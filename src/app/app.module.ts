@@ -5,14 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InstructorCardComponent } from './instructor-card/instructor-card.component';
 import { CardContainerComponent } from './card-container/card-container.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FirstSectionComponent } from './course/first-section/first-section.component';
+import { CourseCardComponent } from './course/course-card/course-card.component';
+import { LastSectionComponent } from './course/last-section/last-section.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InstructorCardComponent,
     CardContainerComponent,
-    HeaderComponent
+    HeaderComponent,
+    FirstSectionComponent,
+    CourseCardComponent,
+    LastSectionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
