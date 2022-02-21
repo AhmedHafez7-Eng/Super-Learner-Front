@@ -12,14 +12,15 @@ const routes: Routes = [
 
   { path: 'home', component: HomeComponent,
     children: [] 
-  } ,
-   { path: 'course', component: CourseCardComponent,
+  } , 
+  { path: 'course', component: CourseCardComponent,
     children: [
-      { path: 'course', component: CourseCardComponent},
-      { path: 'course', component: FirstSectionComponent},
-      { path: 'course', component: LastSectionComponent }
+      { path: 'course', component: CourseCardComponent },
+      { path: 'course', component: FirstSectionComponent },
+      { path: 'course', component: LastSectionComponent },
+
     ] 
-  }    
+  } 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
