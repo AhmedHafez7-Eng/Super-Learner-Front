@@ -31,10 +31,17 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/timeline.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/modernizer.js",
+              "src/all.js",
+              "src/custom.js",
+              "src/timeline.min.js",
+              "src/tl.js"
+
             ]
           },
           "configurations": {

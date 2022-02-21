@@ -10,6 +10,13 @@ import { FirstSectionComponent } from './course/first-section/first-section.comp
 import { CourseCardComponent } from './course/course-card/course-card.component';
 import { LastSectionComponent } from './course/last-section/last-section.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { HomeComponent } from './home/home/home.component';
+import {AboutFirstSecComponent} from './aboutUS/about-first-sec/about-first-sec.component';
+import { AboutsecSecComponent } from './aboutUS/aboutsec-sec/aboutsec-sec.component';
+import { AboutThirdSecComponent } from './aboutUS/about-third-sec/about-third-sec.component';
+import { AboutFourthSecComponent } from './aboutUS/about-fourth-sec/about-fourth-sec.component';
+import { RouterModule, ROUTES } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,10 +27,16 @@ import { FooterComponent } from './layout/footer/footer.component';
     CourseCardComponent,
     LastSectionComponent,
     FooterComponent,
+    HomeComponent,
+    AboutFirstSecComponent,
+    AboutsecSecComponent,
+    AboutThirdSecComponent,
+    AboutFourthSecComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+      RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
