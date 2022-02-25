@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RegisterService } from '../service/register.service';
+import { instructor } from '../models/instructor.model';
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -16,10 +17,16 @@ export class RegistrationFormComponent implements OnInit {
   log1(x:any){
     this.passConf=x.value;
   }
-  constructor() { }
+  instructor=new instructor();
+  tokenfromregist!:string
+  constructor(private registserve:RegisterService) { }
 
   ngOnInit(): void {
     
+  }
+  insertData(){
+    this.registserve.saveData(this.instructor).
+    subscribe(res=>{this.tokenfromregist=(res.access_token)})
   }
 
 }

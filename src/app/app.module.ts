@@ -18,6 +18,7 @@ import{MatInputModule }from '@angular/material/input'
 import { FormsModule } from '@angular/forms';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatNativeDateModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
