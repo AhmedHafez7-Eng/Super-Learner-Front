@@ -13,12 +13,12 @@ import { InstructorCardComponent } from './Instructor/instructor-card/instructor
 
 
 const routes: Routes = [
- {path: '', redirectTo: '/home', pathMatch: 'full' },
-//  {path: 'home', component: HomeComponent, outlet: "home" },
+//  {path: '', redirectTo: '/home', pathMatch: 'full' },
+// //  {path: 'home', component: HomeComponent, outlet: "home" },
 
-  { path: 'home', component: HomeComponent,outlet: "home" ,
-    children: [] 
-  } , 
+//   { path: 'home', component: HomeComponent,outlet: "home" ,
+//     children: [] 
+//   } , 
   // { path: 'course', component: CourseCardComponent,
   //   children: [
   //     { path: 'course', component: CourseCardComponent },
