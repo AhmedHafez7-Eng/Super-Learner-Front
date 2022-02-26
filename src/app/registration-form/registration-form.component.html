@@ -1,5 +1,5 @@
 <div class="container">
-    <form (ngSubmit)='insertData()'>
+    <form (ngSubmit)='insertData()' enctype="multipart/form-data">
         <div class="form-group mt-5">
             <label for="firstName">First name</label>
             <input required ngModel minlength="3" maxlength="10" #firstName="ngModel" class="form-control" type="text" name="fname" [(ngModel)]=instructor.fname id="firstName">
@@ -34,11 +34,14 @@
         </div>
         <!-- <mat-form-field appearance="fill" >
             <mat-label>Date of birth</mat-label>
-            <input matInput [matDatepicker]="picker" name='b_date' [(ngModel)]=instructor.b_date>
+            <input type="date" matInput [matDatepicker]="picker" name='b_date' [(ngModel)]=instructor.b_date>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field> -->
         <div class="form-group mt-3">
+            <input type="date"   name='b_date' [(ngModel)]=instructor.b_date>
+            </div>       
+            <div class="form-group mt-3">
             <label for="phone">Phone</label>
             <input class="form-control"  type="text" pattern="^[0-9]*$" required ngModel #phone="ngModel" minlength="11" name="phone" [(ngModel)]=instructor.phone id="phone">
             <div class="alert alert-danger" *ngIf="phone.touched && phone.errors?.['required']">Phone number is required</div>
@@ -51,7 +54,8 @@
             <div class="alert alert-danger" *ngIf="address.touched && address.errors?.['required']">Address is required</div>
             
         </div>
+       
         <button class="btn btn-primary mt-3 mb-5">Submit</button>
     </form>
-
+    
 </div>

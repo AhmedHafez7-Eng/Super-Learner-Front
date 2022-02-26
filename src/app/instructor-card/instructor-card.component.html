@@ -2,18 +2,23 @@
     <div class="our-team">
         <div class="team-img">
             <!-- get profile picture path from database here -->
-            <img src="../../assets/images/team-01.png"> 
-            <div class="social">
-                <ul>
+            <img src="{{courseData.img}}"> 
+            <!-- <span *ngIf="courseData.role == 'instructor'">
+            <a href='/courseInfo/{{instructorData.id}}' class="fa fa-edit"></a>
+            </span> -->
+            <!-- <div >
+                <ul style="list-style-type: none; display:inline;" >
                     <li><a href="#" class="fa fa-facebook"></a></li>
                     <li><a href="#" class="fa fa-twitter"></a></li>
                     <li><a href="#" class="fa fa-linkedin"></a></li>
                     <li><a href="#" class="fa fa-skype"></a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
-        <div class="team-content">
-            <h3 class="title">{{instructorData.fname}}</h3>
-            <span class="post">insert job from database</span>
+        <div class>
+            <h3 class="title">{{courseData.title}}</h3>
+            <span class="post">
+                 <a href='/courseInfo/{{courseData.instructor_id}}' >more info</a>
+                </span>
         </div>
     </div>

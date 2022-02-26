@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from "@angular/common/http";
+import { CourseInfoComponent } from './course-info/course-info.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { HttpClientModule } from "@angular/common/http";
     InstructorListComponent,
     RegistrationFormComponent,
     InstructorsComponent,
-    RegisterComponent
+    RegisterComponent,
+    CourseInfoComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,7 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

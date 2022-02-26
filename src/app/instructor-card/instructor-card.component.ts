@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { course } from '../models/course.model';
 import { instructor } from '../models/instructor.model';
 
 @Component({
@@ -8,6 +9,7 @@ import { instructor } from '../models/instructor.model';
 })
 export class InstructorCardComponent implements OnInit {
 @Input()
+courseData!:course
 instructorData!:instructor
   constructor() { }
 

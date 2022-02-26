@@ -8,15 +8,20 @@ import{instructor } from '../models/instructor.model'
 })
 export class InstructorListComponent implements OnInit {
   instructors!:any
+  courses!:any
   constructor(private instserve:InstructorserviceService) { }
 
   ngOnInit(): void {
     this.getdata()
+    this.getcourses()
   }
   getdata(){
     this.instserve.getAllInstructros().subscribe(
       (res)=>{this.instructors=res;console.log(res)})
     
+    }
+    getcourses(){
+      this.instserve.getcourses().subscribe((res)=>{this.courses=res})
     }
   
 }

@@ -19,6 +19,10 @@ export class RegistrationFormComponent implements OnInit {
   }
   instructor=new instructor();
   tokenfromregist!:string
+  profile_pic!:any
+
+img!:any
+selectedfile!:File
   constructor(private registserve:RegisterService) { }
 
   ngOnInit(): void {
@@ -26,7 +30,22 @@ export class RegistrationFormComponent implements OnInit {
   }
   insertData(){
     this.registserve.saveData(this.instructor).
-    subscribe(res=>{this.tokenfromregist=(res.access_token)})
+    subscribe(res=>{console.log(res);
+      this.tokenfromregist=(res.access_token)})
+  }
+  uploadimg(){
+    const fd=new FormData();
+    fd.append('profile_pic',this.selectedfile,this.selectedfile.name)
+    
+    
+      this.registserve.uploadimg(1,fd).subscribe((res)=>{
+     
+       console.log(event)
+      })
+  }
+  selectedFile(event:any){
+    this.selectedfile= <File> event.target.files[0]
+   console.log(this.selectedfile)
   }
 
 }

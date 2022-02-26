@@ -1,9 +1,9 @@
 <div id="teachers" class="section wb">
     <div class="container">
         <div class="row">
-            <div *ngFor="let item of instructors" 
+            <div *ngFor="let item of courses" 
             class="col-lg-3 col-md-6 col-12" >
-                <app-instructor-card [instructorData]='item' ></app-instructor-card>
+                <app-instructor-card [courseData]='item' ></app-instructor-card>
             </div>
             <!-- <div class="col-lg-3 col-md-6 col-12">
                 <app-instructor-card></app-instructor-card>
