@@ -18,6 +18,7 @@ export class RegistrationFormComponent implements OnInit {
     this.passConf=x.value;
   }
   instructor=new instructor();
+  role!:string
   tokenfromregist!:string
   profile_pic!:any
 
@@ -29,6 +30,7 @@ selectedfile!:File
     
   }
   insertData(){
+    
     this.registserve.saveData(this.instructor).
     subscribe(res=>{console.log(res);
       this.tokenfromregist=(res.access_token)})
@@ -47,5 +49,6 @@ selectedfile!:File
     this.selectedfile= <File> event.target.files[0]
    console.log(this.selectedfile)
   }
+  
 
 }

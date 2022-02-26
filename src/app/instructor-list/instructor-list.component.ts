@@ -12,7 +12,7 @@ export class InstructorListComponent implements OnInit {
   constructor(private instserve:InstructorserviceService) { }
 
   ngOnInit(): void {
-    this.getdata()
+    //this.getdata()
     this.getcourses()
   }
   getdata(){

@@ -54,6 +54,15 @@
             <div class="alert alert-danger" *ngIf="address.touched && address.errors?.['required']">Address is required</div>
             
         </div>
+        <div class="form-group mt-3">
+            <label for="roles">Regist as..:</label>
+
+<select name="role" id="roles" [(ngModel)]=instructor.role >
+  <option value="student" >student</option>
+  <option value="instructor">instructor</option>
+  
+</select>
+            </div>
        
         <button class="btn btn-primary mt-3 mb-5">Submit</button>
     </form>
