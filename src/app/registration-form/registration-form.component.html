@@ -1,0 +1,70 @@
+<div class="container">
+    <form (ngSubmit)='insertData()' enctype="multipart/form-data">
+        <div class="form-group mt-5">
+            <label for="firstName">First name</label>
+            <input required ngModel minlength="3" maxlength="10" #firstName="ngModel" class="form-control" type="text" name="fname" [(ngModel)]=instructor.fname id="firstName">
+            <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">First name is required</div>
+            <div class="alert alert-danger" *ngIf="firstName.touched &&firstName.errors?.['minlength']">First name must be more than 3 chars</div>
+            <div class="alert alert-danger" *ngIf="firstName.touched &&firstName.errors?.['maxlength']">First name must be less than 10 chars</div>
+        </div>
+        <div class="form-group mt-3">
+            <label for="lastName">Last name</label>
+            <input required ngModel minlength="3" maxlength="10" #lastName="ngModel" class="form-control" type="text" name="lname" [(ngModel)]=instructor.lname id="lastName">
+            <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">Last name is required</div>
+            <div class="alert alert-danger" *ngIf="lastName.touched &&lastName.errors?.['minlength']">Last name must be more than 3 chars</div>
+            <div class="alert alert-danger" *ngIf="lastName.touched &&lastName.errors?.['maxlength']">Last name must be less than 10 chars</div>
+        </div>
+        <div class="form-group mt-3">
+            <label for="mail">E-mail</label>
+            <input required ngModel #email="ngModel" [pattern]="emailPattern" class="form-control" type="email" name="email" [(ngModel)]=instructor.email id="mail">
+            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['required']">E-mail is required</div>
+            <div class="alert alert-danger" *ngIf="email.errors?.['pattern']">Please enter a valid E-mail Address</div>
+        </div>
+        <div class="form-group mt-3">
+            <label for="password">password</label>
+            <input class="form-control" required ngModel #password="ngModel" (change)="log(password)" [pattern]="passPattern" type="password" name="password" [(ngModel)]=instructor.password id="password">
+            <div class="alert alert-danger" *ngIf="password.touched && password.errors?.['required']">Password is required</div>
+            <div class="alert alert-danger" *ngIf="password.errors?.['pattern']">Please enter a valid Password</div>
+        </div>
+        <div class="form-group mt-3 mb-3">
+            <label for="confirmPassword">confirm password</label>
+            <input class="form-control" required ngModel #passwordConfirm="ngModel" (change)="log1(passwordConfirm)" type="password" name="confirmPassword" id="confirmPassword">
+            <div class="alert alert-danger" *ngIf="passwordConfirm.touched && passwordConfirm.errors?.['required']">Password confirmation is required</div>
+            <div class="alert alert-danger" *ngIf="pass!=passConf">Passwords doesn't match</div>
+        </div>
+        <!-- <mat-form-field appearance="fill" >
+            <mat-label>Date of birth</mat-label>
+            <input type="date" matInput [matDatepicker]="picker" name='b_date' [(ngModel)]=instructor.b_date>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+        <div class="form-group mt-3">
+            <input type="date"   name='b_date' [(ngModel)]=instructor.b_date>
+            </div>       
+            <div class="form-group mt-3">
+            <label for="phone">Phone</label>
+            <input class="form-control"  type="text" pattern="^[0-9]*$" required ngModel #phone="ngModel" minlength="11" name="phone" [(ngModel)]=instructor.phone id="phone">
+            <div class="alert alert-danger" *ngIf="phone.touched && phone.errors?.['required']">Phone number is required</div>
+            <div class="alert alert-danger" *ngIf="phone.errors?.['pattern']">Only numbers allowed</div>
+            <div class="alert alert-danger" *ngIf="phone.errors?.['minlength']">Phone number must be atleast 11 numbers</div>
+        </div>
+        <div class="form-group mt-3">
+            <label for="address">Address</label>
+            <input class="form-control" type="text"  required ngModel #address="ngModel" name="address" [(ngModel)]=instructor.address id="address">
+            <div class="alert alert-danger" *ngIf="address.touched && address.errors?.['required']">Address is required</div>
+            
+        </div>
+        <div class="form-group mt-3">
+            <label for="roles">Regist as..:</label>
+
+<select name="role" id="roles" [(ngModel)]=instructor.role >
+  <option value="student" >student</option>
+  <option value="instructor">instructor</option>
+  
+</select>
+            </div>
+       
+        <button class="btn btn-primary mt-3 mb-5">Submit</button>
+    </form>
+    
+</div>

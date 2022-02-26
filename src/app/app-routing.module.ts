@@ -11,8 +11,16 @@ import { HomeComponent } from './home/home/home.component';
 import { CardContainerComponent } from './Instructor/card-container/card-container.component';
 import { InstructorCardComponent } from './Instructor/instructor-card/instructor-card.component';
 
+import { CourseInfoComponent } from './course-info/course-info.component';
+import { InstructorsComponent } from './instructors/instructors.component';
+import { RegisterComponent } from './register/register.component';
+
+
 
 const routes: Routes = [
+    { path: 'teachers', component: InstructorsComponent },
+  { path: 'register', component: RegisterComponent },
+  {path:'courseInfo/:id',component:CourseInfoComponent},
 //  {path: '', redirectTo: '/home', pathMatch: 'full' },
 // //  {path: 'home', component: HomeComponent, outlet: "home" },
 
