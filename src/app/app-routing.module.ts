@@ -15,6 +15,8 @@ import { CourseInfoComponent } from './course-info/course-info.component';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
+import { MyCoursesComponent } from './course/my-courses/my-courses.component';
+import { CoursesComponent } from './course/courses/courses.component';
 
 
 
@@ -22,34 +24,35 @@ const routes: Routes = [
     { path: 'teachers', component: InstructorsComponent },
   { path: 'register', component: RegisterComponent },
   {path:'courseInfo/:id',component:CourseInfoComponent},
-  {path:'update/:id',component:UpdatecourseComponent}
+  {path:'update/:id',component:UpdatecourseComponent},
+  { path: 'course', component: CourseCardComponent,
+    children: [
+      { path: 'course', component: CourseCardComponent },
+      { path: 'course', component: FirstSectionComponent },
+      { path: 'course', component: LastSectionComponent },
+    ] 
+  },
+  {path:'my-courses',component: MyCoursesComponent},
+    { path: 'home', component: HomeComponent,outlet: "home" },
+  
+    { path: 'aboutUs', component: AboutFirstSecComponent,
+    children: [
+      { path: 'aboutUs', component: AboutFirstSecComponent },
+      { path: 'aboutUs', component: AboutsecSecComponent },
+      { path: 'aboutUs', component: AboutThirdSecComponent },
+      { path: 'aboutUs', component: AboutFourthSecComponent },
+    ] 
+  } ,
+  
+    { path: 'teachers', component: CardContainerComponent,
+    children: [
+      { path: 'teachers', component: InstructorCardComponent },
+      { path: 'teachers', component: CardContainerComponent },
+    ] 
+  } 
 ];
 
-//   { path: 'home', component: HomeComponent,outlet: "home" ,
-//     children: [] 
-//   } , 
-  // { path: 'course', component: CourseCardComponent,
-  //   children: [
-  //     { path: 'course', component: CourseCardComponent },
-  //     { path: 'course', component: FirstSectionComponent },
-  //     { path: 'course', component: LastSectionComponent },
-  //   ] 
-  // },
-  //   { path: 'aboutUs', component: AboutFirstSecComponent,
-  //   children: [
-  //     { path: 'aboutUs', component: AboutFirstSecComponent },
-  //     { path: 'aboutUs', component: AboutsecSecComponent },
-  //     { path: 'aboutUs', component: AboutThirdSecComponent },
-  //     { path: 'aboutUs', component: AboutFourthSecComponent },
-  //   ] 
-  // } ,
-  
-  //   { path: 'teachers', component: CardContainerComponent,
-  //   children: [
-  //     { path: 'teachers', component: InstructorCardComponent },
-  //     { path: 'teachers', component: CardContainerComponent },
-  //   ] 
-  // } 
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

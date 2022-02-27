@@ -30,6 +30,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { CourseInfoComponent } from './course-info/course-info.component';
 import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { MyCoursesComponent } from './course/my-courses/my-courses.component';
+import { CoursesComponent } from './course/courses/courses.component';
+import { CourseViewComponent } from './course-view/course-view.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { MyCoursesComponent } from './course/my-courses/my-courses.component';
     CourseInfoComponent,
     UpdatecourseComponent,
     MyCoursesComponent,
+    CoursesComponent,
+    CourseViewComponent,
    
   ],
   imports: [
