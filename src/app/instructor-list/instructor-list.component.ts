@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { InstructorserviceService } from '../service/instructorservice.service';
 import{instructor } from '../models/instructor.model'
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-instructor-list',
   templateUrl: './instructor-list.component.html',
   styleUrls: ['./instructor-list.component.css']
 })
-export class InstructorListComponent implements OnInit {
+export class InstructorListComponent implements OnInit  {
   instructors!:any
   courses!:any
+  dataobservable!:Subscription
   constructor(private instserve:InstructorserviceService) { }
 
   ngOnInit(): void {
@@ -23,5 +25,8 @@ export class InstructorListComponent implements OnInit {
     getcourses(){
       this.instserve.getcourses().subscribe((res)=>{this.courses=res})
     }
+    // ngOnDestroy(): void {
+    //     this.dataobservable.unsubscribe
+    // }
   
 }
