@@ -17,11 +17,14 @@ import { RegisterComponent } from './register/register.component';
 import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { MyCoursesComponent } from './course/my-courses/my-courses.component';
 import { CoursesComponent } from './course/courses/courses.component';
+import { CourseContentComponent } from './course-content/course-content.component';
 
 
 
 const routes: Routes = [
-    { path: 'teachers', component: InstructorsComponent },
+  { path: 'teachers', component: InstructorsComponent },
+  { path: 'course-content', component: CourseContentComponent },
+
   { path: 'register', component: RegisterComponent },
   {path:'courseInfo/:id',component:CourseInfoComponent},
   {path:'update/:id',component:UpdatecourseComponent},

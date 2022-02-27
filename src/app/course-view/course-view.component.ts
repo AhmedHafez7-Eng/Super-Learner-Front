@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { course } from '../models/course.model';
 
 @Component({
@@ -7,13 +7,14 @@ import { course } from '../models/course.model';
   styleUrls: ['./course-view.component.css']
 })
 export class CourseViewComponent implements OnInit {
-
+  @Input()
+  course!:course;
   constructor() { }
 
   ngOnInit(): void {
     
   }
-  course!:course;
+  
   
 
 }

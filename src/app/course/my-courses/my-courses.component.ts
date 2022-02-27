@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { course } from 'src/app/models/course.model';
 
 @Component({
   selector: 'app-my-courses',
@@ -11,16 +12,39 @@ export class MyCoursesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  cardContent=[
-    {img:'../../../assets/images/blog_2.jpg',name:'Hotel Management',
-    desc:'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quomaiorum intel ogrets geuiat operts elicata libere avisse idcumlegebat, liber regione eu si',
-  rate:4},
-   {img:'../../../assets/images/blog_2.jpg',name:'Engineering',
-    desc:'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quomaiorum intel ogrets geuiat operts elicata libere avisse idcumlegebat, liber regione eu si',
-  rate:4},
-   {img:'../../../assets/images/blog_2.jpg',name:'programming',
-    desc:'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quomaiorum intel ogrets geuiat operts elicata libere avisse idcumlegebat, liber regione eu si',
-  rate:4}
+  cardContent: course[] = [
+    {
+      id: 1,
+      title: 'php',
+      desc: 'lorem lorem lorem',
+      max_score: 50,
+      instructor_id: 1,
+      img: '../../../assets/images/blog_2.jpg'
+    },
+    {
+      id: 2,
+      title: 'laravel',
+      desc: 'lorem lorem lorem',
+      max_score: 50,
+      instructor_id: 1,
+      img: '../../../assets/images/blog_2.jpg'
+    },
+    {
+      id: 3,
+      title: 'angular',
+      desc: 'lorem lorem lorem',
+      max_score: 50,
+      instructor_id: 1,
+      img: '../../../assets/images/blog_2.jpg'
+    },
+    {
+      id: 3,
+      title: 'angular',
+      desc: 'lorem lorem lorem',
+      max_score: 50,
+      instructor_id: 1,
+      img: '../../../assets/images/blog_2.jpg'
+    }
   ]
 
 }

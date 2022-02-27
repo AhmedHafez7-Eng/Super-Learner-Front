@@ -32,6 +32,7 @@ import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { MyCoursesComponent } from './course/my-courses/my-courses.component';
 import { CoursesComponent } from './course/courses/courses.component';
 import { CourseViewComponent } from './course-view/course-view.component';
+import { CourseContentComponent } from './course-content/course-content.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { CourseViewComponent } from './course-view/course-view.component';
     MyCoursesComponent,
     CoursesComponent,
     CourseViewComponent,
+    CourseContentComponent,
    
   ],
   imports: [
