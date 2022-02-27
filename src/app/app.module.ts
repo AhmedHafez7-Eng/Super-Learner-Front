@@ -33,6 +33,7 @@ import { MyCoursesComponent } from './course/my-courses/my-courses.component';
 import { CoursesComponent } from './course/courses/courses.component';
 import { CourseViewComponent } from './course-view/course-view.component';
 import { CourseContentComponent } from './course-content/course-content.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { CourseContentComponent } from './course-content/course-content.componen
     CoursesComponent,
     CourseViewComponent,
     CourseContentComponent,
+    LoginFormComponent,
 
    
   ],

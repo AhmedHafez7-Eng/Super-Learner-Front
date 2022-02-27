@@ -18,6 +18,7 @@ import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { MyCoursesComponent } from './course/my-courses/my-courses.component';
 import { CoursesComponent } from './course/courses/courses.component';
 import { CourseContentComponent } from './course-content/course-content.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'course-content', component: CourseContentComponent },
   { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginFormComponent },
   {path:'courseInfo/:id',component:CourseInfoComponent},
   {path:'update/:id',component:UpdatecourseComponent},
   { path: 'course', component: CourseCardComponent,
