@@ -28,12 +28,15 @@ import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CourseInfoComponent } from './course-info/course-info.component';
+import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
+import { MyCoursesComponent } from './course/my-courses/my-courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InstructorCardComponent,
     CardContainerComponent,
+    HeaderComponent,
     FirstSectionComponent,
     CourseCardComponent,
     LastSectionComponent,
@@ -49,7 +52,8 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     InstructorsComponent,
     RegisterComponent,
     CourseInfoComponent,
-    HeaderComponent
+    UpdatecourseComponent,
+    MyCoursesComponent,
    
   ],
   imports: [

@@ -29,5 +29,11 @@ imgofinst!:any
     console.log(res)
     this.imgofinst=res
     })}
+    delete(id:number){this.instserve.deletecourse(id).subscribe(
+      (res)=>{
+      
+        //this.getdata();
+        console.log (this.data)
+      })}
 }
 
