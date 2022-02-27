@@ -28,6 +28,7 @@ import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CourseInfoComponent } from './course-info/course-info.component';
+// import { instructor } from "./models/instructor.model";
 
 @NgModule({
   declarations: [
@@ -49,8 +50,8 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     InstructorsComponent,
     RegisterComponent,
     CourseInfoComponent,
-    HeaderComponent
-   
+    HeaderComponent,
+     
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,8 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     RouterModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    // instructor
     //  MatFormFieldModule,
     // MatDatepickerModule,
     // MatInputModule,

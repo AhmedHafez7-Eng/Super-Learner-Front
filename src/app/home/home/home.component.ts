@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-declare var timeline: any;
+declare var timeline:any;
+// var myapp = angular.module('myapp', ['angular-timeline']);
+
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ export class HomeComponent implements OnInit  {
   constructor() { }
 
   ngOnInit(): void {
-     timeline(document.querySelectorAll('.timeline'), {
+  timeline(document.querySelectorAll('.timeline'), {
     forceVerticalMode: 700,
     mode: 'horizontal',
     verticalStartPosition: 'left',

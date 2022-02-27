@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { instructor } from '../models/instructor.model';
+import { instructor } from "../models/instructor.model";
 import { InstructorserviceService } from '../service/instructorservice.service';
 @Component({
   selector: 'app-course-info',

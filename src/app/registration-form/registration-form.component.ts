@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../service/register.service';
-import { instructor } from '../models/instructor.model';
+import { instructor } from "../models/instructor.model";
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
