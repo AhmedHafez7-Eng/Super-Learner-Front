@@ -24,7 +24,7 @@ import { CourseContentComponent } from './course-content/course-content.componen
 const routes: Routes = [
   { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content', component: CourseContentComponent },
-
+  { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
   {path:'courseInfo/:id',component:CourseInfoComponent},
   {path:'update/:id',component:UpdatecourseComponent},
