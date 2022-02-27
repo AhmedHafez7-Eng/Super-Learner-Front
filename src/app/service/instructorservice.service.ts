@@ -29,5 +29,8 @@ getcourses():
     return this.httpclient.get(`${environment.baseUrl}delete/${id}`)
      
   }
+  uploadimg(id:number,course_img:any):Observable<{img:object}>{
+    return this.httpclient.post<{img:object}>(`${environment.baseUrl}uploadimg/${id}`,course_img)
+  }
 
 }

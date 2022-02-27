@@ -2,8 +2,9 @@
 <img src={{imgofinst}} width='120px' height="120px">
 <span *ngIf="data?.role == 'instructor'">
             <a routerLink='/update/{{data.id}}' class="fa fa-edit"></a>
-            <button (click)='delete(data.id)' >
+            <a routerLink='/update/{{data.id}}' class="fa fa-image"></a>
+            <span (click)='delete(data.id)' class="fa fa-close">
                 
-                delete</button>
+            </span>
             </span>
            
