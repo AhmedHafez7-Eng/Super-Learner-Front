@@ -1,2 +1,9 @@
 <div>{{data?.fname}}</div>
 <img src={{imgofinst}} width='120px' height="120px">
+<span *ngIf="data?.role == 'instructor'">
+            <a routerLink='/update/{{data.id}}' class="fa fa-edit"></a>
+            <button (click)='delete(data.id)' >
+                
+                delete</button>
+            </span>
+           

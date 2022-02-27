@@ -20,6 +20,7 @@ import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CourseInfoComponent } from './course-info/course-info.component';
+import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     InstructorsComponent,
     RegisterComponent,
     CourseInfoComponent,
+    UpdatecourseComponent,
    
   ],
   imports: [

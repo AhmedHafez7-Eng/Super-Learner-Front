@@ -25,5 +25,9 @@ getcourses():
   getimage(id:number){
     return this.httpclient.get(`${environment.baseUrl}getimage/${id}`)
   }
+  deletecourse(id:number){
+    return this.httpclient.get(`${environment.baseUrl}delete/${id}`)
+     
+  }
 
 }
