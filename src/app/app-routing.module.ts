@@ -41,7 +41,7 @@ const routes: Routes = [
     ] 
   },
   {path:'my-courses',component: MyCoursesComponent},
-    { path: 'home', component: HomeComponent,outlet: "home" },
+    { path: 'home', component: HomeComponent},
   
     { path: 'aboutUs', component: AboutFirstSecComponent,
     children: [
