@@ -22,6 +22,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { CourseInfoComponent } from './course-info/course-info.component';
 import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 
+import { LoginFormComponent } from './login-form/login-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,8 @@ import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
     RegisterComponent,
     CourseInfoComponent,
     UpdatecourseComponent,
+    
+    LoginFormComponent,
    
   ],
   imports: [
