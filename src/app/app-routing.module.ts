@@ -22,13 +22,11 @@ import { LoginFormComponent } from './login-form/login-form.component';
 
 
 const routes: Routes = [
-  { path: 'teachers', component: InstructorsComponent },
-  { path: 'course-content', component: CourseContentComponent },
-  { path: 'update', component: UpdatecourseComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginFormComponent },
-  {path:'courseInfo/:id',component:CourseInfoComponent},
-  {path:'update/:id',component:UpdatecourseComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+  { path: 'home', component: HomeComponent,children:[
+    { path: 'home', component: HomeComponent}    ] },
+ 
   { path: 'course', component: CourseCardComponent,
     children: [
       { path: 'course', component: CourseCardComponent },
@@ -41,7 +39,6 @@ const routes: Routes = [
     ] 
   },
   {path:'my-courses',component: MyCoursesComponent},
-    { path: 'home', component: HomeComponent,outlet: "home" },
   
     { path: 'aboutUs', component: AboutFirstSecComponent,
     children: [
@@ -57,7 +54,13 @@ const routes: Routes = [
       { path: 'teachers', component: InstructorCardComponent },
       { path: 'teachers', component: CardContainerComponent },
     ] 
-  } 
+  } ,
+  { path: 'course-content', component: CourseContentComponent },
+  { path: 'update', component: UpdatecourseComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginFormComponent },
+  {path:'courseInfo/:id',component:CourseInfoComponent},
+  {path:'update/:id',component:UpdatecourseComponent},
 ];
 
 
