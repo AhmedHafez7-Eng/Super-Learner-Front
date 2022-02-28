@@ -32,8 +32,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginFormComponent },
   {path:'courseInfo/:id',component:CourseInfoComponent},
-
-  {path:'update/:id',component:UpdatecourseComponent,canActivate:[AuthService]},
+//,canActivate:[AuthService]
+  {path:'update/:id',component:UpdatecourseComponent},
   {path:'login',component:LoginFormComponent},
   { path: 'course', component: CourseCardComponent,
     children: [
