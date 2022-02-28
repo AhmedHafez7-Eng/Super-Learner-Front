@@ -70,7 +70,7 @@ export class CourseContentComponent implements OnInit {
     }
 
   ]
-  role='Instructor';
+  role='student';
   secNum:number=1;
   section1Clicked(){
     this.secNum=1;

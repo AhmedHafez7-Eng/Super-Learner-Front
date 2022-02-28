@@ -35,5 +35,7 @@ getcourses():
   update(data:object,id:number){
     return this.httpclient.post<any>(`${environment.baseUrl}update/${id}`,data)
 }
-
+getcourse(id:number){
+  return this.httpclient.get(`${environment.baseUrl}course/${id}`)
+}
 }

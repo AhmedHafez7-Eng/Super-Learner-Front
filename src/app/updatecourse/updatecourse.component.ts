@@ -15,6 +15,7 @@ export class UpdatecourseComponent implements OnInit {
   selectedfile!:File
   course= new course()
   ngOnInit(): void {
+    this.getcourse()
   }
   uploadimg(){
     const fd=new FormData();
@@ -38,4 +39,7 @@ export class UpdatecourseComponent implements OnInit {
      })
    
      }
+     getcourse(){this.instserve.getcourse(this.course_id).subscribe(res=>{
+       console.log(res)
+     })}
 }
