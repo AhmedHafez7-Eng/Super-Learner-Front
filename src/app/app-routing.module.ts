@@ -10,46 +10,58 @@ import { LastSectionComponent } from './course/last-section/last-section.compone
 import { HomeComponent } from './home/home/home.component';
 import { CardContainerComponent } from './Instructor/card-container/card-container.component';
 import { InstructorCardComponent } from './Instructor/instructor-card/instructor-card.component';
-
 import { CourseInfoComponent } from './course-info/course-info.component';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
+import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
+import { MyCoursesComponent } from './course/my-courses/my-courses.component';
+import { CoursesComponent } from './course/courses/courses.component';
+import { CourseContentComponent } from './course-content/course-content.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 
 const routes: Routes = [
-    { path: 'teachers', component: InstructorsComponent },
+  { path: 'teachers', component: InstructorsComponent },
+  { path: 'course-content', component: CourseContentComponent },
+  { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginFormComponent },
   {path:'courseInfo/:id',component:CourseInfoComponent},
-//  {path: '', redirectTo: '/home', pathMatch: 'full' },
-// //  {path: 'home', component: HomeComponent, outlet: "home" },
+  {path:'update/:id',component:UpdatecourseComponent},
+  { path: 'course', component: CourseCardComponent,
+    children: [
+      { path: 'course', component: CourseCardComponent },
+      { path: 'course', component: FirstSectionComponent },
+      { path: 'course', component: LastSectionComponent },
+      { path: 'course', component: CourseContentComponent },
+      { path: 'course', component: CourseInfoComponent },
 
-//   { path: 'home', component: HomeComponent,outlet: "home" ,
-//     children: [] 
-//   } , 
-  // { path: 'course', component: CourseCardComponent,
-  //   children: [
-  //     { path: 'course', component: CourseCardComponent },
-  //     { path: 'course', component: FirstSectionComponent },
-  //     { path: 'course', component: LastSectionComponent },
-  //   ] 
-  // },
-  //   { path: 'aboutUs', component: AboutFirstSecComponent,
-  //   children: [
-  //     { path: 'aboutUs', component: AboutFirstSecComponent },
-  //     { path: 'aboutUs', component: AboutsecSecComponent },
-  //     { path: 'aboutUs', component: AboutThirdSecComponent },
-  //     { path: 'aboutUs', component: AboutFourthSecComponent },
-  //   ] 
-  // } ,
+
+    ] 
+  },
+  {path:'my-courses',component: MyCoursesComponent},
+    { path: 'home', component: HomeComponent,outlet: "home" },
   
-  //   { path: 'teachers', component: CardContainerComponent,
-  //   children: [
-  //     { path: 'teachers', component: InstructorCardComponent },
-  //     { path: 'teachers', component: CardContainerComponent },
-  //   ] 
-  // } 
+    { path: 'aboutUs', component: AboutFirstSecComponent,
+    children: [
+      { path: 'aboutUs', component: AboutFirstSecComponent },
+      { path: 'aboutUs', component: AboutsecSecComponent },
+      { path: 'aboutUs', component: AboutThirdSecComponent },
+      { path: 'aboutUs', component: AboutFourthSecComponent },
+    ] 
+  } ,
+  
+    { path: 'teachers', component: InstructorsComponent,
+    children: [
+      { path: 'teachers', component: InstructorCardComponent },
+      { path: 'teachers', component: CardContainerComponent },
+    ] 
+  } 
 ];
+
+
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

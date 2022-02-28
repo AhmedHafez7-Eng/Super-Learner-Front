@@ -1,0 +1,28 @@
+.side{
+    position:fixed;
+    top:72px;
+    right:0;
+    height:100%;
+    padding:0;
+    z-index: 1;
+  }
+  .contentList{
+    list-style-type: none;
+    font-size: larger;
+    text-align: center;
+    
+  }
+  .contentList>li{
+    cursor: pointer;
+  }
+  .scroll-area{
+    width:100%;
+    height:100%;
+    
+    
+    float:right;
+    overflow-y:scroll;
+  }
+  body{
+     
+  }

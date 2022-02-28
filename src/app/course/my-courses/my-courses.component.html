@@ -1,0 +1,19 @@
+<!-- <div *ngIf="" name="teatcher">
+
+</div>
+
+<div name="student">
+
+</div> -->
+<div class="container">
+    <div class="my-5">
+        <div class="row ">
+            <div class="col-lg-4 col-md-6 col-12 mb-3" *ngFor="let item of cardContent" >
+                <app-course-view [course]="item"></app-course-view>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>

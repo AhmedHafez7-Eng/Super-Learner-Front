@@ -18,7 +18,8 @@
         <div class>
             <h3 class="title">{{courseData.title}}</h3>
             <span class="post">
-                 <a href='/courseInfo/{{courseData.instructor_id}}' >more info</a>
+                 <a routerLink='/courseInfo/{{courseData.instructor_id}}' >more info</a>
                 </span>
         </div>
     </div>
+    <router-outlet></router-outlet>

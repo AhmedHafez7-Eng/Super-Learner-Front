@@ -19,22 +19,25 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { InstructorListComponent } from './instructor-list/instructor-list.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import {MatDatepickerModule} from '@angular/material/datepicker';
-// import {MatNativeDateModule} from '@angular/material/core';
-// import{MatInputModule }from '@angular/material/input'
 import { FormsModule } from '@angular/forms';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CourseInfoComponent } from './course-info/course-info.component';
-// import { instructor } from "./models/instructor.model";
+import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
+import { MyCoursesComponent } from './course/my-courses/my-courses.component';
+import { CoursesComponent } from './course/courses/courses.component';
+import { CourseViewComponent } from './course-view/course-view.component';
+import { CourseContentComponent } from './course-content/course-content.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     InstructorCardComponent,
     CardContainerComponent,
+    HeaderComponent,
     FirstSectionComponent,
     CourseCardComponent,
     LastSectionComponent,
@@ -50,8 +53,14 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     InstructorsComponent,
     RegisterComponent,
     CourseInfoComponent,
-    HeaderComponent,
-     
+    UpdatecourseComponent,
+    MyCoursesComponent,
+    CoursesComponent,
+    CourseViewComponent,
+    CourseContentComponent,
+    LoginFormComponent,
+
+   
   ],
   imports: [
     BrowserModule,
