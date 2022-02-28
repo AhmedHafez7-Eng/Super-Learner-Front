@@ -10,5 +10,5 @@ export class instructor{
     password!:number;
     password_confirmation!:number;
     profile_pic!:File;
-    courseofinstructor!:string
+    courseofinstructor!:any
     }

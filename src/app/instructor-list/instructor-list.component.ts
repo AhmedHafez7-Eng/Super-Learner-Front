@@ -14,12 +14,14 @@ export class InstructorListComponent implements OnInit  {
   constructor(private instserve:InstructorserviceService) { }
 
   ngOnInit(): void {
-    //this.getdata()
-    this.getcourses()
+    this.getdata()
+   // this.getcourses()
   }
   getdata(){
     this.instserve.getAllInstructros().subscribe(
-      (res)=>{this.instructors=res;console.log(res)})
+      (res)=>{this.instructors=res.instructors;
+       // console.log(this.instructors[7].courseofinstructor[0].title)
+      })
     
     }
     getcourses(){

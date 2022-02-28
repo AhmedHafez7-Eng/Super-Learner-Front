@@ -19,8 +19,8 @@ getcourses():
   Observable<{courses:course[]}> {
     return this.httpclient.get<{courses:course[]}>(`${environment.baseUrl}courses`)
   }
-  getone(id:number) :Observable<{data:instructor}>{
-    return this.httpclient.get<{data:instructor}>(`${environment.baseUrl}courseinfo/${id}`)
+  getone(id:number) :Observable<{data:course[]}>{
+    return this.httpclient.get<{data:course[]}>(`${environment.baseUrl}courseinfo/${id}`)
   }
   getimage(id:number){
     return this.httpclient.get(`${environment.baseUrl}getimage/${id}`)

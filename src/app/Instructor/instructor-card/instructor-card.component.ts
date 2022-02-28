@@ -9,11 +9,12 @@ import { instructor } from '../../models/instructor.model';
 })
 export class InstructorCardComponent implements OnInit {
 @Input()
-courseData!:course
+//courseData!:course
 instructorData!:instructor
   constructor() { }
 
   ngOnInit(): void {
   }
+  
 
 }

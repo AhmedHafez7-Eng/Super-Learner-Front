@@ -26,7 +26,7 @@ import { CourseContentComponent } from './course-content/course-content.componen
 
 
 const routes: Routes = [
- // { path: 'teachers', component: InstructorsComponent },
+  { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content', component: CourseContentComponent },
  // { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
@@ -42,7 +42,7 @@ const routes: Routes = [
       { path: 'course', component: LastSectionComponent },
     ] 
   },
-  {path:'my-courses',component: MyCoursesComponent},
+  {path:'my-courses/:id',component: MyCoursesComponent},
     { path: 'home', component: HomeComponent,outlet: "home" },
   
     { path: 'aboutUs', component: AboutFirstSecComponent,
@@ -54,12 +54,12 @@ const routes: Routes = [
     ] 
   } ,
   
-    { path: 'teachers', component: CardContainerComponent,
-    children: [
-      { path: 'teachers', component: InstructorCardComponent },
-      { path: 'teachers', component: CardContainerComponent },
-    ] 
-  } 
+  //   { path: 'teachers', component: CardContainerComponent,
+  //   children: [
+  //     { path: 'teachers', component: InstructorCardComponent },
+  //     { path: 'teachers', component: CardContainerComponent },
+  //   ] 
+  // } 
 
 ];
 
