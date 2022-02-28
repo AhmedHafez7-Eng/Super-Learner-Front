@@ -1,0 +1,77 @@
+<div class="row" *ngIf="role=='student'">
+    <div class="col-3 side bg-light" [style.top.px]="height" #side (scroll)="onWindowScroll(side)">
+       <div style="position:relative;width:100%;height:100%;">
+    
+        
+         <div class="scroll-area">
+             <h2 style="text-align: center;" class="mt-1">course content</h2>
+             <ul class="contentList">
+                 <li>
+                     <div (click)="section1Clicked()" class="bg-light p-5">
+                         Section 1
+                     </div>
+                     <hr>
+                     <div (click)="section2Clicked()" class="bg-light p-5">
+                        Section 2
+                    </div>
+                    <hr>
+                    <div (click)="section3Clicked()" class="bg-light p-5">
+                        Section 3
+                    </div>
+                    <hr>
+                    <div (click)="section4Clicked()" class="bg-light p-5">
+                        Section 4
+                    </div>
+                    <hr>
+                    <div (click)="section5Clicked()" class="bg-light p-5">
+                        Section 5
+                    </div>
+                    <hr>
+                    <div class="bg-light p-5">
+                        Test
+                    </div>
+                 </li>
+             </ul>
+         </div>
+
+         
+       </div>
+
+    </div> 
+    <div class="col-md-10 col-xs-offset-2 content col-md-offset-2">
+      <div style="height:1000px;width:100%;" >
+        <div *ngIf="secNum==1">
+            <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
+            <h2 class="mt-5">{{section[0].title}}</h2>
+            <h4 class="mt-5">{{section[0].courseContent}}</h4>  
+        </div>
+        <div *ngIf="secNum==2">
+            <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
+            <h2 class="mt-5">{{section[1].title}}</h2>
+            <h4 class="mt-5">{{section[1].courseContent}}</h4>  
+        </div>
+        <div *ngIf="secNum==3">
+            <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
+            <h2 class="mt-5">{{section[2].title}}</h2>
+            <h4 class="mt-5">{{section[2].courseContent}}</h4>  
+        </div>
+        <div *ngIf="secNum==4">
+            <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
+            <h2 class="mt-5">{{section[3].title}}</h2>
+            <h4 class="mt-5">{{section[3].courseContent}}</h4>  
+        </div>
+        <div *ngIf="secNum==5">
+            <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
+            <h2 class="mt-5">{{section[4].title}}</h2>
+            <h4 class="mt-5">{{section[4].courseContent}}</h4>  
+        </div>
+      </div>
+      
+    </div>
+
+</div>
+<div class="container" *ngIf="role=='Instructor'">
+    course info page from dalia
+
+    <a routerLink="/update" class="btn btn-primary">Edit Course</a>
+</div>
