@@ -2,7 +2,7 @@
     <div class="our-team">
         <div class="team-img">
             <!-- get profile picture path from database here -->
-            <img src="{{courseData.img}}"> 
+            <img src="{{instructorData.profile_pic}}"> 
             <!-- <span *ngIf="courseData.role == 'instructor'">
             <a href='/courseInfo/{{instructorData.id}}' class="fa fa-edit"></a>
             </span> -->
@@ -16,9 +16,12 @@
             </div> -->
         </div>
         <div class>
-            <h3 class="title">{{courseData.title}}</h3>
+            <h3 class="title">{{instructorData.fname}}</h3>
+            <div *ngFor='let course of instructorData.courseofinstructor'>
+            <h3 class="title">{{course.title}}</h3>
+            </div>
             <span class="post">
-                 <a routerLink='/courseInfo/{{courseData.instructor_id}}' >more info</a>
+                 <a routerLink='/my-courses/{{instructorData.id}}' >more info</a>
                 </span>
         </div>
     </div>

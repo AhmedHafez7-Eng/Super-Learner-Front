@@ -1,8 +1,8 @@
 <div class="container">
-    <form>
+    <form  (ngSubmit)='updateData()'>
         <div class="form-group mt-5">
             <label for="title">Title</label>
-            <input required ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title"  id="title">
+            <input required ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title" [(ngModel)]=course.title id="title">
             <div class="alert alert-danger" *ngIf="title.touched && !title.valid">title is required</div>
             <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['minlength']">title must be more than 3 chars</div>
             <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['maxlength']">title must be less than 10 chars</div>

@@ -12,26 +12,37 @@ import { CardContainerComponent } from './Instructor/card-container/card-contain
 import { InstructorCardComponent } from './Instructor/instructor-card/instructor-card.component';
 import { CourseInfoComponent } from './course-info/course-info.component';
 import { InstructorsComponent } from './instructors/instructors.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+
 import { RegisterComponent } from './register/register.component';
+import { AuthService } from './service/guard/auth.service';
 import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { MyCoursesComponent } from './course/my-courses/my-courses.component';
 import { CoursesComponent } from './course/courses/courses.component';
 import { CourseContentComponent } from './course-content/course-content.component';
-import { LoginFormComponent } from './login-form/login-form.component';
+//import { LoginFormComponent } from './login-form/login-form.component';
 
 
 
 const routes: Routes = [
   { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content', component: CourseContentComponent },
-  { path: 'update', component: UpdatecourseComponent },
+ // { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginFormComponent },
   {path:'courseInfo/:id',component:CourseInfoComponent},
+//,canActivate:[AuthService]
   {path:'update/:id',component:UpdatecourseComponent},
-  { path: 'course', component: CoursesComponent},
-  {path:'my-courses',component: MyCoursesComponent},
-    { path: 'home', component: HomeComponent},
+  {path:'login',component:LoginFormComponent},
+  { path: 'course', component: CourseCardComponent,
+    children: [
+      { path: 'course', component: CourseCardComponent },
+      { path: 'course', component: FirstSectionComponent },
+      { path: 'course', component: LastSectionComponent },
+    ] 
+  },
+  {path:'my-courses/:id',component: MyCoursesComponent},
+    { path: 'home', component: HomeComponent,outlet: "home" },
   
     { path: 'aboutUs', component: AboutFirstSecComponent,
     children: [
@@ -42,12 +53,13 @@ const routes: Routes = [
     ] 
   } ,
   
-    { path: 'teachers', component: InstructorsComponent,
-    children: [
-      { path: 'teachers', component: InstructorCardComponent },
-      { path: 'teachers', component: CardContainerComponent },
-    ] 
-  } 
+  //   { path: 'teachers', component: CardContainerComponent,
+  //   children: [
+  //     { path: 'teachers', component: InstructorCardComponent },
+  //     { path: 'teachers', component: CardContainerComponent },
+  //   ] 
+  // } 
+
 ];
 
 

@@ -19,8 +19,8 @@ getcourses():
   Observable<{courses:course[]}> {
     return this.httpclient.get<{courses:course[]}>(`${environment.baseUrl}courses`)
   }
-  getone(id:number) :Observable<{data:instructor}>{
-    return this.httpclient.get<{data:instructor}>(`${environment.baseUrl}courseinfo/${id}`)
+  getone(id:number) :Observable<{data:course[]}>{
+    return this.httpclient.get<{data:course[]}>(`${environment.baseUrl}courseinfo/${id}`)
   }
   getimage(id:number){
     return this.httpclient.get(`${environment.baseUrl}getimage/${id}`)
@@ -29,8 +29,11 @@ getcourses():
     return this.httpclient.get(`${environment.baseUrl}delete/${id}`)
      
   }
-  uploadimg(id:number,course_img:any):Observable<{img:object}>{
-    return this.httpclient.post<{img:object}>(`${environment.baseUrl}uploadimg/${id}`,course_img)
+  uploadimg(id:number,course_img:any){
+    return this.httpclient.post(`${environment.baseUrl}uploadimg/${id}`,course_img)
   }
+  update(data:object,id:number){
+    return this.httpclient.post<any>(`${environment.baseUrl}update/${id}`,data)
+}
 
 }
