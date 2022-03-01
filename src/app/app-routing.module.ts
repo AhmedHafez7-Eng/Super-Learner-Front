@@ -10,7 +10,6 @@ import { LastSectionComponent } from './course/last-section/last-section.compone
 import { HomeComponent } from './home/home/home.component';
 import { CardContainerComponent } from './Instructor/card-container/card-container.component';
 import { InstructorCardComponent } from './Instructor/instructor-card/instructor-card.component';
-
 import { CourseInfoComponent } from './course-info/course-info.component';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -40,6 +39,10 @@ const routes: Routes = [
       { path: 'course', component: CourseCardComponent },
       { path: 'course', component: FirstSectionComponent },
       { path: 'course', component: LastSectionComponent },
+      { path: 'course', component: CourseContentComponent },
+      { path: 'course', component: CourseInfoComponent },
+
+             
     ] 
   },
   {path:'my-courses/:id',component: MyCoursesComponent},
@@ -61,6 +64,12 @@ const routes: Routes = [
   //   ] 
   // } 
 
+    { path: 'teachers', component: InstructorsComponent,
+    children: [
+      { path: 'teachers', component: InstructorCardComponent },
+      { path: 'teachers', component: CardContainerComponent },
+    ] 
+  } 
 ];
 
 

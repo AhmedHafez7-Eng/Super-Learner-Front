@@ -19,10 +19,6 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { InstructorListComponent } from './instructor-list/instructor-list.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import {MatDatepickerModule} from '@angular/material/datepicker';
-// import {MatNativeDateModule} from '@angular/material/core';
-// import{MatInputModule }from '@angular/material/input'
 import { FormsModule } from '@angular/forms';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
@@ -74,7 +70,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     RouterModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    // instructor
     //  MatFormFieldModule,
     // MatDatepickerModule,
     // MatInputModule,
