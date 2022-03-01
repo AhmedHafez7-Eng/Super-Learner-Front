@@ -29,17 +29,7 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   {path:'courseInfo/:id',component:CourseInfoComponent},
   {path:'update/:id',component:UpdatecourseComponent},
-  { path: 'course', component: CourseCardComponent,
-    children: [
-      { path: 'course', component: CourseCardComponent },
-      { path: 'course', component: FirstSectionComponent },
-      { path: 'course', component: LastSectionComponent },
-      { path: 'course', component: CourseContentComponent },
-      { path: 'course', component: CourseInfoComponent },
-
-
-    ] 
-  },
+  { path: 'course', component: CoursesComponent},
   {path:'my-courses',component: MyCoursesComponent},
     { path: 'home', component: HomeComponent},
   
