@@ -33,20 +33,9 @@ const routes: Routes = [
   {path:'courseInfo/:id',component:CourseInfoComponent},
 //,canActivate:[AuthService]
   {path:'update/:id',component:UpdatecourseComponent},
-  {path:'login',component:LoginFormComponent},
-  { path: 'course', component: CourseCardComponent,
-    children: [
-      { path: 'course', component: CourseCardComponent },
-      { path: 'course', component: FirstSectionComponent },
-      { path: 'course', component: LastSectionComponent },
-      { path: 'course', component: CourseContentComponent },
-      { path: 'course', component: CourseInfoComponent },
-
-             
-    ] 
-  },
-  {path:'my-courses/:id',component: MyCoursesComponent},
-    { path: 'home', component: HomeComponent },
+  { path: 'course', component: CoursesComponent},
+  {path:'my-courses',component: MyCoursesComponent},
+    { path: 'home', component: HomeComponent},
   
     { path: 'aboutUs', component: AboutFirstSecComponent,
     children: [
