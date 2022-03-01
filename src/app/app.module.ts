@@ -19,7 +19,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { InstructorListComponent } from './instructor-list/instructor-list.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from "@angular/common/http";
@@ -30,6 +30,7 @@ import { CoursesComponent } from './course/courses/courses.component';
 import { CourseViewComponent } from './course-view/course-view.component';
 import { CourseContentComponent } from './course-content/course-content.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule
     // instructor
     //  MatFormFieldModule,
     // MatDatepickerModule,
