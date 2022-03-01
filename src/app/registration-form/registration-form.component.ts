@@ -42,7 +42,7 @@ selectedfile!:File
     
       this.registserve.uploadimg(1,fd).subscribe((res)=>{
      
-       console.log(event)
+       console.log(fd)
       })
   }
   selectedFile(event:any){
