@@ -10,12 +10,12 @@ export class HomeComponent implements OnInit  {
   constructor() { }
 
   ngOnInit(): void {
-     timeline(document.querySelectorAll('.timeline'), {
-    forceVerticalMode: 700,
-    mode: 'horizontal',
-    verticalStartPosition: 'left',
-    visibleItems: 4
-});
+//      timeline(document.querySelectorAll('.timeline'), {
+//     forceVerticalMode: 700,
+//     mode: 'horizontal',
+//     verticalStartPosition: 'left',
+//     visibleItems: 4
+// });
   }
 
 
