@@ -6,7 +6,7 @@
         <div class="course-br">
             <div class="course-title">
                 <h2>
-                    <a routerLink='/update/{{course.id}}' title="">{{ course.title }}</a>
+                    <a routerLink='/course-content' title="">{{ course.title }}</a>
                 </h2>
             </div>
             <div class="course-desc">
@@ -23,7 +23,8 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star-half"></i>
                     
-                    <div *ngIf="role=='Instructor'" style="float:right"><a routerLink="/update" class="btn btn-primary">Edit Course</a></div>
+                    <div *ngIf="role=='Instructor'" style="float:right">
+                        <a routerLink='/update/{{course.id}}' class="btn btn-primary">Edit Course</a></div>
                 
             </div>
             

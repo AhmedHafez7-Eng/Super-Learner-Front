@@ -14,27 +14,24 @@
     <hr class="invis" />
 
     <div class="row">
-      <div
-        class="col-lg-4 col-md-6 col-12"
-        *ngFor="let CardComp of cardContent"
-      >
+     
         <div class="course-item">
           <div class="image-blog">
-            <img [src]="CardComp.img" alt="" class="img-fluid" />
+            <!-- <img src="{{coursesfrompare.course_img}}" alt="" class="img-fluid" /> -->
           </div>
           <div class="course-br">
             <div class="course-title">
               <h2>
-                <a href="#" title="">{{ CardComp.name }}</a>
+                <a href="#" title="">{{ coursesfrompare.title }}</a>
               </h2>
             </div>
             <div class="course-desc">
               <p>
-                {{ CardComp.desc }}
+                {{ coursesfrompare.desc }}
               </p>
             </div>
             <div class="course-rating">
-              {{ CardComp.rate }}
+              
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
@@ -51,6 +48,6 @@
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </div>

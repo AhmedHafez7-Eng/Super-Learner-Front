@@ -15,10 +15,7 @@ export class InstructorserviceService {
   }
 
 
-getcourses():
-  Observable<{courses:course[]}> {
-    return this.httpclient.get<{courses:course[]}>(`${environment.baseUrl}courses`)
-  }
+
   getone(id:number) :Observable<{data:course[]}>{
     return this.httpclient.get<{data:course[]}>(`${environment.baseUrl}courseinfo/${id}`)
   }

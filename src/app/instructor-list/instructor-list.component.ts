@@ -20,13 +20,12 @@ export class InstructorListComponent implements OnInit  {
   getdata(){
     this.instserve.getAllInstructros().subscribe(
       (res)=>{this.instructors=res.instructors;
+        console.log('fjfjfjfjfjf')
        // console.log(this.instructors[7].courseofinstructor[0].title)
       })
     
     }
-    getcourses(){
-      this.instserve.getcourses().subscribe((res)=>{this.courses=res})
-    }
+   
     // ngOnDestroy(): void {
     //     this.dataobservable.unsubscribe
     // }
