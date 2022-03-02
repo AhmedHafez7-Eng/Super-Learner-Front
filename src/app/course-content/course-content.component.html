@@ -27,8 +27,12 @@
                             Section 5
                         </div>
                         <hr>
-                        <div (click)="testClicked()" class="bg-light p-5">
-                            Test
+                        <div  class="bg-light p-5">
+                            Tests
+                            <ul *ngFor='let quiz of test_course'>
+                                <li (click)="testClicked(quiz.id)">{{quiz.title}}</li>
+
+                            </ul>
                         </div>
                     </li>
                 </ul>
@@ -77,34 +81,34 @@
                     <hr>
 
                     <form #testForm="ngForm" (ngSubmit)="testSubmit(testForm)">
-                        <div class="mb-5" *ngFor="let question of questions; let i = index">
-                            <h2>Q{{i+1}}) {{question.Header}}</h2>
+                        <div class="mb-5" *ngFor="let question of ques; let i = index">
+                            <h2>Q{{i+1}}) {{question.question}}</h2>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
-                                    [value]="question.Answers[0]"  >
+                                [value]="question.answer1"  >
                                 <label class="form-check-label" for="exampleRadios1">
-                                    {{question.Answers[0]}}
+                                    {{question.answer1}}
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
-                                [value]="question.Answers[1]" >
+                                [value]="question.answer2" >
                                 <label class="form-check-label" for="exampleRadios1">
-                                    {{question.Answers[1]}}
+                                    {{question.answer2}}
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
-                                [value]="question.Answers[2]" >
+                                [value]="question.answer3" >
                                 <label class="form-check-label" for="exampleRadios1">
-                                    {{question.Answers[2]}}
+                                    {{question.answer3}}
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
-                                [value]="question.Answers[3]" >
+                                [value]="question.answer4" >
                                 <label class="form-check-label" for="exampleRadios1">
-                                    {{question.Answers[3]}}
+                                    {{question.answer4}}
                                 </label>
                             </div>
                             

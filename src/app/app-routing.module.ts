@@ -26,7 +26,7 @@ import { CourseContentComponent } from './course-content/course-content.componen
 
 const routes: Routes = [
   { path: 'teachers', component: InstructorsComponent },
-  { path: 'course-content', component: CourseContentComponent },
+  { path: 'course-content/:id', component: CourseContentComponent },
  // { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginFormComponent },
@@ -34,7 +34,7 @@ const routes: Routes = [
 //,canActivate:[AuthService]
   {path:'update/:id',component:UpdatecourseComponent},
   { path: 'course', component: CoursesComponent},
-  {path:'my-courses',component: MyCoursesComponent},
+  {path:'my-courses/:id',component: MyCoursesComponent},
     { path: 'home', component: HomeComponent},
   
     { path: 'aboutUs', component: AboutFirstSecComponent,

@@ -15,8 +15,8 @@ courses!:any
    this.getallcourses()
   }
 getallcourses(){
-  return this.httpserve.getcourses().subscribe((res)=>{this.courses= res.courses
-  console.log('lllllllllllll')
+  return this.httpserve.getcourses().subscribe((res)=>{this.courses= res
+  console.log(this.courses)
   })
   
 }

@@ -1,7 +1,9 @@
-
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { section } from '../models/section.model';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { TestseserveService } from '../service/testseserve.service';
+import { test } from '../models/test.model';
 @Component({
   selector: 'app-course-content',
   templateUrl: './course-content.component.html',
@@ -9,10 +11,28 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class CourseContentComponent implements OnInit {
   height: number = 72;
-  constructor() { }
-
+  constructor(private activeroute:ActivatedRoute,private testhttp:TestseserveService) { }
+ course_id:number=(this.activeroute.snapshot.params['id']) as number;
+test_course!:any
   ngOnInit(): void {
+    this.getquiz()
   }
+getquiz(){
+  this.testhttp.gettest(this.course_id).subscribe((res)=>{
+    console.log(res)
+    this.test_course=res})
+
+}
+
+
+
+
+
+
+
+
+
+  //////////////
   @HostListener("window:scroll", [])
   onWindowScroll(side: any) {
     var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -206,11 +226,15 @@ export class CourseContentComponent implements OnInit {
     this.secNum=5;
     this.test=false;
   }
-  testClicked(){
+  ques!:any
+  testClicked(test_id:number){
     if (!this.scoreView) {
       this.secNum=0;
-      this.test=true;
-    }
+      this.test=true;}
+      this.testhttp.getquestions(test_id).subscribe((res)=>{
+        console.log(res)
+        this.ques=res})
+    
     
   }
   form = new FormGroup({
@@ -219,36 +243,37 @@ export class CourseContentComponent implements OnInit {
   score:number=0;
   scoreView:boolean=false;
   testSubmit(testForm:any){
-    if (testForm.value.question1==this.questions[0].CorrectAnswer) {
+    
+    if (testForm.value.question1==this.ques[0].correct_answer) {
       this.score++;
     }
-    if (testForm.value.question2==this.questions[1].CorrectAnswer) {
+    if (testForm.value.question2==this.ques[1].correct_answer) {
       this.score++;
     }
-    if (testForm.value.question3==this.questions[2].CorrectAnswer) {
+    if (testForm.value.question3==this.ques[2].correct_answer) {
       this.score++;
-    }
-    if (testForm.value.question4==this.questions[3].CorrectAnswer) {
-      this.score++;
-    }
-    if (testForm.value.questio5==this.questions[4].CorrectAnswer) {
-      this.score++;
-    }
-    if (testForm.value.question6==this.questions[5].CorrectAnswer) {
-      this.score++;
-    }
-    if (testForm.value.question7==this.questions[6].CorrectAnswer) {
-      this.score++;
-    }
-    if (testForm.value.question8==this.questions[7].CorrectAnswer) {
-      this.score++;
-    }
-    if (testForm.value.question9==this.questions[8].CorrectAnswer) {
-      this.score++;
-    }
-    if (testForm.value.question10==this.questions[9].CorrectAnswer) {
-      this.score++;
-    }
+     }
+    // if (testForm.value.question4==this.questions[3].CorrectAnswer) {
+    //   this.score++;
+    // }
+    // if (testForm.value.questio5==this.questions[4].CorrectAnswer) {
+    //   this.score++;
+    // }
+    // if (testForm.value.question6==this.questions[5].CorrectAnswer) {
+    //   this.score++;
+    // }
+    // if (testForm.value.question7==this.questions[6].CorrectAnswer) {
+    //   this.score++;
+    // }
+    // if (testForm.value.question8==this.questions[7].CorrectAnswer) {
+    //   this.score++;
+    // }
+    // if (testForm.value.question9==this.questions[8].CorrectAnswer) {
+    //   this.score++;
+    // }
+    // if (testForm.value.question10==this.questions[9].CorrectAnswer) {
+    //   this.score++;
+    // }
     this.test=false;
     this.scoreView=true;
     

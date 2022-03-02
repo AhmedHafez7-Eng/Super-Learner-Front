@@ -2,17 +2,17 @@
 
   <div class="course-item">
     <div class="image-blog">
-      <img [src]="" alt="" class="img-fluid" />
+      <img src="<?= asset('{{coursesfrompare.course_img}}') ?>"alt="" class="img-fluid" />
     </div>
     <div class="course-br">
       <div class="course-title">
         <h2>
-          <a href="#" title=""></a>
+          <a routerLink='/course-content/{{coursesfrompare.id}}' title="">{{coursesfrompare.title}}</a>
         </h2>
       </div>
       <div class="course-desc">
         <p>
-
+{{coursesfrompare.desc}}
         </p>
       </div>
       <div class="course-rating">
