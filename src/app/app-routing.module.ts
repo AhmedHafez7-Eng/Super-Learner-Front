@@ -20,6 +20,9 @@ import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { MyCoursesComponent } from './course/my-courses/my-courses.component';
 import { CoursesComponent } from './course/courses/courses.component';
 import { CourseContentComponent } from './course-content/course-content.component';
+import { LoggedoutComponent } from './loggedout/loggedout.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { SecureComponent } from './secure/secure.component';
 //import { LoginFormComponent } from './login-form/login-form.component';
 
 
@@ -30,6 +33,9 @@ const routes: Routes = [
  // { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginFormComponent },
+  //{ path: 'logout', component: LoggedoutComponent },
+  {path:'secure',component:SecureComponent},
+  
   {path:'courseInfo/:id',component:CourseInfoComponent},
 //,canActivate:[AuthService]
   {path:'update/:id',component:UpdatecourseComponent},
