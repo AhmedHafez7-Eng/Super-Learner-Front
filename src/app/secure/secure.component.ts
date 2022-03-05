@@ -21,7 +21,7 @@ user!:any
       });
       console.log(localStorage.getItem('token'));
       this.http.get('http://localhost:8000/api/user', {headers}).subscribe(
-        (result) => {this.user = result 
+        (result) => {this.user = result
           console.log(this.user)
           this.userService.whologin(this.user)
         //  this.activeroute.navigate(['/home']);
@@ -32,8 +32,8 @@ user!:any
         }
       );
     console.log(this.user)}
-    
-      
+
+
   }
   //login(){}
 //   logout(){
