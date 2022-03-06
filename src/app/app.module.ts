@@ -32,6 +32,7 @@ import { CourseContentComponent } from './course-content/course-content.componen
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoggedoutComponent } from './loggedout/loggedout.component';
 import { SecureComponent } from './secure/secure.component';
+import { InstructorAccountComponent } from './instructor-account/instructor-account.component';
 
 
 
@@ -64,6 +65,7 @@ import { SecureComponent } from './secure/secure.component';
     LoginFormComponent,
     LoggedoutComponent,
     SecureComponent,
+    InstructorAccountComponent,
 
    
   ],
