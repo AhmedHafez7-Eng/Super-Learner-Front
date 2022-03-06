@@ -59,6 +59,8 @@ userlogin():Observable<{user:instructor}>{
     // }
   //);
 //console.log(this.user)}
-
+ifenroll(ids:object){
+return this.httpclient.post(`${environment.baseUrl}ifenrolle`,ids)
+}
 
 }

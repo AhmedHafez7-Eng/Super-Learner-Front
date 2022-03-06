@@ -7,7 +7,7 @@
     <div class="course-br">
       <div class="course-title">
         <h2>
-          <a routerLink='/course-content/{{coursesfrompare.id}}' title="">{{coursesfrompare.title}}</a>
+          <a (click)='ifenroll()' title="">{{coursesfrompare.title}}</a>
         </h2>
       </div>
       <div class="course-desc">
@@ -31,12 +31,12 @@
         <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
       </ul>
       <div style="float:right">
-        <a (click)='enroll()' class="btn btn-primary">add</a>
+        <a (click)='enroll()' class="btn btn-primary">enroll</a>
       </div>
 
 
     </div>
     <div *ngIf='mess'>{{mess}}</div>
-
+    <div *ngIf='permission'>{{permission}}</div>
   </div>
 </div>
