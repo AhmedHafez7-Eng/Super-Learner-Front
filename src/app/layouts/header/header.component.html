@@ -43,8 +43,8 @@
             </li> -->
             <!-- </button> -->
 
-            <li class="nav-item " *ngIf="loggedIn">
-              <a class="nav-link btn btn-primary" routerLink="/profile">{{user?.fname}}</a>
+            <li class="nav-item username" *ngIf="loggedIn">
+              <a class="nav-link btn btn-primary" routerLink="/profile">{{user?.fname}} {{user?.lname}}</a>
             </li>
           </ul>
           <div>
