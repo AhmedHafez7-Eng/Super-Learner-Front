@@ -20,7 +20,7 @@ export class InstructorListComponent implements OnInit  {
   getdata(){
     this.instserve.getAllInstructros().subscribe(
       (res)=>{this.instructors=res.instructors;
-        console.log('fjfjfjfjfjf')
+        console.log(res)
        // console.log(this.instructors[7].courseofinstructor[0].title)
       })
     

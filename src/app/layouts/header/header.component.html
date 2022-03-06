@@ -32,15 +32,27 @@
               <a class="nav-link" routerLink="/course">Courses</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/my-courses/2">My Courses</a>
+              <a class="nav-link" routerLink="/my-courses/{{user?.id}}">My Courses</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item ">
               <a class="nav-link" routerLink="/teachers">Teachers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/register">Register</a>
+              <a class="nav-link" routerLink="/register" *ngIf="!loggedIn">Register</a>
             </li>
-          
+            <li class="nav-item ">
+   
+              <a class="nav-link" routerLink="/login" *ngIf="!loggedIn">Log in</a>
+             </li>
+             <li class="nav-item ">
+              <a class="nav-link" routerLink="/loggedout" *ngIf="loggedIn" (click)="logout()">Log out</a>
+             </li>
+             <li class="nav-item "(click)="myFunction()">
+              <link href='https://css.gg/dark-mode.css' rel='stylesheet'> 
+              <i class="gg-dark-mode"></i>
+              </li>
+             <!-- </button> -->
+
 
           </ul>
           <div>

@@ -30,7 +30,13 @@
         <li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
         <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
       </ul>
+      <div style="float:right">
+        <a (click)='enroll()' class="btn btn-primary">add</a>
+      </div>
+
+
     </div>
+    <div *ngIf='mess'>{{mess}}</div>
 
   </div>
 </div>

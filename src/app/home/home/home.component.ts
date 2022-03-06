@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 
 import { instructor } from 'src/app/models/instructor.model';
 
+
 declare var timeline:any;
 // var myapp = angular.module('myapp', ['angular-timeline']);
 
@@ -18,13 +19,22 @@ declare var timeline:any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit  {
+  user!:any
+  loggedIn!:boolean
   constructor(private userService: UserService,private http:HttpClient,private activeroute:Router) { }
   
-  ngOnInit(): void {
-    
   
-  }
-  user:any=this.userService.getwhologin()
+  ngOnInit(): void {
+    // this.userService.isUserLoggedIn().subscribe(
+    //   ( status) => {this.loggedIn = status
+    //    console.log('isLogged', this.loggedIn);
+      this.userService.userlogin().subscribe((res)=>{this.user=res
+        console.log(this.user) }
+        )
+      
+    //  })
+    }
+
 
 // login(){
 //   if(localStorage.getItem('token')){

@@ -23,13 +23,24 @@
 .form-control.ng-touched.ng-invalid{
     border:1.5px solid red;
 }
-body {
+/* body {
     color: #333333;
     font-size: 14px;
     font-family: 'Rubik', sans-serif;
     line-height: 1.80857;
     overflow-x:hidden;
-}
+} */
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
 
 body.demos .section {
     background: url(assets/images/bg.png) repeat top center #f2f3f5;

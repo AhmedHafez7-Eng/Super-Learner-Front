@@ -8,21 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  loggedIn!:any;
-  constructor(private userService: UserService,private activeroute:Router) {
+  check=localStorage.getItem('token')
+  // loggedIn!:any;
+  // checkval=0
+  loggedIn!:any
+   constructor(private userService: UserService,private activeroute:Router) {
   }
   ngOnInit(): void {
+   
     this.userService.isUserLoggedIn().subscribe(
-      status => this.loggedIn = status
-    );
-    console.log('isLogged', this.loggedIn);
+     (status) => {this.loggedIn = status
+     
+    
+      console.log('isLogged', this.loggedIn)}
+    )
+  
     
   }
+  
 
-  logout(): void {
-    this.userService.logout();
-    this.activeroute.navigate(['/login'])
-  }
+  // logout(): void {
+  //   this.userService.logout();
+  //   //this.activeroute.navigate(['/login'])
+  // }
   title = 'SuperLearner';
-  check=localStorage.getItem('token')
+  //check=localStorage.getItem('token')
 }

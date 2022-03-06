@@ -24,7 +24,7 @@ user!:any
         (result) => {this.user = result 
           console.log(this.user)
           this.userService.whologin(this.user)
-        //  this.activeroute.navigate(['/home']);
+          this.activeroute.navigateByUrl('/home')
         },
         error => {
           this.userService.logout();

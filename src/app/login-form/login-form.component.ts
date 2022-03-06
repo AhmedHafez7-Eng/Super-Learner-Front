@@ -20,11 +20,10 @@ export class LoginFormComponent implements OnInit {
   login(){
     this.loginserve.login(this.user).
     subscribe((res)=>{this.token=(res.access_token)
-     // localStorage.setItem('token', this.token);
     this.userService.login(this.token);
      
-        this.activeroute.navigate(['/secure']);
-       // this.activeroute.navigate(['/home']);
+        //this.activeroute.navigate(['/secure']);
+        this.activeroute.navigateByUrl('/home');
      // if(this.token)
      // this.authserve.validation(this.token)
      // console.log(this.authserve.validation(this.token))

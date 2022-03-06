@@ -4,23 +4,42 @@ import { ActivatedRoute } from '@angular/router';
 import { InstructorserviceService } from 'src/app/service/instructorservice.service';
 import { instructor } from 'src/app/models/instructor.model';
 import { UserService } from 'src/app/service/user.service';
+import { StudentserveService } from 'src/app/service/studentserve.service';
 @Component({
   selector: 'app-my-courses',
   templateUrl: './my-courses.component.html',
   styleUrls: ['./my-courses.component.css']
 })
 export class MyCoursesComponent implements OnInit {
-
-  constructor(private activeroute:ActivatedRoute,private instserve:InstructorserviceService,private userService: UserService,) { }
+user!:any
+  constructor(private userService: UserService,private activeroute:ActivatedRoute,private instserve:InstructorserviceService,private stu :StudentserveService) { }
   instructor_id:number=(this.activeroute.snapshot.params['id']) as number;
 data!:any
   ngOnInit(): void {
-   this.getcourses(this.instructor_id)
+    this.userService.userlogin().subscribe((res)=>{this.user=res
+      if(this.user.role=='instructor')
+      this.getcourses(this.instructor_id)
+    else 
+    this.getcoursesofstu()
+     }
+      )
+     
+     
+   
+   console.log(this.instructor_id)
+   console.log(this.user)
+  }
+
+  getcoursesofstu(){
+this.stu.coursesofstu(this.instructor_id).
+subscribe((res)=>{this.data=res
+console.log(res)
+})
   }
 getcourses(id:number){
   this.instserve.getone(this.instructor_id).subscribe
   ((res)=>{this.data=res})}
-  id_user=this.userService.getwhologin().id
+  //id_user=this.userService.getwhologin().id
   // cardContent: course[] = [
   //   {
   //     id: 1,

@@ -9,19 +9,27 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class UserService {
-user!:instructor
-  
+user!:any
+ 
   private loggedChanged = new Subject<boolean>();
   constructor(private httpclient:HttpClient) { }
 
   login(token: any): void {
     localStorage.setItem('token', token);
+    this.userlogin().subscribe((res)=>{
+      this.user=res
+      this.whologin(this.user)
+      this.getwhologin()
     this.loggedChanged.next(true);
+  
+  
+  })
+  
   }
 
   logout(): void {
     localStorage.removeItem('token');
-
+     
     this.loggedChanged.next(false);
   }
   isUserLoggedIn(): Subject<boolean> {
@@ -33,5 +41,24 @@ user!:instructor
 getwhologin(){
   return this.user
 }
+userlogin():Observable<{user:instructor}>{
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${localStorage.getItem('token')}`
+  });
+ return this.httpclient.get<{user:instructor}>('http://localhost:8000/api/user', {headers})}
+  // .subscribe(
+  //   (result) => {this.user = result 
+  //     return result
+  //     // console.log(this.user)
+  //     // this.userService.whologin(this.user)
+  //     // this.activeroute.navigateByUrl('/home')
+  //   }
+    // error => {
+    //   this.userService.logout();
+    //   this.activeroute.navigate(['/login']);
+    // }
+  //);
+//console.log(this.user)}
+
 
 }

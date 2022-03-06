@@ -33,15 +33,15 @@ const routes: Routes = [
  // { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginFormComponent },
-  //{ path: 'logout', component: LoggedoutComponent },
+  { path: 'loggedout', component: LoggedoutComponent },
   {path:'secure',component:SecureComponent},
   
-  {path:'courseInfo/:id',component:CourseInfoComponent},
-//,canActivate:[AuthService]
+  {path:'courseInfo/:id',component:CourseInfoComponent
+  ,canActivate:[AuthService]},
   {path:'update/:id',component:UpdatecourseComponent},
   { path: 'course', component: CoursesComponent},
   {path:'my-courses/:id',component: MyCoursesComponent},
-    { path: 'home', component: HomeComponent},
+    { path: 'home', component: HomeComponent,canActivate:[AuthService]},
   
     { path: 'aboutUs', component: AboutFirstSecComponent,
     children: [

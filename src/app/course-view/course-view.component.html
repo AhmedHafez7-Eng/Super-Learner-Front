@@ -26,11 +26,14 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star-half"></i>
                     
-                    <div *ngIf="role=='Instructor'" style="float:right">
-                        <a routerLink='/update/{{course.id}}' class="btn btn-primary">Edit Course</a></div>
+                    <div *ngIf="role=='instructor'" style="float:right">
+                        <a routerLink='/update/{{course.id}}' class="btn btn-primary">{{action}}</a></div>
                 
             </div>
-            
+            <div *ngIf="role=='student'" style="float:right">
+                <a routerLink='/course-content/{{course.id}}' class="btn btn-primary">{{action}}</a></div>
+        
+    
         </div>
         <div class="course-meta-bot">
             <ul>
