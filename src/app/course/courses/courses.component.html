@@ -1,21 +1,23 @@
-
 <!-- <app-header></app-header> -->
 <div id="overviews" class="section wb">
-    <div class="container">
-      <div class="section-title row text-center">
-        <div class="col-md-8 offset-md-2">
-          <p class="lead">
-            Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean
-            sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,
-            nec sagittis sem!
-          </p>
-        </div>
+  <div class="container">
+    <div class="section-title row text-center">
+      <div class="col-md-8 offset-md-2">
+        <p class="lead">
+          Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean
+          sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,
+          nec sagittis sem!
+        </p>
       </div>
-      <!-- end title -->
-  
-      <hr class="invis" />
-      <div *ngFor='let course of courses'>
-          <app-course-card [coursesfrompare]='course'></app-course-card>
+    </div>
+    <!-- end title -->
+
+    <hr class="invis" />
+    <div class="row">
+      <div *ngFor='let course of courses' class="col-4">
+        <app-course-card [coursesfrompare]='course'></app-course-card>
       </div>
-    </div> 
-</div>     
+
+    </div>
+  </div>
+</div>
