@@ -18,13 +18,13 @@ user!:any
 action!:boolean
 ids!:any
 mess!:object
-sign!:number[]
+permission!:any
   ngOnInit(): void {
     this.userService.userlogin().subscribe((res)=>{this.user=res
     if(this.user.role=='instructor')
     this.action=false
     else this.action=true
-    
+   
     })
   }
 enroll(){
@@ -36,14 +36,22 @@ else{
  this.ids={student_id:this.user.id,course_id:this.coursesfrompare.id}
   this.student.enrolle(this.ids).subscribe((res)=>{
     this.mess=res
-   
+   this.permission=false
    
   })
 
 }
 
 }
-
+ifenroll(){
+  this.ids={user_id:this.user.id,course_id:this.coursesfrompare.id}
+  this.userService.ifenroll(this.ids).subscribe(
+    (res)=>{if (res==0)
+    this.permission='pleaze enrolle to see content'
+    else {if(res==1)
+    this.router.navigateByUrl('course-content/{this.user.id}')
+    else this.permission=res}
+  })}
 
 
 
