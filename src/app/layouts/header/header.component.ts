@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { Router } from '@angular/router';
-import { instructor } from 'Super-Learner-Front/src/app/models/instructor.model';
+import { instructor } from '../../models/instructor.model';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -15,7 +15,7 @@ loggedIn:any;
 constructor(private userService: UserService,private activeroute:Router) {
 }
 ngOnInit(): void {
-  
+
   this.userService.isUserLoggedIn().subscribe(
    ( status) => {this.loggedIn = status
     console.log('isLogged', this.loggedIn);
@@ -23,8 +23,8 @@ ngOnInit(): void {
   }
 
   );
-  
-  
+
+
 }
 
 
