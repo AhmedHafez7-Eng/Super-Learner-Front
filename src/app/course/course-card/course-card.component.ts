@@ -12,6 +12,8 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./course-card.component.css']
 })
 export class CourseCardComponent implements OnInit {
+
+
 @Input()
 coursesfrompare!:course
 
@@ -42,7 +44,7 @@ enroll(){
 
   })
   if(!this.action){
-  alert('please regist as student')
+  confirm('Enrolling for Students Only, Please Register as Student!')
 
   this.router.navigateByUrl('register')
 }
@@ -61,7 +63,7 @@ ifenroll(){
   this.ids={user_id:this.user.id,course_id:this.coursesfrompare.id}
   this.userService.ifenroll(this.ids).subscribe(
     (res)=>{if (res==0)
-    this.permission='pleaze enrolle to see content'
+    this.permission='Please Enroll to Access Course Content'
     else {if(res==1)
     this.router.navigateByUrl('course-content/{this.user.id}')
     else this.permission=res}
