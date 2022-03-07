@@ -42,9 +42,9 @@ const routes: Routes = [
   {path:'courseInfo/:id',component:CourseInfoComponent
   ,canActivate:[AuthService]},
   {path:'update/:id',component:UpdatecourseComponent},
-  { path: 'course', component: CoursesComponent},
-  {path:'my-courses/:id',component: MyCoursesComponent},
-    { path: 'home', component: HomeComponent,canActivate:[AuthService]},
+  { path: 'course', component: CoursesComponent,canActivate:[AuthService]},
+  {path:'my-courses/:id',component: MyCoursesComponent,canActivate:[AuthService]},
+    { path: 'home', component: HomeComponent},
 
     { path: 'aboutUs', component: AboutFirstSecComponent,
     children: [

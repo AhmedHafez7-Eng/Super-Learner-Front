@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { course } from 'src/app/models/course.model';
+import { payment } from 'src/app/models/payment.model';
 import { CourseserveService } from 'src/app/service/courseserve.service';
+import { PaymentService } from 'src/app/service/payment.service';
 import { StudentserveService } from 'src/app/service/studentserve.service';
 import { UserService } from 'src/app/service/user.service';
 @Component({
@@ -13,12 +15,15 @@ export class CourseCardComponent implements OnInit {
 @Input()
 coursesfrompare!:course
 
-  constructor(private courseserve:CourseserveService,private userService: UserService,private router:Router,private student:StudentserveService) { }
+  constructor(private payserve:PaymentService,private courseserve:CourseserveService,private userService: UserService,private router:Router,private student:StudentserveService) { }
 user!:any
 action!:boolean
 ids!:any
 mess!:object
 permission!:any
+fatoohrares!:any
+url?:string
+
   ngOnInit(): void {
     this.userService.userlogin().subscribe((res)=>{this.user=res
     if(this.user.role=='instructor')
@@ -28,8 +33,17 @@ permission!:any
     })
   }
 enroll(){
+  // console.log(this.user.fname)
+  // this.payserve.payment({fname:this.user.fname,phone:this.user.phone,email:this.user.email}).subscribe((res)=>{
+  // console.log(res)
+  //   this.fatoohrares=res
+  //   this.url=this.fatoohrares.Data.InvoiceURL
+  //   //window.location.href=this.url
+
+  // })
   if(!this.action){
   alert('please regist as student')
+
   this.router.navigateByUrl('register')
 }
 else{

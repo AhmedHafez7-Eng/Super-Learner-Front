@@ -10,6 +10,7 @@ export class LoginService {
 
   constructor(private httpclient:HttpClient) { }
   login(user:instructor){
+    
     return this.httpclient.post<any>(`${environment.baseUrl}login`,user)
   }
 }

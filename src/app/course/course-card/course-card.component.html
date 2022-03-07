@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="course-item">
   <div class="image-blog">
     <img src="{{coursesfrompare.course_img}}" alt="" class="img-fluid" />
@@ -14,6 +15,27 @@
       </p>
     </div>
     <div class="course-rating">
+=======
+
+<div class="row">
+
+  <div class="course-item">
+    <div class="image-blog">
+      <img src="<?= asset('{{coursesfrompare.course_img}}') ?>"alt="" class="img-fluid" />
+    </div>
+    <div class="course-br">
+      <div class="course-title">
+        <h2>
+          <button (click)='ifenroll()' title="">{{coursesfrompare.title}}</button>
+        </h2>
+      </div>
+      <div class="course-desc">
+        <p>
+{{coursesfrompare.desc}}
+        </p>
+      </div>
+      <div class="course-rating">
+>>>>>>> 199ab51c6dd818153ee96194ae8ede7de9eed9be
 
       <i class="fa fa-star"></i>
       <i class="fa fa-star"></i>
@@ -31,6 +53,19 @@
     <div style="float:right">
       <a (click)='enroll()' class="btn btn-primary">enroll</a>
     </div>
+<<<<<<< HEAD
+=======
+    <div class="course-meta-bot">
+      <ul>
+        <li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
+        <li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
+        <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
+      </ul>
+      <div style="float:right">
+        <a (click)='enroll()' class="btn btn-primary">enroll</a>
+        <a *ngIf='url' href={{url}} target="_blank">clik to payment</a>
+      </div>
+>>>>>>> 199ab51c6dd818153ee96194ae8ede7de9eed9be
 
 
   </div>
