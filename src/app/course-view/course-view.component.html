@@ -13,9 +13,10 @@
                 </h2>
             </div>
             <div class="course-desc">
-                <p>
-                    {{ course.desc }}
+                <p *ngIf='user.role=="student"'>
+                    {{ course?.desc }}
                 </p>
+                <p *ngIf='user.role=="instructor"'>{{ course?.desc }}</p>
             </div>
             
                     <div class="course-rating">

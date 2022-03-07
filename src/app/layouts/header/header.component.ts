@@ -16,13 +16,13 @@ constructor(private userService: UserService,private activeroute:Router) {
 }
 ngOnInit(): void {
   
-  this.userService.isUserLoggedIn().subscribe(
+ { this.userService.isUserLoggedIn().subscribe(
    ( status) => {this.loggedIn = status
     console.log('isLogged', this.loggedIn);
    this.userService.userlogin().subscribe(res=>this.user=res)
   }
 
-  );
+  );}
   
   
 }

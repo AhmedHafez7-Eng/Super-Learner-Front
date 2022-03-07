@@ -10,11 +10,12 @@ import { environment } from "src/environments/environment";
 })
 export class UserService {
 user!:any
+private loggedChanged = new Subject<boolean>();
  
-  private loggedChanged = new Subject<boolean>();
   constructor(private httpclient:HttpClient) { }
 
   login(token: any): void {
+  
     localStorage.setItem('token', token);
     this.userlogin().subscribe((res)=>{
       this.user=res
