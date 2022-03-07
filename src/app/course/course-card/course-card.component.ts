@@ -29,18 +29,18 @@ url?:string
     if(this.user.role=='instructor')
     this.action=false
     else this.action=true
-   
+
     })
   }
 enroll(){
-  // console.log(this.user.fname)
-  // this.payserve.payment({fname:this.user.fname,phone:this.user.phone,email:this.user.email}).subscribe((res)=>{
-  // console.log(res)
-  //   this.fatoohrares=res
-  //   this.url=this.fatoohrares.Data.InvoiceURL
-  //   //window.location.href=this.url
+  console.log(this.user.fname)
+  this.payserve.payment({fname:this.user.fname,phone:this.user.phone,email:this.user.email}).subscribe((res)=>{
+  console.log(res)
+    this.fatoohrares=res
+    this.url=this.fatoohrares.Data.InvoiceURL
+    //window.location.href=this.url
 
-  // })
+  })
   if(!this.action){
   alert('please regist as student')
 
@@ -51,7 +51,7 @@ else{
   this.student.enrolle(this.ids).subscribe((res)=>{
     this.mess=res
    this.permission=false
-   
+
   })
 
 }
