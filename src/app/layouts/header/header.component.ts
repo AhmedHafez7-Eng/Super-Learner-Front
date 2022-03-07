@@ -8,27 +8,32 @@ import { instructor } from '../../models/instructor.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  id!: number
-  user!: any
-  loggedIn: any;
+id!:number
+user!:any
+loggedIn:any;
 
-  constructor(private userService: UserService, private activeroute: Router) {
-  }
-  ngOnInit(): void {
-    this.userService.isUserLoggedIn().subscribe(
-      (status) => {
-        this.loggedIn = status
-        console.log('isLogged', this.loggedIn);
-        this.userService.userlogin().subscribe(res => this.user = res)
-      }
+constructor(private userService: UserService,private activeroute:Router) {
+}
+ngOnInit(): void {
 
-    );
-
-
-    // myFunction() {
-    //   var element = document.body;
-    //   element.classList.toggle("dark-mode");
-    // }
+ { this.userService.isUserLoggedIn().subscribe(
+   ( status) => {this.loggedIn = status
+    console.log('isLogged', this.loggedIn);
+   this.userService.userlogin().subscribe(res=>this.user=res)
   }
 
+  );}
+
+
+}
+
+
+logout(): void {
+  this.userService.logout();
+  //this.activeroute.navigate(['/login'])
+}
+ myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
 }

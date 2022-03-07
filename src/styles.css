@@ -31,25 +31,19 @@
   line-height: 1.80857;
   overflow-x: hidden;
 } */
-<<<<<<< HEAD
-
-/* body {
-    padding: 25px;
-=======
 body {
-    /* padding: 25px; */
->>>>>>> 199ab51c6dd818153ee96194ae8ede7de9eed9be
-    background-color: white;
-    color: black;
-    font-size: 25px;
-  }
+  /* padding: 25px; */
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
 
-  .dark-mode {
-    background-color: black;
-    color: white;
-  } */
+.dark-mode {
+  background-color: black;
+  color: white;
+}
 
-body.demos .section {
+*/ body.demos .section {
   background: url(assets/images/bg.png) repeat top center #f2f3f5;
 }
 
