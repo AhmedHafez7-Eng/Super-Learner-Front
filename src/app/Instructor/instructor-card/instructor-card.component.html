@@ -1,28 +1,18 @@
-
-    <div class="our-team">
-        <div class="team-img">
-            <!-- get profile picture path from database here -->
-            <img src="{{instructorData.profile_pic}}"> 
-            <!-- <span *ngIf="courseData.role == 'instructor'">
-            <a href='/courseInfo/{{instructorData.id}}' class="fa fa-edit"></a>
-            </span> -->
-            <!-- <div >
-                <ul style="list-style-type: none; display:inline;" >
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-linkedin"></a></li>
-                    <li><a href="#" class="fa fa-skype"></a></li>
-                </ul>
-            </div> -->
-        </div>
-        <div class>
-            <h3 class="title">{{instructorData.fname}}</h3>
-            <!-- <div *ngFor='let course of instructorData.courseofinstructor'>
-            <h3 class="title">{{course.title}}</h3>
-            </div> -->
-            <span class="post">
-                 <a routerLink='/course' >more info</a>
-                </span>
-        </div>
+<div class="our-team box">
+    <div class="top-bar"></div>
+    <div class="top">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
     </div>
-    <router-outlet></router-outlet>
+    <div class="content">
+        <img src="{{instructorData.profile_pic}}"
+            alt="">
+        <strong>{{instructorData.fname}} {{instructorData.lname}}</strong>
+        <p>{{instructorData.email}}</p>
+    </div>
+    <div class="btn">
+        <a routerLink='/course'><i class="fa fa-eye" aria-hidden="true"></i>More Info</a>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+

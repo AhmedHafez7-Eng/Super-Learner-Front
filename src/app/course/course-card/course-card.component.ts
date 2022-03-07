@@ -44,9 +44,9 @@ enroll(){
 
   })
   if(!this.action){
-  confirm('Enrolling for Students Only, Please Register as Student!')
-
-  this.router.navigateByUrl('register')
+  if(confirm('Enrolling for Students Only, Please Register as Student!')){
+    this.router.navigateByUrl('register')
+  }
 }
 else{
  this.ids={student_id:this.user.id,course_id:this.coursesfrompare.id}

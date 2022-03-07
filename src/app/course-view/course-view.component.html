@@ -35,10 +35,9 @@
       <div class="action" *ngIf="role=='instructor'">
         <a routerLink='/update/{{course.id}}' class="actionLink">{{action}}</a>
       </div>
-  
+      <div class="action" *ngIf="role=='student'">
+        <a routerLink='/course-content/{{course.id}}' class="actionLink">{{action}}</a>
+      </div>
     </div>
-    <div class="action" *ngIf="role=='student'">
-      <a routerLink='/course-content/{{course.id}}' class="actionLink">{{action}}</a>
-    </div>
-    </div>
+
   </div>
