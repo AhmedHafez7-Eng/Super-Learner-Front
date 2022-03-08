@@ -38,6 +38,9 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { AdminMainContentComponent } from './admin/admin-main-content/admin-main-content.component';
+import { StudentsComponent } from './admin/students/students.component';
+import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
+import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
 
 
 
@@ -76,6 +79,9 @@ import { AdminMainContentComponent } from './admin/admin-main-content/admin-main
     AdminFooterComponent,
     AdminSidebarComponent,
     AdminMainContentComponent,
+    StudentsComponent,
+    AdminCoursesComponent,
+    AdminInstructorsComponent,
 
    
   ],

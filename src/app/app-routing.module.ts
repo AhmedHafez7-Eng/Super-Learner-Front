@@ -25,6 +25,9 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { SecureComponent } from './secure/secure.component';
 import { InstructorAccountComponent } from './instructor-account/instructor-account.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { StudentsComponent } from './admin/students/students.component';
+import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
+import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
 
 //import { LoginFormComponent } from './login-form/login-form.component';
 
@@ -32,6 +35,9 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 
 const routes: Routes = [
   { path: 'admin/dashboard', component: AdminDashboardComponent },
+  { path: 'admin/students', component: StudentsComponent },
+  { path: 'admin/instructors', component: AdminInstructorsComponent },
+  { path: 'admin/courses', component: AdminCoursesComponent },
   { path: 'instructor-account', component: InstructorAccountComponent },
   { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content/:id', component: CourseContentComponent },

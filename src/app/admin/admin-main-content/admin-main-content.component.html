@@ -14,7 +14,7 @@
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item active">Dashboard</li>
-                    <li class="breadcrumb-item"><a href="#">Instructors</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/instructors">Instructors</a></li>
                   </ol>
                 </div>
               </div>
@@ -34,7 +34,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor='let instructor of instructors'>
+                  <tr *ngFor='let instructor of instructors.slice(0, 7)'>
                     <td><img src="{{instructor.profile_pic}}" alt="Course Image"></td>
                     <td>{{instructor.fname}} {{instructor.lname}}</td>
                     <td>{{instructor.email}}</td>
@@ -55,7 +55,6 @@
                 </tfoot>
               </table>
             </div>
-
           </div>
 
 
@@ -68,7 +67,7 @@
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item active">Dashboard</li>
-                    <li class="breadcrumb-item"><a href="#">Courses</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/courses">Courses</a></li>
                   </ol>
                 </div>
               </div>
@@ -88,7 +87,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor='let course of courses'>
+                  <tr *ngFor='let course of courses.slice(0, 7)'>
                     <td><img src="{{course.course_img}}" alt="Course Image"></td>
                     <td>{{course.title}}</td>
                     <td>{{course.instructor_id}}</td>
@@ -121,7 +120,7 @@
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item active">Dashboard</li>
-                    <li class="breadcrumb-item"><a href="#">Students</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/students">Students</a></li>
                   </ol>
                 </div>
               </div>
@@ -141,7 +140,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor='let student of students'>
+                  <tr *ngFor='let student of students.slice(0, 7)'>
                     <td><img src="{{student.profile_pic}}" alt="Student Image"></td>
                     <td>{{student.fname}} {{student.lname}}</td>
                     <td>{{student.email}}</td>
