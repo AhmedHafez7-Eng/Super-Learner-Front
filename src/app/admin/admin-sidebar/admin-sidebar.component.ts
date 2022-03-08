@@ -7,9 +7,21 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class AdminSidebarComponent implements OnInit {
 
+  id!:number
+  user!:any
+  loggedIn:any;
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+
+    { this.userService.isUserLoggedIn().subscribe(
+      ( status) => {this.loggedIn = status
+       console.log('isLogged', this.loggedIn);
+      this.userService.userlogin().subscribe(res=>this.user=res)
+     }
+
+     );}
   }
   logout(): void {
     this.userService.logout();
