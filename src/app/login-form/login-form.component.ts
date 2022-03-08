@@ -13,6 +13,7 @@ import {UserService} from '../service/user.service';
 export class LoginFormComponent implements OnInit {
   user=new instructor()
   token!:string
+  loggeduser!:any
   constructor( private userService: UserService,private loginserve:LoginService,private activeroute:Router,private authserve:AuthService) { }
 
   ngOnInit(): void {
@@ -21,9 +22,14 @@ export class LoginFormComponent implements OnInit {
     this.loginserve.login(this.user).
     subscribe((res)=>{this.token=(res.access_token)
     this.userService.login(this.token);
-
-        //this.activeroute.navigate(['/secure']);
-        this.activeroute.navigateByUrl('/home');
+    this.userService.userlogin().subscribe((res)=>{this.loggeduser=res
+      if(this.loggeduser.role=='admin')
+      this.activeroute.navigateByUrl('/admin/dashboard');
+      else  this.activeroute.navigateByUrl('/home');
+    }
+      )
+      
+        //this.activeroute.navigateByUrl('/home');
      // if(this.token)
      // this.authserve.validation(this.token)
      // console.log(this.authserve.validation(this.token))

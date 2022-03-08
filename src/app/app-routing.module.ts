@@ -34,10 +34,10 @@ import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.compo
 
 
 const routes: Routes = [
-  { path: 'admin/dashboard', component: AdminDashboardComponent },
-  { path: 'admin/students', component: StudentsComponent },
-  { path: 'admin/instructors', component: AdminInstructorsComponent },
-  { path: 'admin/courses', component: AdminCoursesComponent },
+  { path: 'admin/dashboard', component: AdminDashboardComponent,canActivate:[AuthService] },
+  { path: 'admin/students', component: StudentsComponent,canActivate:[AuthService] },
+  { path: 'admin/instructors', component: AdminInstructorsComponent,canActivate:[AuthService]},
+  { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService] },
   { path: 'instructor-account', component: InstructorAccountComponent },
   { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content/:id', component: CourseContentComponent },

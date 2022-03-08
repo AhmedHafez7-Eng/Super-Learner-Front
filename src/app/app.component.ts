@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {UserService} from './service/user.service';
-import { OnInit} from '@angular/core';
+
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
@@ -15,16 +15,18 @@ export class AppComponent {
    constructor(private userService: UserService,private activeroute:Router) {
   }
   ngOnInit(): void {
+   if(localStorage.getItem('token'))
+     this.userService.login(localStorage.getItem('token'))
+
+  //   this.userService.isUserLoggedIn().subscribe(
+  //    (status) => {this.loggedIn = status
    
-    this.userService.isUserLoggedIn().subscribe(
-     (status) => {this.loggedIn = status
-     
     
-      console.log('isLogged', this.loggedIn)}
-    )
+  //     console.log('isLogged', this.loggedIn)}
+  //   )
   
     
-  }
+   }
   
 
   // logout(): void {
