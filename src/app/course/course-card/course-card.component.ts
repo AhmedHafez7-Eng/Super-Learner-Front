@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { course } from 'src/app/models/course.model';
 import { payment } from 'src/app/models/payment.model';
 import { CourseserveService } from 'src/app/service/courseserve.service';
-import { PaymentService } from 'src/app/service/payment.service';
+import { PaymentService } from '../../service/payment.service';
 import { StudentserveService } from 'src/app/service/studentserve.service';
 import { UserService } from 'src/app/service/user.service';
 @Component({

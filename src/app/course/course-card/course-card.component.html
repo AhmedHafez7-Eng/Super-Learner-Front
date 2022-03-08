@@ -39,6 +39,7 @@
 
     <div class="messageBox" *ngIf='mess'>
       <div class="message">
+        <!-- {{mess}} -->
         <a routerLink="/my-courses/{{user?.id}}">{{mess}}</a>
       </div>
     </div>
@@ -46,3 +47,4 @@
     <div class="messageBox" *ngIf='permission'>
       <div class="permission">{{permission}}</div>
     </div>
+    
