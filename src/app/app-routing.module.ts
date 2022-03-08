@@ -24,12 +24,14 @@ import { LoggedoutComponent } from './loggedout/loggedout.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { SecureComponent } from './secure/secure.component';
 import { InstructorAccountComponent } from './instructor-account/instructor-account.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 //import { LoginFormComponent } from './login-form/login-form.component';
 
 
 
 const routes: Routes = [
+  { path: 'admin/dashboard', component: AdminDashboardComponent },
   { path: 'instructor-account', component: InstructorAccountComponent },
   { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content/:id', component: CourseContentComponent },
