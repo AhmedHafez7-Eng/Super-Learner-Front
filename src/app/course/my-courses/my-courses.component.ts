@@ -19,13 +19,13 @@ data!:any
     this.userService.userlogin().subscribe((res)=>{this.user=res
       if(this.user.role=='instructor')
       this.getcourses(this.instructor_id)
-    else 
+    else
     this.getcoursesofstu()
      }
       )
-     
-     
-   
+
+
+
    console.log(this.instructor_id)
    console.log(this.user)
   }

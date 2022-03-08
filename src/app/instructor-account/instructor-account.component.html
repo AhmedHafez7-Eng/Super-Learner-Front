@@ -1,1 +1,57 @@
-<p>instructor-account works!</p>
+<div class="container">
+  <h2>Test Information</h2>
+  <form class="row g-3">
+    <div class="col-12">
+      <label for="inputTitle" class="form-label">Title</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="PHP Part1 Exam">
+    </div>
+    <div class="col-md-2">
+      <label for="inputMaxScore" class="form-label">Max Score</label>
+      <input type="number" class="form-control" id="inputMaxScore" min="1" max="100" placeholder="10, 20, 50 or ...">
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Next</button>
+    </div>
+  </form>
+
+  <h2>Test Details</h2>
+  <form class="row g-3">
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">Course Tests</label>
+      <select id="inputState" class="form-select">
+        <option selected>Select Test...</option>
+        <option>PHP Part 1</option>
+        <option>PHP Part 2</option>
+        <option>Laravel</option>
+        <option>React</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <label for="inputTitle" class="form-label">Question Header</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="What's PHP Stands For?">
+    </div>
+    <div class="col-12">
+      <label for="inputTitle" class="form-label">Answer 1</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Answer 1">
+    </div>
+    <div class="col-12">
+      <label for="inputTitle" class="form-label">Answer 2</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Answer 2">
+    </div>
+    <div class="col-12">
+      <label for="inputTitle" class="form-label">Answer 3</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Answer 3">
+    </div>
+    <div class="col-12">
+      <label for="inputTitle" class="form-label">Answer 4</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Answer 4">
+    </div>
+    <div class="col-12">
+      <label for="inputTitle" class="form-label">Correct Answer</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Correct Answer">
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Add Question</button>
+    </div>
+  </form>
+</div>

@@ -33,8 +33,15 @@ export class HomeComponent implements OnInit  {
         )
       
     //  })
-    }
 
+    //  timeline(document.querySelectorAll('.timeline'), {
+		// 	forceVerticalMode: 700,
+		// 	mode: 'horizontal',
+		// 	verticalStartPosition: 'left',
+		// 	visibleItems: 4
+		// });
+    
+    }
 
 // login(){
 //   if(localStorage.getItem('token')){

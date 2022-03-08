@@ -11,26 +11,26 @@ import { environment } from "src/environments/environment";
 export class UserService {
 user!:any
 private loggedChanged = new Subject<boolean>();
- 
+
   constructor(private httpclient:HttpClient) { }
 
   login(token: any): void {
-  
+
     localStorage.setItem('token', token);
     this.userlogin().subscribe((res)=>{
       this.user=res
       this.whologin(this.user)
       this.getwhologin()
     this.loggedChanged.next(true);
-  
-  
+
+
   })
-  
+
   }
 
   logout(): void {
     localStorage.removeItem('token');
-     
+
     this.loggedChanged.next(false);
   }
   isUserLoggedIn(): Subject<boolean> {
@@ -48,7 +48,7 @@ userlogin():Observable<{user:instructor}>{
   });
  return this.httpclient.get<{user:instructor}>('http://localhost:8000/api/user', {headers})}
   // .subscribe(
-  //   (result) => {this.user = result 
+  //   (result) => {this.user = result
   //     return result
   //     // console.log(this.user)
   //     // this.userService.whologin(this.user)

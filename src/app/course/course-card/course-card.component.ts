@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { course } from 'src/app/models/course.model';
 import { payment } from 'src/app/models/payment.model';
 import { CourseserveService } from 'src/app/service/courseserve.service';
-import { PaymentService } from 'src/app/service/payment.service';
+import { PaymentService } from '../../service/payment.service';
 import { StudentserveService } from 'src/app/service/studentserve.service';
 import { UserService } from 'src/app/service/user.service';
 @Component({
@@ -12,6 +12,8 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./course-card.component.css']
 })
 export class CourseCardComponent implements OnInit {
+
+
 @Input()
 coursesfrompare!:course
 
@@ -29,7 +31,7 @@ url?:string
     if(this.user.role=='instructor')
     this.action=false
     else this.action=true
-   
+
     })
   }
 enroll(){
@@ -42,16 +44,16 @@ enroll(){
 
   })
   if(!this.action){
-  alert('please regist as student')
-
-  this.router.navigateByUrl('register')
+  if(confirm('Enrolling for Students Only, Please Register as Student!')){
+    this.router.navigateByUrl('register')
+  }
 }
 else{
  this.ids={student_id:this.user.id,course_id:this.coursesfrompare.id}
   this.student.enrolle(this.ids).subscribe((res)=>{
     this.mess=res
    this.permission=false
-   
+
   })
 
 }
@@ -61,7 +63,7 @@ ifenroll(){
   this.ids={user_id:this.user.id,course_id:this.coursesfrompare.id}
   this.userService.ifenroll(this.ids).subscribe(
     (res)=>{if (res==0)
-    this.permission='pleaze enrolle to see content'
+    this.permission='Please Enroll to Access Course Content'
     else {if(res==1)
     this.router.navigateByUrl('course-content/{this.user.id}')
     else this.permission=res}

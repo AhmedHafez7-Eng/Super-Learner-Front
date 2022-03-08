@@ -1,0 +1,176 @@
+<div class="content-wrapper">
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+
+          <section class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h1>Instructors</h1>
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item"><a href="#">Instructors</a></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Profile Image</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Birth Date</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let instructor of instructors.slice(0,9)'>
+                    <td><img src="{{instructor.profile_pic}}" alt="Course Image"></td>
+                    <td>{{instructor.fname}} {{instructor.lname}}</td>
+                    <td>{{instructor.email}}</td>
+                    <td>{{instructor.b_date}}</td>
+                    <td>{{instructor.phone}}</td>
+                    <td>{{instructor.address}}</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Profile Image</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Birth Date</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+          </div>
+
+
+          <section class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h1>Courses</h1>
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item"><a href="#">Courses</a></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="card">
+
+            <div class="card-body">
+              <table class="table table-info table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Instructor Name</th>
+                    <th>Description</th>
+                    <th>Max Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let course of courses'>
+                    <td><img src="{{course.course_img}}" alt="Course Image"></td>
+                    <td>{{course.title}}</td>
+                    <td>{{course.instructor_id}}</td>
+                    <td>{{course.desc}}</td>
+                    <td>{{course.max_score}}</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Instructor Name</th>
+                    <th>Description</th>
+                    <th>Max Score</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+          </div>
+
+
+
+          <section class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h1>Students</h1>
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item"><a href="#">Students</a></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Profile Image</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Birth Date</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let student of students'>
+                    <td><img src="{{student.profile_pic}}" alt="Student Image"></td>
+                    <td>{{student.fname}} {{student.lname}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.b_date}}</td>
+                    <td>{{student.phone}}</td>
+                    <td>{{student.address}}</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Profile Image</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Birth Date</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
