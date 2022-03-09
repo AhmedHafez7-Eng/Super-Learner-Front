@@ -1,130 +1,121 @@
 
-<div class="row">
-    <div class="col-3 side bg-light" [style.top.px]="height" #side (scroll)="onWindowScroll(side)">
-        <div style="position:relative;width:100%;height:100%;">
-
-
-            <div class="scroll-area">
-                <h2 style="text-align: center;" class="mt-1">course content</h2>
-                <ul class="contentList">
-                    <li>
-                        <div (click)="section1Clicked()" class="bg-light p-5">
+<div class="container-fluid">
+    <div class="row">
+        <!-- <div class="col-3 side bg-light" [style.top.px]="height" #side (scroll)="onWindowScroll(side)"> -->
+        <div class="col-12 col-md-4 col-lg-3 side">
+                <div class="sectionTitle">
+                    <h2>course content</h2>
+                </div>
+                <div class="contentList">
+                        <div (click)="section1Clicked()" class="sideTab">
                             Section 1
                         </div>
-                        <hr>
-                        <div (click)="section2Clicked()" class="bg-light p-5">
+                        <div (click)="section2Clicked()" class="sideTab">
                             Section 2
                         </div>
-                        <hr>
-                        <div (click)="section3Clicked()" class="bg-light p-5">
+                        <div (click)="section3Clicked()" class="sideTab">
                             Section 3
                         </div>
-                        <hr>
-                        <div (click)="section4Clicked()" class="bg-light p-5">
+                        <div (click)="section4Clicked()" class="sideTab">
                             Section 4
                         </div>
-                        <hr>
-                        <div (click)="section5Clicked()" class="bg-light p-5">
+                        <div (click)="section5Clicked()" class="sideTab">
                             Section 5
                         </div>
-                        <hr>
-                        <div  class="bg-light p-5">
-                            Tests
-                            <ul *ngFor='let quiz of test_course'>
-                                <li (click)="testClicked(quiz.id)">{{quiz.title}}</li>
-
-                            </ul>
+                        <div class="sectionTitle">
+                            <h2>tests</h2>
                         </div>
-                    </li>
-                </ul>
-            </div>
-
-
-        </div>
-
-    </div>
-    <div class="col-md-10 col-xs-offset-2 content col-md-offset-2">
-        <div style="width:100%;">
-            <div *ngIf="secNum==1">
-                <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0"
-                    allowfullscreen></iframe>
-                <h2 class="mt-5">{{section[0].title}}</h2>
-                <h4 class="mt-5">{{section[0].courseContent}}</h4>
-            </div>
-            <div *ngIf="secNum==2">
-                <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0"
-                    allowfullscreen></iframe>
-                <h2 class="mt-5">{{section[1].title}}</h2>
-                <h4 class="mt-5">{{section[1].courseContent}}</h4>
-            </div>
-            <div *ngIf="secNum==3">
-                <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0"
-                    allowfullscreen></iframe>
-                <h2 class="mt-5">{{section[2].title}}</h2>
-                <h4 class="mt-5">{{section[2].courseContent}}</h4>
-            </div>
-            <div *ngIf="secNum==4">
-                <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0"
-                    allowfullscreen></iframe>
-                <h2 class="mt-5">{{section[3].title}}</h2>
-                <h4 class="mt-5">{{section[3].courseContent}}</h4>
-            </div>
-            <div *ngIf="secNum==5">
-                <iframe width="91%" height="350" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0"
-                    allowfullscreen></iframe>
-                <h2 class="mt-5">{{section[4].title}}</h2>
-                <h4 class="mt-5">{{section[4].courseContent}}</h4>
-            </div>
-            <div *ngIf="test">
-                <div class="container">
-                    <h1>Each question is 10 percent total is 100 percent</h1>
-                    <h1>Time allowed is 10 minutes</h1>
-                    <hr>
-
-                    <form #testForm="ngForm" (ngSubmit)="testSubmit(testForm)">
-                        <div class="mb-5" *ngFor="let question of ques; let i = index">
-                            <h2>Q{{i+1}}) {{question.question}}</h2>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
-                                [value]="question.answer1"  >
-                                <label class="form-check-label" for="exampleRadios1">
-                                    {{question.answer1}}
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
-                                [value]="question.answer2" >
-                                <label class="form-check-label" for="exampleRadios1">
-                                    {{question.answer2}}
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
-                                [value]="question.answer3" >
-                                <label class="form-check-label" for="exampleRadios1">
-                                    {{question.answer3}}
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
-                                [value]="question.answer4" >
-                                <label class="form-check-label" for="exampleRadios1">
-                                    {{question.answer4}}
-                                </label>
-                            </div>
-                            
+                        <div class="tests" *ngFor='let quiz of test_course'>
+                            <div (click)="testClicked(quiz.id)" class="sideTab">
+                                {{quiz.title}}
                         </div>
-                        <button  class="btn btn-primary" type="submit">submit</button>
-                    </form>
-                    
+                        </div>
                 </div>
-
-            </div>
-            <div style="height:500px;" *ngIf="scoreView &&!test && secNum==0">
-                <h1 style="text-align: center;color: red; margin-top: 50px;">your score is {{score*10}}/100</h1>
+        </div>
+    
+        <div class="col-12 col-md-8 col-lg-9 content">
+            <div class="contentContainer">
+                <div *ngIf="secNum==1" class="contentItem">
+                    <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc"
+                        allowfullscreen></iframe>
+                    <h2>{{section[0].title}}</h2>
+                    <p>{{section[0].courseContent}}</p>
+                </div>
+                <div *ngIf="secNum==2" class="contentItem">
+                    <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc"
+                        allowfullscreen></iframe>
+                    <h2 >{{section[1].title}}</h2>
+                    <p >{{section[1].courseContent}}</p>
+                </div>
+                <div *ngIf="secNum==3" class="contentItem">
+                    <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc"
+                        allowfullscreen></iframe>
+                    <h2 >{{section[2].title}}</h2>
+                    <p >{{section[2].courseContent}}</p>
+                </div>
+                <div *ngIf="secNum==4" class="contentItem">
+                    <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc"
+                        allowfullscreen></iframe>
+                    <h2 >{{section[3].title}}</h2>
+                    <p >{{section[3].courseContent}}</p>
+                </div>
+                <div *ngIf="secNum==5" class="contentItem">
+                    <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc"
+                        allowfullscreen></iframe>
+                    <h2 >{{section[4].title}}</h2>
+                    <p >{{section[4].courseContent}}</p>
+                </div>
+                <div *ngIf="test" class="testContainer">
+                    <div class="alert alert-success" role="alert">
+                        <h2 class="alert-heading">Best Wishes!</h2>
+                        <p>Each question has 10 points & total points are 100 percent.</p>
+                        <hr>
+                        <p class="mb-0">Time allowed is 30 minutes.</p>
+                    </div>
+                       
+                    <div class="formBx">
+                        <form #testForm="ngForm" (ngSubmit)="testSubmit(testForm)">
+                            <div class="quesCard" *ngFor="let question of ques; let i = index">
+                                <h2>Q{{i+1}}) {{question.question}}</h2>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
+                                    [value]="question.answer1"  >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        {{question.answer1}}
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
+                                    [value]="question.answer2" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        {{question.answer2}}
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
+                                    [value]="question.answer3" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        {{question.answer3}}
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1"
+                                    [value]="question.answer4" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        {{question.answer4}}
+                                    </label>
+                                </div>
+                                
+                            </div>
+                            <button  class="btn btn-primary" type="submit">submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div style="height:500px;" *ngIf="scoreView &&!test && secNum==0" class="contentItem">
+                    <h1 style="text-align: center;color: red; margin-top: 50px;">your score is {{score*10}}/100</h1>
+                </div>
             </div>
         </div>
-
+    
     </div>
-
 </div>

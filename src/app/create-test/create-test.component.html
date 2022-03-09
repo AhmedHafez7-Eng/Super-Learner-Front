@@ -61,7 +61,7 @@
         <form (ngSubmit)="addQuestion()" class="row formStyle">
           <div class="col-12">
             <label for="inputState" class="form-label">Test name</label>
-            <select class="form-select col-6" required [(ngModel)]="newQuestion.test_id" ngModel #selectTest="ngModel" name="selectTest" id="inputState">
+            <select class="form-select col-6" required [(ngModel)]="newQuestion.test_id" ngModel #selectTest="ngModel" name="test_id" id="inputState">
               <option disabled selected>Select course...</option>
               <option value="{{i+1}}" *ngFor="let tester of test;index as i">{{tester.title}}</option>
             </select>
