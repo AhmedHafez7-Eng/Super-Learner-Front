@@ -49,8 +49,8 @@
                       <td>{{instructor.phone}}</td>
                       <td>{{instructor.address}}</td>
                       <td>
-                        <a class="btn btn-outline-danger"
-                          routerLink="/admin/instructor/delete/{{instructor.id}}">Delete</a>
+                        <a class="btn btn-outline-danger" (click)='deleteinst(instructor?.id)'
+                          >Delete</a>
                       </td>
                     </tr>
                   </tbody>
