@@ -2,19 +2,19 @@
     <form  (ngSubmit)='updateData()'>
         <div class="form-group mt-5">
             <label for="title">Title</label>
-            <input required ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title" [(ngModel)]=course.title id="title">
+            <input required ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title" [(ngModel)]=course.title id="title" value='{{onecourse?.title}}'>
             <div class="alert alert-danger" *ngIf="title.touched && !title.valid">title is required</div>
             <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['minlength']">title must be more than 3 chars</div>
             <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['maxlength']">title must be less than 10 chars</div>
         </div>
         <div class="form-group mt-3">
             <label for="description">Description</label>
-            <input required ngModel #description="ngModel" class="form-control" type="text" name="description"  id="description">
+            <input required ngModel #description="ngModel" class="form-control" type="text" name="description"  id="description" value='{{onecourse?.desc}}'>
             <div class="alert alert-danger" *ngIf="description.touched && !description.valid">description is required</div>
         </div>
         <div class="form-group mt-3">
             <label for="maxScore">Max score</label>
-            <input required ngModel #maxScore="ngModel"  class="form-control" type="number" name="maxScore"  id="maxScore">
+            <input required ngModel #maxScore="ngModel"  class="form-control" type="number" name="maxScore"  id="maxScore" value='{{onecourse?.max_score}}'>
             <div class="alert alert-danger" *ngIf="maxScore.touched && maxScore.errors?.['required']">E-mail is required</div>
         </div>
     

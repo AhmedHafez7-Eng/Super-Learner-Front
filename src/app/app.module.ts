@@ -30,6 +30,17 @@ import { CoursesComponent } from './course/courses/courses.component';
 import { CourseViewComponent } from './course-view/course-view.component';
 import { CourseContentComponent } from './course-content/course-content.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { LoggedoutComponent } from './loggedout/loggedout.component';
+import { SecureComponent } from './secure/secure.component';
+import { InstructorAccountComponent } from './instructor-account/instructor-account.component';
+import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
+import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
+import { AdminMainContentComponent } from './admin/admin-main-content/admin-main-content.component';
+import { StudentsComponent } from './admin/students/students.component';
+import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
+import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
 
 
 
@@ -60,6 +71,17 @@ import { LoginFormComponent } from './login-form/login-form.component';
     CourseViewComponent,
     CourseContentComponent,
     LoginFormComponent,
+    LoggedoutComponent,
+    SecureComponent,
+    InstructorAccountComponent,
+    AdminHeaderComponent,
+    AdminDashboardComponent,
+    AdminFooterComponent,
+    AdminSidebarComponent,
+    AdminMainContentComponent,
+    StudentsComponent,
+    AdminCoursesComponent,
+    AdminInstructorsComponent,
 
    
   ],

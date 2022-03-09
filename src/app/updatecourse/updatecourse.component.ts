@@ -14,7 +14,9 @@ export class UpdatecourseComponent implements OnInit {
   course_id:number=(this.activeroute.snapshot.params['id']) as number;
   selectedfile!:File
   course= new course()
+  onecourse!:any
   ngOnInit(): void {
+    this.getcourse()
   }
   uploadimg(){
     const fd=new FormData();
@@ -38,4 +40,7 @@ export class UpdatecourseComponent implements OnInit {
      })
    
      }
+     getcourse(){this.instserve.getcourse(this.course_id).subscribe(res=>{
+      this.onecourse=res
+     })}
 }

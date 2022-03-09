@@ -1,0 +1,10 @@
+.myCoursesContainer{
+    gap:15px 0px;
+}
+
+.sectionTitle{
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #333;
+}

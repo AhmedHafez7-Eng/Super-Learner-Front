@@ -14,6 +14,9 @@ export class AuthService implements CanActivate{
 // getvalidation(){return this.valid}
   constructor(private auth:LoginService) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+     if(localStorage.getItem('token'))
+     return true
+     else
      return false
   }
 }

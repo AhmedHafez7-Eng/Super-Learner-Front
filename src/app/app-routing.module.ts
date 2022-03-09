@@ -20,46 +20,61 @@ import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { MyCoursesComponent } from './course/my-courses/my-courses.component';
 import { CoursesComponent } from './course/courses/courses.component';
 import { CourseContentComponent } from './course-content/course-content.component';
+import { LoggedoutComponent } from './loggedout/loggedout.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { SecureComponent } from './secure/secure.component';
+import { InstructorAccountComponent } from './instructor-account/instructor-account.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { StudentsComponent } from './admin/students/students.component';
+import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
+import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
+
 //import { LoginFormComponent } from './login-form/login-form.component';
 
 
 
 const routes: Routes = [
+  { path: 'admin/dashboard', component: AdminDashboardComponent,canActivate:[AuthService] },
+  { path: 'admin/students', component: StudentsComponent,canActivate:[AuthService] },
+  { path: 'admin/instructors', component: AdminInstructorsComponent,canActivate:[AuthService]},
+  { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService] },
+  { path: 'instructor-account/:id', component: InstructorAccountComponent },
   { path: 'teachers', component: InstructorsComponent },
-  { path: 'course-content', component: CourseContentComponent },
+  { path: 'course-content/:id', component: CourseContentComponent },
  // { path: 'update', component: UpdatecourseComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginFormComponent },
-  {path:'courseInfo/:id',component:CourseInfoComponent},
-//,canActivate:[AuthService]
+  { path: 'loggedout', component: LoggedoutComponent },
+  {path:'secure',component:SecureComponent},
+
+  {path:'courseInfo/:id',component:CourseInfoComponent
+  ,canActivate:[AuthService]},
   {path:'update/:id',component:UpdatecourseComponent},
-  {path:'login',component:LoginFormComponent},
-  { path: 'course', component: CourseCardComponent,
-    children: [
-      { path: 'course', component: CourseCardComponent },
-      { path: 'course', component: FirstSectionComponent },
-      { path: 'course', component: LastSectionComponent },
-    ] 
-  },
-  {path:'my-courses/:id',component: MyCoursesComponent},
-    { path: 'home', component: HomeComponent,outlet: "home" },
-  
+  { path: 'course', component: CoursesComponent,canActivate:[AuthService]},
+  {path:'my-courses/:id',component: MyCoursesComponent,canActivate:[AuthService]},
+    { path: 'home', component: HomeComponent},
+
     { path: 'aboutUs', component: AboutFirstSecComponent,
     children: [
       { path: 'aboutUs', component: AboutFirstSecComponent },
       { path: 'aboutUs', component: AboutsecSecComponent },
       { path: 'aboutUs', component: AboutThirdSecComponent },
       { path: 'aboutUs', component: AboutFourthSecComponent },
-    ] 
+    ]
   } ,
-  
   //   { path: 'teachers', component: CardContainerComponent,
   //   children: [
   //     { path: 'teachers', component: InstructorCardComponent },
   //     { path: 'teachers', component: CardContainerComponent },
-  //   ] 
-  // } 
+  //   ]
+  // }
 
+    { path: 'teachers', component: InstructorsComponent,
+    children: [
+      { path: 'teachers', component: InstructorCardComponent },
+      { path: 'teachers', component: CardContainerComponent },
+    ]
+  }
 ];
 
 

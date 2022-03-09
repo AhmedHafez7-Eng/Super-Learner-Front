@@ -1,0 +1,71 @@
+.course-item{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.course-item .image-blog img{
+    max-width: 100%;
+    height: 250px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.course-br{
+    margin-bottom:7px;
+}
+
+.course-title h2 button{
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.course-desc p{
+    color: #555;
+    letter-spacing: 2px;
+}
+
+.course-rating>*{
+    color: gold;
+}
+
+.course-meta-bot, .course-br{
+    border:none;
+}
+
+.course-meta-bot,
+.messageBox{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 35px;
+}
+
+.course-meta-bot .enroll{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+    padding: 10px 20px;
+    cursor: pointer;
+    color:#53D2F2;
+}
+
+.course-meta-bot .enroll:hover{
+    background: #19a2c4;
+    color:#FFF;
+}
+
+.messageBox{
+    justify-content: center;
+}
+
+.messageBox .message,
+.messageBox .permission{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+    padding: 20px;
+    text-transform: capitalize;
+    text-align:center;
+    max-width: 80%;
+}
+.messageBox .message a{
+    color: #2ad62a;
+}
+.messageBox .permission{
+    color: #d3cc00;
+}
