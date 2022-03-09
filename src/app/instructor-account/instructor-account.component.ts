@@ -54,6 +54,8 @@ export class InstructorAccountComponent implements OnInit {
     ((res) => { this.test = res });
   }
   addQuestion(){
+    console.log(this.newQuestion);
+    
     this.testService.addQuestion(this.newQuestion).subscribe
     ((res) => { this.data = res });
   }
