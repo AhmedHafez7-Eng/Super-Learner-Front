@@ -47,8 +47,7 @@
                       <td>{{course.desc}}</td>
                       <td>{{course.max_score}}</td>
                       <td>
-                        <a class="btn btn-outline-danger" routerLink="/admin/course/delete/{{course.id}}">Delete</a>
-                      </td>
+                        <a class="btn btn-outline-danger" (click)='deletecourse(course.id)'>Delete</a>
                     </tr>
                   </tbody>
                   <tfoot>

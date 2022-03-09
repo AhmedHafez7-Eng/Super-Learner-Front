@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/service/admin.service';
 import { StudentserveService } from 'src/app/service/studentserve.service';
 @Component({
   selector: 'app-students',
@@ -9,7 +10,7 @@ export class StudentsComponent implements OnInit {
 
   students!: any
 
-  constructor(private stuserve:StudentserveService) { }
+  constructor(private stuserve:StudentserveService,private adminserve:AdminService) { }
 
   ngOnInit(): void {
     this.getallStudents()
@@ -20,5 +21,8 @@ export class StudentsComponent implements OnInit {
         console.log(res)
        // console.log(this.instructors[7].courseofinstructor[0].title)
       })
+  }
+  delete(id:number){
+    return this.adminserve.deletestudent(id).subscribe(res=>alert(res))
   }
 }

@@ -48,7 +48,7 @@
                       <td>{{student.phone}}</td>
                       <td>{{student.address}}</td>
                       <td>
-                        <a class="btn btn-outline-danger" routerLink="/admin/student/delete/{{student.id}}">Delete</a>
+                        <a class="btn btn-outline-danger" (click)='delete(student.id)'>Delete</a>
                       </td>
                     </tr>
                   </tbody>
