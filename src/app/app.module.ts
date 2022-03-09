@@ -41,6 +41,7 @@ import { AdminMainContentComponent } from './admin/admin-main-content/admin-main
 import { StudentsComponent } from './admin/students/students.component';
 import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
 import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
+import { CreateTestComponent } from './create-test/create-test.component';
 
 
 
@@ -82,6 +83,7 @@ import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instr
     StudentsComponent,
     AdminCoursesComponent,
     AdminInstructorsComponent,
+    CreateTestComponent,
 
    
   ],
