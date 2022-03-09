@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'admin/students', component: StudentsComponent,canActivate:[AuthService] },
   { path: 'admin/instructors', component: AdminInstructorsComponent,canActivate:[AuthService]},
   { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService] },
-  { path: 'instructor-account', component: InstructorAccountComponent },
+  { path: 'instructor-account/:id', component: InstructorAccountComponent },
   { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content/:id', component: CourseContentComponent },
  // { path: 'update', component: UpdatecourseComponent },

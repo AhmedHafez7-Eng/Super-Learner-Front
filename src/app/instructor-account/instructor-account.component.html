@@ -1,13 +1,24 @@
 <div class="container">
   <h2>Test Information</h2>
-  <form class="row g-3">
+  <form (ngSubmit)='addTest()' class="row g-3">
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">Course name</label>
+      <select required [(ngModel)]="newCourse.course_id" #selectCourse="ngModel" name="courseSelect" [(ngModel)]="selectedCourse" id="inputState" class="form-select">
+        <option disabled selected>Select course...</option>
+        <option value="{{i+1}}" *ngFor="let course of data;index as i">{{course.title}}</option>
+      </select>
+   
+    </div>
     <div class="col-12">
       <label for="inputTitle" class="form-label">Title</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="PHP Part1 Exam">
+      <input required [(ngModel)]="newCourse.title" #testName="ngModel"   type="text" class="form-control" id="testName" name="testName" placeholder="PHP Part1 Exam">
+      <div class="alert alert-danger" *ngIf="testName.touched &&  !testName.valid">title is required</div>
     </div>
+
     <div class="col-md-2">
       <label for="inputMaxScore" class="form-label">Max Score</label>
-      <input type="number" class="form-control" id="inputMaxScore" min="1" max="100" placeholder="10, 20, 50 or ...">
+      <input type="number"  required [(ngModel)]="newCourse.max_score" #maxScore="ngModel"  class="form-control" id="maxScore" name="maxScore" min="1" max="100" placeholder="10, 20, 50 or ...">
+      <div class="alert alert-danger" *ngIf="maxScore.touched &&  !maxScore.valid">max score is required</div>
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Next</button>
@@ -15,40 +26,48 @@
   </form>
 
   <h2>Test Details</h2>
-  <form class="row g-3">
+  <form (ngSubmit)="CheckTests()">
     <div class="col-md-4">
-      <label for="inputState" class="form-label">Course Tests</label>
-      <select id="inputState" class="form-select">
-        <option selected>Select Test...</option>
-        <option>PHP Part 1</option>
-        <option>PHP Part 2</option>
-        <option>Laravel</option>
-        <option>React</option>
+      <label for="inputState" class="form-label">Course name</label>
+      <select required [(ngModel)]="testget" #selectCourseForTest="ngModel" name="selectCourseForTest" id="inputState" class="form-select">
+        <option disabled selected>Select course...</option>
+        <option value="{{i+1}}" *ngFor="let course of data;index as i">{{course.title}}</option>
       </select>
+      <button class="btn btn-primary">check tests</button>
+    </div>
+  </form>
+  <form (ngSubmit)="addQuestion()" class="row g-3">
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">Test name</label>
+      <select required [(ngModel)]="newQuestion.test_id" ngModel #selectTest="ngModel" name="selectTest" id="inputState" class="form-select">
+        <option disabled selected>Select course...</option>
+        <option value="{{i+1}}" *ngFor="let tester of test;index as i">{{tester.title}}</option>
+      </select>
+   
     </div>
     <div class="col-12">
       <label for="inputTitle" class="form-label">Question Header</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="What's PHP Stands For?">
+      <input type="text" [(ngModel)]="newQuestion.question" class="form-control" id="inputTitle" placeholder="What's PHP Stands For?">
     </div>
     <div class="col-12">
       <label for="inputTitle" class="form-label">Answer 1</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="Answer 1">
+      <input type="text" [(ngModel)]="newQuestion.answer1" class="form-control" id="inputTitle" placeholder="Answer 1">
     </div>
     <div class="col-12">
       <label for="inputTitle" class="form-label">Answer 2</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="Answer 2">
+      <input type="text" [(ngModel)]="newQuestion.answer2" class="form-control" id="inputTitle" placeholder="Answer 2">
     </div>
     <div class="col-12">
       <label for="inputTitle" class="form-label">Answer 3</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="Answer 3">
+      <input type="text" [(ngModel)]="newQuestion.answer3" class="form-control" id="inputTitle" placeholder="Answer 3">
     </div>
     <div class="col-12">
       <label for="inputTitle" class="form-label">Answer 4</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="Answer 4">
+      <input type="text" [(ngModel)]="newQuestion.answer4" class="form-control" id="inputTitle" placeholder="Answer 4">
     </div>
     <div class="col-12">
       <label for="inputTitle" class="form-label">Correct Answer</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="Correct Answer">
+      <input type="text" [(ngModel)]="newQuestion.correct_answer" class="form-control" id="inputTitle" placeholder="Correct Answer">
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Add Question</button>
