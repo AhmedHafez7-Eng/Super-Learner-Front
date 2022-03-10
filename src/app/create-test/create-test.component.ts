@@ -37,8 +37,8 @@ export class CreateTestComponent implements OnInit {
       if (this.user.role == 'instructor'){
         this.getcourses(this.instructor_id);
       }
-        
-    })   
+
+    })
   }
 
 
@@ -46,21 +46,22 @@ export class CreateTestComponent implements OnInit {
     this.instserve.getone(this.instructor_id).subscribe
     ((res) => { this.data = res })
     }
-    
+
   addTest(){
-    
+
     this.testService.addtest(this.newCourse).subscribe
     ((res) => { this.data = res });
-  }  
+  }
   CheckTests(){
     console.log("hello");
-    
+
     this.testService.gettest(this.testget).subscribe
     ((res) => { this.test = res });
   }
   addQuestion(){
     console.log(this.newQuestion);
-    
+    console.log(this.test);
+
     this.testService.addQuestion(this.newQuestion).subscribe
     ((res) => { this.data = res });
   }
