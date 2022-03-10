@@ -60,11 +60,21 @@
           <p>{{section[4].courseContent}}</p>
         </div>
         <div *ngIf="test" class="testContainer">
-          <div class="alert alert-success" role="alert">
+          <div *ngIf="ques.length>0" class="alert alert-success" role="alert">
             <h2 class="alert-heading">Best Wishes!</h2>
-            <p>Each question has 10 points & total points are 100 percent.</p>
+            <p>Each question has {{testInfo.max_score / ques.length}} points & total points are {{testInfo.max_score}}
+              Points.</p>
             <hr>
-            <p class="mb-0">Time allowed is 30 minutes.</p>
+            <p class="mb-0"><strong>Be Carefull!</strong>, and Don't Refresh Page for not losing your answers and score
+            </p>
+          </div>
+
+          <div *ngIf="ques.length<=0" class="alert alert-info" role="alert">
+            <h2 class="alert-heading">Hello Dear Student!</h2>
+            <p>There're No Questions for this test yet.</p>
+            <hr>
+            <p class="mb-0"><strong>Browse it Later!</strong>, When Your Instructor Add Questions to it
+            </p>
           </div>
 
           <div class="formBx">
@@ -101,14 +111,14 @@
                 </div>
 
               </div>
-              <div class="submitBtn">
+              <div *ngIf="ques.length>0" class="submitBtn">
                 <button type="submit">submit</button>
               </div>
             </form>
           </div>
         </div>
         <div *ngIf="scoreView &&!test && secNum==0" class="result">
-          <h1>your score is {{score*10}}/100</h1>
+          <h1>your score is {{score*(testInfo.max_score / ques.length)}}/{{testInfo.max_score}}</h1>
           <div class="submitBtn">
             <button routerLink="/course">Check More Courses</button>
           </div>

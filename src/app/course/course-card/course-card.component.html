@@ -31,7 +31,7 @@
         <li><i class="fa fa-users" aria-hidden="true"></i> 224 Student</li>
         <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
       </ul>
-      <div>
+      <div *ngIf='user?.role=="student"'>
         <a (click)='enroll()' class="enroll">Enroll</a>
         <!-- <a *ngIf='url' href={{url}} target="_blank" class="pay">Click For Payment</a> -->
       </div>
@@ -47,4 +47,3 @@
     <div class="messageBox" *ngIf='permission'>
       <div class="permission">{{permission}}</div>
     </div>
-    

@@ -228,17 +228,23 @@ getquiz(){
     this.secNum=5;
     this.test=false;
   }
-  ques!:any
+  ques!: any
+  testInfo!:any
   testClicked(test_id:number){
     if (!this.scoreView) {
       this.secNum=0;
       this.test=true;}
       this.testhttp.getquestions(test_id).subscribe((res)=>{
         console.log(res)
-        this.ques=res})
+        this.ques = res
+      })
 
+      this.testhttp.getTestInfo(test_id).subscribe((res)=>{
+        console.log(res)
+        this.testInfo=res})
 
   }
+
   form = new FormGroup({
     gender: new FormControl('', Validators.required)
   });
@@ -246,36 +252,24 @@ getquiz(){
   scoreView:boolean=false;
   testSubmit(testForm:any){
 
-    if (testForm.value.question1==this.ques[0].correct_answer) {
-      this.score++;
+    for (let index = 0; index < this.ques.length; index++) {
+      if (testForm.value.question1==this.ques[index].correct_answer) {
+        this.score++;
+      }
     }
-    if (testForm.value.question2==this.ques[1].correct_answer) {
-      this.score++;
-    }
-    if (testForm.value.question3==this.ques[2].correct_answer) {
-      this.score++;
-     }
-    // if (testForm.value.question4==this.questions[3].CorrectAnswer) {
+
+    // if (testForm.value.question1==this.ques[0].correct_answer) {
     //   this.score++;
     // }
-    // if (testForm.value.questio5==this.questions[4].CorrectAnswer) {
+    // if (testForm.value.question2==this.ques[1].correct_answer) {
     //   this.score++;
     // }
-    // if (testForm.value.question6==this.questions[5].CorrectAnswer) {
+    // if (testForm.value.question3==this.ques[2].correct_answer) {
     //   this.score++;
     // }
-    // if (testForm.value.question7==this.questions[6].CorrectAnswer) {
+    // if (testForm.value.question4==this.ques[3].correct_answer) {
     //   this.score++;
-    // }
-    // if (testForm.value.question8==this.questions[7].CorrectAnswer) {
-    //   this.score++;
-    // }
-    // if (testForm.value.question9==this.questions[8].CorrectAnswer) {
-    //   this.score++;
-    // }
-    // if (testForm.value.question10==this.questions[9].CorrectAnswer) {
-    //   this.score++;
-    // }
+    //  }
     this.test=false;
     this.scoreView=true;
 
