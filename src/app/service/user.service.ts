@@ -9,9 +9,9 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class UserService {
-user!:any
+user?:any
 private loggedChanged = new Subject<boolean>();
-
+private loggedChanged2 = new Subject<boolean>();
   constructor(private httpclient:HttpClient) { }
 
   login(token: any): void {
@@ -22,6 +22,8 @@ private loggedChanged = new Subject<boolean>();
       this.whologin(this.user)
       this.getwhologin()
     this.loggedChanged.next(true);
+    if(this.user.role=='admin')
+    this.loggedChanged2.next(true)
 
 
   })
@@ -33,6 +35,8 @@ private loggedChanged = new Subject<boolean>();
 
     this.loggedChanged.next(false);
   }
+  isAdmin(): Subject<boolean> {
+    return this.loggedChanged2;}
   isUserLoggedIn(): Subject<boolean> {
     return this.loggedChanged;
   }

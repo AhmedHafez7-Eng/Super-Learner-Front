@@ -37,7 +37,7 @@ import { CreateTestComponent } from './create-test/create-test.component';
 
 
 const routes: Routes = [
-  { path: 'admin/dashboard', component: AdminDashboardComponent,canActivate:[AuthService] },
+  { path: 'admin/dashboard', component: AdminDashboardComponent,canActivate:[AuthService,AdminService] },
   { path: 'admin/students', component: StudentsComponent,canActivate:[AuthService] },
   { path: 'admin/instructors', component: AdminInstructorsComponent,canActivate:[AuthService]},
   { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService] },
