@@ -22,11 +22,11 @@
       <label for="password">Max-score</label>
       <input class="form-control" type="text" name="max_score" required [(ngModel)]=course.max_score>
     </div>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label for="course_img" class="form-label">Choose course image</label>
       <input name="course_img" class="form-control" type="file" id="course_img" [(ngModel)]=course.course_img
         (change)="selectedFile($event)">
-    </div>
+    </div> -->
     <button type="submit" [disabled]='f.invalid'>add</button>
 
 
