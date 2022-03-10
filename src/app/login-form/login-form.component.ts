@@ -14,6 +14,7 @@ export class LoginFormComponent implements OnInit {
   user=new instructor()
   token!:string
   loggeduser!:any
+  error?:any
   constructor( private userService: UserService,private loginserve:LoginService,private activeroute:Router,private authserve:AuthService) { }
 
   ngOnInit(): void {
@@ -26,6 +27,7 @@ export class LoginFormComponent implements OnInit {
       if(this.loggeduser.role=='admin')
       this.activeroute.navigateByUrl('/admin/dashboard');
       else  this.activeroute.navigateByUrl('/home');
+      
     }
       )
       
@@ -33,7 +35,7 @@ export class LoginFormComponent implements OnInit {
      // if(this.token)
      // this.authserve.validation(this.token)
      // console.log(this.authserve.validation(this.token))
-    })
+    },(error)=>{this.error=error.error.message})
 
 }
 

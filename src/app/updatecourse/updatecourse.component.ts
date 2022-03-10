@@ -15,6 +15,7 @@ export class UpdatecourseComponent implements OnInit {
   selectedfile!:File
   course= new course()
   onecourse!:any
+  mess?:any
   ngOnInit(): void {
     this.getcourse()
   }
@@ -33,9 +34,9 @@ export class UpdatecourseComponent implements OnInit {
     //////////////////////////////////////
     updateData(){
       
-      
+      console.log(this.course)
     this.instserve.update(this.course,this.course_id).subscribe(
-     (res)=>{console.log('hi')
+     (res)=>{this.mess=res
         
      })
    

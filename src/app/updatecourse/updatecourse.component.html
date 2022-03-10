@@ -1,5 +1,6 @@
 <div class="container">
-    <form  (ngSubmit)='updateData()'>
+    <div *ngIf='mess'>{{mess}}</div>
+    <form  (ngSubmit)='updateData(); f.resetForm()' #f='ngForm'>
         <div class="form-group mt-5">
             <label for="title">Title</label>
             <input required ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title" [(ngModel)]=course.title id="title" value='{{onecourse?.title}}'>
@@ -9,13 +10,13 @@
         </div>
         <div class="form-group mt-3">
             <label for="description">Description</label>
-            <input required ngModel #description="ngModel" class="form-control" type="text" name="description"  id="description" value='{{onecourse?.desc}}'>
+            <input required ngModel #description="ngModel" class="form-control" type="text" name="description"  id="description"  [(ngModel)]=course.desc value='{{onecourse?.desc}}'>
             <div class="alert alert-danger" *ngIf="description.touched && !description.valid">description is required</div>
         </div>
         <div class="form-group mt-3">
             <label for="maxScore">Max score</label>
-            <input required ngModel #maxScore="ngModel"  class="form-control" type="number" name="maxScore"  id="maxScore" value='{{onecourse?.max_score}}'>
-            <div class="alert alert-danger" *ngIf="maxScore.touched && maxScore.errors?.['required']">E-mail is required</div>
+            <input required ngModel #maxScore="ngModel"  class="form-control" type="number" name="maxScore"  id="maxScore" value='{{onecourse?.max_score}}'  [(ngModel)]=course.max_score>
+            <div class="alert alert-danger" *ngIf="maxScore.touched && maxScore.errors?.['required']">this field is required</div>
         </div>
     
         

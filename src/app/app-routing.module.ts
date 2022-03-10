@@ -28,13 +28,15 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { StudentsComponent } from './admin/students/students.component';
 import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
 import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
+import { AddcourseComponent } from './addcourse/addcourse.component';
+import { AdminService } from './service/admin.service';
 
 //import { LoginFormComponent } from './login-form/login-form.component';
 
 
 
 const routes: Routes = [
-  { path: 'admin/dashboard', component: AdminDashboardComponent,canActivate:[AuthService] },
+  { path: 'admin/dashboard', component: AdminDashboardComponent,canActivate:[AuthService,AdminService] },
   { path: 'admin/students', component: StudentsComponent,canActivate:[AuthService] },
   { path: 'admin/instructors', component: AdminInstructorsComponent,canActivate:[AuthService]},
   { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService] },
@@ -46,6 +48,7 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'loggedout', component: LoggedoutComponent },
   {path:'secure',component:SecureComponent},
+  {path:'addcourse/:id',component:AddcourseComponent},
 
   {path:'courseInfo/:id',component:CourseInfoComponent
   ,canActivate:[AuthService]},

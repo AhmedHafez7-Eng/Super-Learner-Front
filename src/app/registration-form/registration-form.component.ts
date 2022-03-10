@@ -31,7 +31,9 @@ selectedfile!:File
     
   }
   insertData(){
-    
+   
+    this.instructor.profile_pic=this.selectedfile
+    console.log(this.instructor)
     this.registserve.saveData(this.instructor).
     subscribe(res=>{console.log(res);
       this.tokenfromregist=(res.access_token)})
