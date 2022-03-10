@@ -10,6 +10,8 @@ import { StudentserveService } from 'src/app/service/studentserve.service';
   templateUrl: './my-courses.component.html',
   styleUrls: ['./my-courses.component.css']
 })
+
+
 export class MyCoursesComponent implements OnInit {
 user!:any
   constructor(private userService: UserService,private activeroute:ActivatedRoute,private instserve:InstructorserviceService,private stu :StudentserveService) { }

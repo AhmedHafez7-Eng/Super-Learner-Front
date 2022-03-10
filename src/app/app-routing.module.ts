@@ -30,6 +30,7 @@ import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instr
 import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { AdminService } from './service/admin.service';
+import { CreateTestComponent } from './create-test/create-test.component';
 
 //import { LoginFormComponent } from './login-form/login-form.component';
 
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path: 'admin/students', component: StudentsComponent,canActivate:[AuthService] },
   { path: 'admin/instructors', component: AdminInstructorsComponent,canActivate:[AuthService]},
   { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService] },
-  { path: 'instructor-account', component: InstructorAccountComponent },
+  { path: 'test/create/:id', component: CreateTestComponent },
+  // { path: 'instructor-account/:id', component: InstructorAccountComponent },
   { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content/:id', component: CourseContentComponent },
  // { path: 'update', component: UpdatecourseComponent },
@@ -65,7 +67,6 @@ const routes: Routes = [
       { path: 'aboutUs', component: AboutFourthSecComponent },
     ]
   } ,
-
   //   { path: 'teachers', component: CardContainerComponent,
   //   children: [
   //     { path: 'teachers', component: InstructorCardComponent },

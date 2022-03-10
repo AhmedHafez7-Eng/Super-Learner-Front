@@ -8,14 +8,14 @@ import { StudentserveService } from 'src/app/service/studentserve.service';
 import { TestseserveService } from '../service/testseserve.service';
 import { test } from '../models/test.model';
 import { testDetails } from '../models/testDetails.model';
+
 @Component({
-  selector: 'app-instructor-account',
-  templateUrl: './instructor-account.component.html',
-  styleUrls: ['./instructor-account.component.css']
+  selector: 'app-create-test',
+  templateUrl: './create-test.component.html',
+  styleUrls: ['./create-test.component.css']
 })
+export class CreateTestComponent implements OnInit {
 
-
-export class InstructorAccountComponent implements OnInit {
   user!: any
   data!: any
   test!:any
@@ -24,10 +24,13 @@ export class InstructorAccountComponent implements OnInit {
   selectedCourse!:any
   testget!:number
 
+
   constructor(private testService:TestseserveService,private userService: UserService, private activeroute: ActivatedRoute, private instserve: InstructorserviceService) { }
-  
+
   instructor_id: number = (this.activeroute.snapshot.params['id']) as number;
+
   ngOnInit(): void {
+
     console.log(this.instructor_id);
     this.userService.userlogin().subscribe((res) => {
       this.user = res;
@@ -37,6 +40,8 @@ export class InstructorAccountComponent implements OnInit {
         
     })   
   }
+
+
   getcourses(id: number){
     this.instserve.getone(this.instructor_id).subscribe
     ((res) => { this.data = res })
@@ -59,4 +64,5 @@ export class InstructorAccountComponent implements OnInit {
     this.testService.addQuestion(this.newQuestion).subscribe
     ((res) => { this.data = res });
   }
+
 }

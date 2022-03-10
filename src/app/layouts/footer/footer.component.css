@@ -1,0 +1,10 @@
+.img-repsonsive{
+    max-width: 200px;
+}
+
+footer .container .row{
+    gap: 20px;
+}
+.footer-links-soi li{
+    padding: 0 5px;
+}
