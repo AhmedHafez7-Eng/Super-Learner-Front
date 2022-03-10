@@ -7,11 +7,11 @@
 </div> -->
 <!-- <app-header></app-header> -->
 
-<div class="course-br">
-  <div class="course-title">
-<a *ngIf='user?.role=="instructor"' routerLink='/addcourse/{{user?.id}}'>add new course</a>
-
-</div>
+<div class="addCourse" *ngIf='user?.role=="instructor"'>
+  <a routerLink='/addcourse/{{user?.id}}'>
+    <i class="fas fa-plus fa-2x"></i>
+  </a>
+  <span class="tooltiptext">Add New Course</span>
 </div>
 <div class="container">
   <div class="my-5">
