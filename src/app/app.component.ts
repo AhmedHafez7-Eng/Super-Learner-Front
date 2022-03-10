@@ -12,12 +12,13 @@ export class AppComponent {
   // loggedIn!:any;
   // checkval=0
   loggedIn!:any
-   constructor(private userService: UserService,private activeroute:Router) {
+  router!: string;
+   constructor(private _router: Router,private userService: UserService,private activeroute:Router) {
   }
   ngOnInit(): void {
    if(localStorage.getItem('token'))
      this.userService.login(localStorage.getItem('token'))
-
+     
   //   this.userService.isUserLoggedIn().subscribe(
   //    (status) => {this.loggedIn = status
    
