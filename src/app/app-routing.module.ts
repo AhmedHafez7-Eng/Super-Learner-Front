@@ -28,6 +28,8 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { StudentsComponent } from './admin/students/students.component';
 import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
 import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
+import { AddcourseComponent } from './addcourse/addcourse.component';
+import { AdminService } from './service/admin.service';
 import { CreateTestComponent } from './create-test/create-test.component';
 
 //import { LoginFormComponent } from './login-form/login-form.component';
@@ -48,6 +50,7 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'loggedout', component: LoggedoutComponent },
   {path:'secure',component:SecureComponent},
+  {path:'addcourse/:id',component:AddcourseComponent},
 
   {path:'courseInfo/:id',component:CourseInfoComponent
   ,canActivate:[AuthService]},

@@ -15,5 +15,9 @@ export class CourseserveService {
   Observable<{courses:course[]}> {
     return this.httpclient.get<{courses:course[]}>(`${environment.baseUrl}courses`)
   }
+  add(course:course){
+   return this.httpclient.post(`${environment.baseUrl}add`,course)
+  
+  }
   
 }
