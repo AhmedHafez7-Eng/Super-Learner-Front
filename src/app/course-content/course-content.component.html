@@ -35,27 +35,27 @@
     <div class="col-12 col-md-8 col-lg-9 content">
       <div class="contentContainer">
         <div *ngIf="secNum==1" class="contentItem">
-          <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/hMJXrpn8c8Y" allowfullscreen></iframe>
           <h2>{{section[0].title}}</h2>
           <p>{{section[0].courseContent}}</p>
         </div>
         <div *ngIf="secNum==2" class="contentItem">
-          <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/FIIHEHklga0" allowfullscreen></iframe>
           <h2>{{section[1].title}}</h2>
           <p>{{section[1].courseContent}}</p>
         </div>
         <div *ngIf="secNum==3" class="contentItem">
-          <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/mrdJWYVdvVg" allowfullscreen></iframe>
           <h2>{{section[2].title}}</h2>
           <p>{{section[2].courseContent}}</p>
         </div>
         <div *ngIf="secNum==4" class="contentItem">
-          <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/jCM7unYh71E" allowfullscreen></iframe>
           <h2>{{section[3].title}}</h2>
           <p>{{section[3].courseContent}}</p>
         </div>
         <div *ngIf="secNum==5" class="contentItem">
-          <iframe src="https://www.youtube.com/embed/1ozGKlOzEVc" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/o7AJVMrwHUg" allowfullscreen></iframe>
           <h2>{{section[4].title}}</h2>
           <p>{{section[4].courseContent}}</p>
         </div>
@@ -68,45 +68,50 @@
           </div>
 
           <div class="formBx">
-            <form #testForm="ngForm" (ngSubmit)="testSubmit(testForm)">
+            <form class="testDetailsForm row" #testForm="ngForm" (ngSubmit)="testSubmit(testForm)">
               <div class="quesCard" *ngFor="let question of ques; let i = index">
-                <h2>Q{{i+1}} {{question.question}}</h2>
+                <h2>Q{{i+1}}: {{question.question}}?</h2>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios1{{i}}"
-                    [value]="question.answer1">
+                  <input required class="form-check-input" type="radio" ngModel name="question{{i+1}}"
+                    id="exampleRadios1{{i}}" [value]="question.answer1">
                   <label class="form-check-label" for="exampleRadios1{{i}}">
                     {{question.answer1}}
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios2{{i}}"
-                    [value]="question.answer2">
+                  <input required class="form-check-input" type="radio" ngModel name="question{{i+1}}"
+                    id="exampleRadios2{{i}}" [value]="question.answer2">
                   <label class="form-check-label" for="exampleRadios2{{i}}">
                     {{question.answer2}}
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios3{{i}}"
-                    [value]="question.answer3">
+                  <input required class="form-check-input" type="radio" ngModel name="question{{i+1}}"
+                    id="exampleRadios3{{i}}" [value]="question.answer3">
                   <label class="form-check-label" for="exampleRadios3{{i}}">
                     {{question.answer3}}
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" ngModel name="question{{i+1}}" id="exampleRadios4{{i}}"
-                    [value]="question.answer4">
+                  <input required class="form-check-input" type="radio" ngModel name="question{{i+1}}"
+                    id="exampleRadios4{{i}}" [value]="question.answer4">
                   <label class="form-check-label" for="exampleRadios4{{i}}">
                     {{question.answer4}}
                   </label>
                 </div>
 
               </div>
-              <button class="btn btn-primary" type="submit">submit</button>
+              <div class="submitBtn">
+                <button type="submit">submit</button>
+              </div>
             </form>
           </div>
         </div>
-        <div style="height:500px;" *ngIf="scoreView &&!test && secNum==0" class="contentItem">
-          <h1 style="text-align: center;color: red; margin-top: 50px;">your score is {{score*10}}/100</h1>
+        <div *ngIf="scoreView &&!test && secNum==0" class="result">
+          <h1>your score is {{score*10}}/100</h1>
+          <div class="submitBtn">
+            <button routerLink="/course">Check More Courses</button>
+          </div>
         </div>
       </div>
     </div>

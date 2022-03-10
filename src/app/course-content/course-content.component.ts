@@ -55,38 +55,40 @@ getquiz(){
     else {
       this.height = 0;
     }
-
-
   }
+
+
+
+
   section: section[] = [
     {
       id: 1,
       title: 'section 1',
-      videoURL: 'https://www.youtube.com/embed/1ozGKlOzEVc',
+      videoURL: 'https://www.youtube.com/embed/hMJXrpn8c8Y',
       courseContent: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio veritatis accusamus provident quia harum soluta labore qui, aliquid praesentium quisquam dolorum sapiente nam minima dicta eum earum, odio ea vitae.'
     },
     {
       id: 2,
       title: 'section 2',
-      videoURL: 'https://www.youtube.com/embed/1ozGKlOzEVc',
+      videoURL: 'https://youtu.be/embed/FIIHEHklga0',
       courseContent: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio veritatis accusamus provident quia harum soluta labore qui, aliquid praesentium quisquam dolorum sapiente nam minima dicta eum earum, odio ea vitae.'
     },
     {
       id: 3,
       title: 'section 3',
-      videoURL: 'https://www.youtube.com/embed/1ozGKlOzEVc',
+      videoURL: 'https://youtu.be/embed/mrdJWYVdvVg',
       courseContent: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio veritatis accusamus provident quia harum soluta labore qui, aliquid praesentium quisquam dolorum sapiente nam minima dicta eum earum, odio ea vitae.'
     },
     {
       id: 4,
       title: 'section 4',
-      videoURL: 'https://www.youtube.com/embed/1ozGKlOzEVc',
+      videoURL: 'https://www.youtube.com/embed/jCM7unYh71E',
       courseContent: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio veritatis accusamus provident quia harum soluta labore qui, aliquid praesentium quisquam dolorum sapiente nam minima dicta eum earum, odio ea vitae.'
     },
     {
       id: 5,
       title: 'section 5',
-      videoURL: 'https://www.youtube.com/embed/1ozGKlOzEVc',
+      videoURL: 'https://www.youtube.com/embed/o7AJVMrwHUg',
       courseContent: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio veritatis accusamus provident quia harum soluta labore qui, aliquid praesentium quisquam dolorum sapiente nam minima dicta eum earum, odio ea vitae.'
     }
 
@@ -234,8 +236,8 @@ getquiz(){
       this.testhttp.getquestions(test_id).subscribe((res)=>{
         console.log(res)
         this.ques=res})
-    
-    
+
+
   }
   form = new FormGroup({
     gender: new FormControl('', Validators.required)
@@ -243,7 +245,7 @@ getquiz(){
   score:number=0;
   scoreView:boolean=false;
   testSubmit(testForm:any){
-    
+
     if (testForm.value.question1==this.ques[0].correct_answer) {
       this.score++;
     }
@@ -276,6 +278,6 @@ getquiz(){
     // }
     this.test=false;
     this.scoreView=true;
-    
+
   }
 }
