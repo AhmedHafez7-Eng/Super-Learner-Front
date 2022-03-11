@@ -43,6 +43,7 @@ import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.compo
 import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { CreateTestComponent } from './create-test/create-test.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 
@@ -86,6 +87,7 @@ import { CreateTestComponent } from './create-test/create-test.component';
     AdminInstructorsComponent,
     AddcourseComponent,
     CreateTestComponent,
+    UpdateProfileComponent,
 
    
   ],
