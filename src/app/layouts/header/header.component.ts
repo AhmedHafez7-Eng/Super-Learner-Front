@@ -35,5 +35,20 @@ logout(): void {
  myFunction() {
   var element = document.body;
   element.classList.toggle("dark-mode");
+ }
+
+
+
+  // ========== Navbar Toggle
+ open = false;
+//  fade = false;
+ toggle = false;
+
+ toggleClass() {
+   this.open = !this.open;
+  //  this.fade = !this.fade;
+   this.toggle = !this.toggle;
+ }
+
 }
-}
+
