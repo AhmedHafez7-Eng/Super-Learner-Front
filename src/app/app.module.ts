@@ -32,7 +32,6 @@ import { CourseContentComponent } from './course-content/course-content.componen
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoggedoutComponent } from './loggedout/loggedout.component';
 import { SecureComponent } from './secure/secure.component';
-import { InstructorAccountComponent } from './instructor-account/instructor-account.component';
 import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
@@ -43,7 +42,6 @@ import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.compo
 import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { CreateTestComponent } from './create-test/create-test.component';
-import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 
@@ -76,7 +74,6 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     LoginFormComponent,
     LoggedoutComponent,
     SecureComponent,
-    InstructorAccountComponent,
     AdminHeaderComponent,
     AdminDashboardComponent,
     AdminFooterComponent,
@@ -87,9 +84,6 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     AdminInstructorsComponent,
     AddcourseComponent,
     CreateTestComponent,
-    UpdateProfileComponent,
-
-   
   ],
   imports: [
     BrowserModule,
@@ -104,7 +98,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     // MatDatepickerModule,
     // MatInputModule,
     // MatNativeDateModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,7 +23,6 @@ import { CourseContentComponent } from './course-content/course-content.componen
 import { LoggedoutComponent } from './loggedout/loggedout.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { SecureComponent } from './secure/secure.component';
-import { InstructorAccountComponent } from './instructor-account/instructor-account.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { StudentsComponent } from './admin/students/students.component';
 import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
