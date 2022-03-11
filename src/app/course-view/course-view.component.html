@@ -6,7 +6,7 @@
         <div class="course-br">
             <div class="course-title">
                 <h2>
-                    <a href="#" title="">{{ course.title }}</a>
+                    <a routerLink="/course-content" title="">{{ course.title }}</a>
                 </h2>
             </div>
             <div class="course-desc">
@@ -14,14 +14,19 @@
                     {{ course.desc }}
                 </p>
             </div>
-            <div class="course-rating">
-                4
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
+            
+                    <div class="course-rating">
+                        4
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half"></i>
+                    
+                    <div *ngIf="role=='Instructor'" style="float:right"><a routerLink="/update" class="btn btn-primary">Edit Course</a></div>
+                
             </div>
+            
         </div>
         <div class="course-meta-bot">
             <ul>

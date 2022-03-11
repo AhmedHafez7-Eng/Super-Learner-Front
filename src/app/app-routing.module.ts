@@ -19,28 +19,18 @@ import { CoursesComponent } from './course/courses/courses.component';
 import { CourseContentComponent } from './course-content/course-content.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 
-
-
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-
-  { path: 'home', component: HomeComponent,children:[
-    { path: 'home', component: HomeComponent}    ] },
- 
-  { path: 'course', component: CourseCardComponent,
-    children: [
-      { path: 'course', component: CourseCardComponent },
-      { path: 'course', component: FirstSectionComponent },
-      { path: 'course', component: LastSectionComponent },
-      { path: 'course', component: CourseContentComponent },
-      { path: 'course', component: CourseInfoComponent },
-
-
-    ] 
-  },
+  { path: 'teachers', component: InstructorsComponent },
+  { path: 'course-content', component: CourseContentComponent },
+  { path: 'update', component: UpdatecourseComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginFormComponent },
+  {path:'courseInfo/:id',component:CourseInfoComponent},
+  {path:'update/:id',component:UpdatecourseComponent},
+  { path: 'course', component: CoursesComponent},
   {path:'my-courses',component: MyCoursesComponent},
-  
-    { path: 'aboutUs', component: AboutFirstSecComponent,
+  { path: 'home', component: HomeComponent},
+  { path: 'aboutUs', component: AboutFirstSecComponent,
     children: [
       { path: 'aboutUs', component: AboutFirstSecComponent },
       { path: 'aboutUs', component: AboutsecSecComponent },
@@ -48,8 +38,7 @@ const routes: Routes = [
       { path: 'aboutUs', component: AboutFourthSecComponent },
     ] 
   } ,
-  
-    { path: 'teachers', component: InstructorsComponent,
+  { path: 'teachers', component: InstructorsComponent,
     children: [
       { path: 'teachers', component: InstructorCardComponent },
       { path: 'teachers', component: CardContainerComponent },
@@ -62,8 +51,6 @@ const routes: Routes = [
   {path:'courseInfo/:id',component:CourseInfoComponent},
   {path:'update/:id',component:UpdatecourseComponent},
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

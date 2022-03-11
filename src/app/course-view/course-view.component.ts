@@ -6,15 +6,16 @@ import { course } from '../models/course.model';
   templateUrl: './course-view.component.html',
   styleUrls: ['./course-view.component.css']
 })
+
 export class CourseViewComponent implements OnInit {
   @Input()
   course!:course;
   constructor() { }
-
+  
   ngOnInit(): void {
     
   }
   
   
-
+role='Instructor';
 }
