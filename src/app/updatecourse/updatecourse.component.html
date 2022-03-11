@@ -1,35 +1,47 @@
 <div class="container">
-    <div *ngIf='mess'>{{mess}}</div>
-    <form  (ngSubmit)='updateData(); f.resetForm()' #f='ngForm'>
-        <div class="form-group mt-5">
-            <label for="title">Title</label>
-            <input required ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title" [(ngModel)]=course.title id="title" value='{{onecourse?.title}}'>
-            <div class="alert alert-danger" *ngIf="title.touched && !title.valid">title is required</div>
-            <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['minlength']">title must be more than 3 chars</div>
-            <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['maxlength']">title must be less than 10 chars</div>
-        </div>
-        <div class="form-group mt-3">
-            <label for="description">Description</label>
-            <input required ngModel #description="ngModel" class="form-control" type="text" name="description"  id="description"  [(ngModel)]=course.desc value='{{onecourse?.desc}}'>
-            <div class="alert alert-danger" *ngIf="description.touched && !description.valid">description is required</div>
-        </div>
-        <div class="form-group mt-3">
-            <label for="maxScore">Max score</label>
-            <input required ngModel #maxScore="ngModel"  class="form-control" type="number" name="maxScore"  id="maxScore" value='{{onecourse?.max_score}}'  [(ngModel)]=course.max_score>
-            <div class="alert alert-danger" *ngIf="maxScore.touched && maxScore.errors?.['required']">this field is required</div>
-        </div>
-    
-        
-        <button class="btn btn-primary mt-3">update</button>
-    </form>
-    
-    <!-- <form class="my-3" (ngSubmit)='uploadimg()' method="post" enctype="multipart/form-data">
-        
+  <div *ngIf='mess' class="alert alert-success alert-dismissible fade show" role="alert">
+    {{mess}} <strong>Successfully!</strong>
+    <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="sectionTitle">
+    <h2>Update Course Data</h2>
+  </div>
+  <form class="formBx" (ngSubmit)='updateData(); f.resetForm()' #f='ngForm'>
+    <div class="form-group  ">
+      <label for="title">Title</label>
+      <input ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title"
+        [(ngModel)]=course.title id="title" value='{{onecourse?.title}}'>
+      <div class="alert alert-danger" *ngIf="title.touched && !title.valid">title is required</div>
+      <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['minlength']">title must be more than 3
+        chars</div>
+      <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['maxlength']">title must be less than 10
+        chars</div>
+    </div>
+    <div class="form-group  ">
+      <label for="description">Description</label>
+      <input ngModel #description="ngModel" class="form-control" type="text" name="description" id="description"
+        [(ngModel)]=course.desc value='{{onecourse?.desc}}'>
+      <div class="alert alert-danger" *ngIf="description.touched && !description.valid">description is required</div>
+    </div>
+    <div class="form-group  ">
+      <label for="maxScore">Max score</label>
+      <input ngModel #maxScore="ngModel" class="form-control" type="number" name="maxScore" id="maxScore"
+        value='{{onecourse?.max_score}}' [(ngModel)]=course.max_score>
+      <div class="alert alert-danger" *ngIf="maxScore.touched && maxScore.errors?.['required']">this field is required
+      </div>
+    </div>
+
+
+    <button>update</button>
+  </form>
+
+  <!-- <form class="my-3" (ngSubmit)='uploadimg()' method="post" enctype="multipart/form-data">
+
         <div class="mb-3">
             <label for="course_img" class="form-label">Choose course image</label>
             <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
         </div>
-        
+
         <button class="btn btn-primary" type="submit">update image</button>
     </form> -->
 </div>

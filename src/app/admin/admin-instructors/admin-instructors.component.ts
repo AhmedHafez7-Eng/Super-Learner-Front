@@ -22,7 +22,16 @@ export class AdminInstructorsComponent implements OnInit {
        // console.log(this.instructors[7].courseofinstructor[0].title)
       })
   }
+  message!: any
   deleteinst(id:number){
-    this.adminserve.deleteinst(id).subscribe(res=>alert(res))
+    if (confirm("Are You Sure?")) {
+      this.adminserve.deleteinst(id).subscribe(res => {
+        this.message = res
+      })
+    }
   }
+
+  refresh() {
+    window.location.reload()
+}
 }

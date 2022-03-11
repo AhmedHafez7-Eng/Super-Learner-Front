@@ -1,10 +1,60 @@
-.myCoursesContainer{
-    gap:15px 0px;
+.myCoursesContainer {
+  gap: 15px 0px;
 }
 
-.sectionTitle{
-    font-size: 45px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: #333;
+.sectionTitle {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #333;
+}
+
+
+.addCourse {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: #FFF;
+  padding: 15px;
+  z-index: 9999999999999999999999999;
+}
+
+.addCourse a {
+  color: #53d2f2;
+}
+
+.addCourse .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: #FFF;
+  color: #53d2f2;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 13%;
+  left: 100%;
+  margin-left: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-weight: bold;
+}
+
+.addCourse .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 34%;
+  left: -10px;
+  /* margin-left: -5px; */
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #FFF transparent transparent;
+}
+
+.addCourse:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

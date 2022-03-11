@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-    You should check in on some of those fields below. <strong>Successfully!</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <div *ngIf='message' class="alert alert-success alert-dismissible fade show" role="alert">
+    {{message}} <strong>Successfully!</strong>
+    <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   <div class="row formRow">
 
@@ -10,7 +10,7 @@
     </div>
 
     <div class='col-12 col-md-7 col-lg-7'>
-      <form (ngSubmit)='addTest()' class="row formStyle">
+      <form (ngSubmit)='addTest()' class="row formStyle" #addtestForm='ngForm'>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputState" class="form-label">Course name</label>
           <select required [(ngModel)]="newCourse.course_id" #selectCourse="ngModel" name="courseSelect"
@@ -33,13 +33,13 @@
           <div class="alert alert-danger" *ngIf="maxScore.touched &&  !maxScore.valid">max score is required</div>
         </div>
         <div class="col-12">
-          <button type="submit">Add New Test</button>
+          <button [disabled]='addtestForm.invalid' type="submit">Add New Test</button>
         </div>
       </form>
     </div>
 
     <div class='col-12 col-md-4 col-lg-4'>
-      <form (ngSubmit)="CheckTests()" class="row formStyle">
+      <form (ngSubmit)="CheckTests()" class="row formStyle" #checktestsForm='ngForm'>
         <div class="col-12">
           <label for="inputState" class="form-label">Course name</label>
           <select required [(ngModel)]="testget" #selectCourseForTest="ngModel" name="selectCourseForTest"
@@ -49,7 +49,7 @@
           </select>
         </div>
         <div class="col-12">
-          <button type="submit">check tests</button>
+          <button [disabled]='checktestsForm.invalid' type="submit">check tests</button>
         </div>
       </form>
     </div>
@@ -62,7 +62,7 @@
     </div>
 
     <div class='col-12'>
-      <form (ngSubmit)="addQuestion()" #f='ngForm' class="row formStyle">
+      <form (ngSubmit)="addQuestion()" #f='ngForm' class="row formStyle" #addquesForm='ngForm'>
         <div class="col-12">
           <label for="inputState" class="form-label">Test name</label>
           <select class="form-select col-6" required [(ngModel)]="newQuestion.test_id" ngModel #selectTest="ngModel"
@@ -74,36 +74,36 @@
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Question Header</label>
-          <input type="text" name="question" required [(ngModel)]="newQuestion.question" class="form-control" id="inputTitle"
-            placeholder="What's PHP Stands For?">
+          <input type="text" name="question" required [(ngModel)]="newQuestion.question" class="form-control"
+            id="inputTitle" placeholder="What's PHP Stands For?">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Answer 1</label>
-          <input type="text" name="answer1" required [(ngModel)]="newQuestion.answer1" class="form-control" id="inputTitle"
-            placeholder="Answer 1">
+          <input type="text" name="answer1" required [(ngModel)]="newQuestion.answer1" class="form-control"
+            id="inputTitle" placeholder="Answer 1">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Answer 2</label>
-          <input type="text" name="answer2" required [(ngModel)]="newQuestion.answer2" class="form-control" id="inputTitle"
-            placeholder="Answer 2">
+          <input type="text" name="answer2" required [(ngModel)]="newQuestion.answer2" class="form-control"
+            id="inputTitle" placeholder="Answer 2">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Answer 3</label>
-          <input type="text" name="answer3" required [(ngModel)]="newQuestion.answer3" class="form-control" id="inputTitle"
-            placeholder="Answer 3">
+          <input type="text" name="answer3" required [(ngModel)]="newQuestion.answer3" class="form-control"
+            id="inputTitle" placeholder="Answer 3">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Answer 4</label>
-          <input type="text" name="answer4" required [(ngModel)]="newQuestion.answer4" class="form-control" id="inputTitle"
-            placeholder="Answer 4">
+          <input type="text" name="answer4" required [(ngModel)]="newQuestion.answer4" class="form-control"
+            id="inputTitle" placeholder="Answer 4">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Correct Answer</label>
-          <input type="text" name="correct_answer" required [(ngModel)]="newQuestion.correct_answer" class="form-control"
-            id="inputTitle" placeholder="Correct Answer">
+          <input type="text" name="correct_answer" required [(ngModel)]="newQuestion.correct_answer"
+            class="form-control" id="inputTitle" placeholder="Correct Answer">
         </div>
         <div class="col-12">
-          <button [disabled]='f.invalid' type="submit">Add Question</button>
+          <button [disabled]='addquesForm.invalid' type="submit">Add Question</button>
         </div>
       </form>
     </div>

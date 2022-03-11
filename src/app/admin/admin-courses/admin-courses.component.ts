@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseserveService } from 'src/app/service/courseserve.service';
 import { AdminService } from 'src/app/service/admin.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-courses',
   templateUrl: './admin-courses.component.html',
@@ -8,7 +9,7 @@ import { AdminService } from 'src/app/service/admin.service';
 })
 export class AdminCoursesComponent implements OnInit {
   courses!: any
-  constructor(private httpserve:CourseserveService,private adminserve:AdminService) { }
+  constructor(private httpserve:CourseserveService,private adminserve:AdminService, private activeroute:Router) { }
 
   ngOnInit(): void {
     this.getallcourses()
@@ -20,7 +21,17 @@ export class AdminCoursesComponent implements OnInit {
     })
 
   }
-  deletecourse(id:number){
-    this.adminserve.deletecourse(id).subscribe(res=>alert(res))
+  message!:any
+  deletecourse(id: number) {
+
+    if (confirm("Are You Sure?")) {
+      this.adminserve.deletecourse(id).subscribe(res => {
+        this.message = res
+      })
+    }
   }
+
+  refresh() {
+    window.location.reload()
+}
 }

@@ -1,6 +1,6 @@
 <!-- <app-header></app-header> -->
 <div class="container">
-  <form (ngSubmit)='insertData()' enctype="multipart/form-data" #f='ngForm'>
+  <form class="formBx" (ngSubmit)='insertData()' enctype="multipart/form-data" #f='ngForm'>
     <div class="form-group mt-5">
       <label for="firstName">First name</label>
       <input required ngModel minlength="3" maxlength="10" #firstName="ngModel" class="form-control" type="text"
@@ -69,9 +69,9 @@
 
     </div>
     <div class="form-group mt-3">
-      <label for="roles">Regist as..:</label>
+      <label for="roles">Role</label>
 
-      <select name="role" id="roles" [(ngModel)]=instructor.role>
+      <select class="form-select" name="role" id="roles" [(ngModel)]=instructor.role>
         <option value="student">student</option>
         <option value="instructor">instructor</option>
 
@@ -81,8 +81,7 @@
       <label for="course_img" class="form-label">Choose course image</label>
       <input name="profile_pic" class="form-control" type="file" id="course_img" [(ngModel)]='instructor.profile_pic' (change)="selectedFile($event)">
   </div> -->
-    <button [disabled]='f.invalid' class="btn btn-primary mt-3 mb-5">Submit</button>
+    <button [disabled]='f.invalid'>Register</button>
   </form>
 
 </div>
-

@@ -47,10 +47,12 @@ export class CreateTestComponent implements OnInit {
     ((res) => { this.data = res })
     }
 
+  message!: any
   addTest(){
 
     this.testService.addtest(this.newCourse).subscribe
-    ((res) => { this.data = res });
+      ((res) => { this.data = res });
+    this.message = "Test Added"
   }
   CheckTests(){
     console.log("hello");
@@ -63,7 +65,12 @@ export class CreateTestComponent implements OnInit {
     console.log(this.test);
 
     this.testService.addQuestion(this.newQuestion).subscribe
-    ((res) => { this.data = res });
+      ((res) => { this.data = res });
+      this.message = "Question Added"
+  }
+
+  refresh() {
+    window.location.reload();
   }
 
 }
