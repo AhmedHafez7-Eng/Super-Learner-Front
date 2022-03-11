@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginService } from '../login.service';
 
@@ -12,11 +12,15 @@ export class AuthService implements CanActivate{
 //   this.valid=token
 //   }
 // getvalidation(){return this.valid}
-  constructor(private auth:LoginService) { }
+  constructor(private auth:LoginService,private router:Router) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
      if(localStorage.getItem('token'))
-     return true
+    {  
+      return true}
      else
-     return false
+     { window.alert('Access Denied, Login is Required to Access This Page!');
+     this.router.navigate(['/login']);
+ 
+       return false}
   }
 }

@@ -29,7 +29,7 @@ import { StudentsComponent } from './admin/students/students.component';
 import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
 import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
-import { AdminService } from './service/admin.service';
+import { AdminService } from './service/guard/admin.service'
 import { CreateTestComponent } from './create-test/create-test.component';
 
 //import { LoginFormComponent } from './login-form/login-form.component';
@@ -55,7 +55,7 @@ const routes: Routes = [
   {path:'courseInfo/:id',component:CourseInfoComponent
   ,canActivate:[AuthService]},
   {path:'update/:id',component:UpdatecourseComponent},
-  { path: 'course', component: CoursesComponent,canActivate:[AuthService]},
+  { path: 'course', component: CoursesComponent,canActivate:[AdminService]},
   {path:'my-courses/:id',component: MyCoursesComponent,canActivate:[AuthService]},
     { path: 'home', component: HomeComponent},
 

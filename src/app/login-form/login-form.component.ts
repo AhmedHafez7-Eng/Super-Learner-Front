@@ -26,6 +26,7 @@ export class LoginFormComponent implements OnInit {
     this.userService.userlogin().subscribe((res)=>{this.loggeduser=res
       if(this.loggeduser.role=='admin')
      { console.log(this.loggeduser.role)
+     console.log( this.userService.isAdmin())
        this.activeroute.navigateByUrl('/admin/dashboard');}
       else  this.activeroute.navigateByUrl('/home');
       

@@ -11,7 +11,7 @@ import { environment } from "src/environments/environment";
 export class UserService {
 user?:any
 private loggedChanged = new Subject<boolean>();
-private loggedChanged2 = new Subject<boolean>();
+private loggedChanged2! :boolean
   constructor(private httpclient:HttpClient) { }
 
   login(token: any): void {
@@ -23,7 +23,7 @@ private loggedChanged2 = new Subject<boolean>();
       this.getwhologin()
     this.loggedChanged.next(true);
     if(this.user.role=='admin')
-    this.loggedChanged2.next(true)
+    this.loggedChanged2=(true)
 
 
   })
@@ -32,10 +32,10 @@ private loggedChanged2 = new Subject<boolean>();
 
   logout(): void {
     localStorage.removeItem('token');
-
+    this.loggedChanged2=(false)
     this.loggedChanged.next(false);
   }
-  isAdmin(): Subject<boolean> {
+  isAdmin(): boolean {
     return this.loggedChanged2;}
   isUserLoggedIn(): Subject<boolean> {
     return this.loggedChanged;
