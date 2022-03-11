@@ -21,17 +21,14 @@ export class AdminCoursesComponent implements OnInit {
     })
 
   }
-  message!:any
+  message?:any
   deletecourse(id: number) {
 
     if (confirm("Are You Sure?")) {
       this.adminserve.deletecourse(id).subscribe(res => {
         this.message = res
+        this.getallcourses()
       })
     }
   }
-
-  refresh() {
-    window.location.reload()
-}
 }

@@ -27,11 +27,9 @@ export class AdminInstructorsComponent implements OnInit {
     if (confirm("Are You Sure?")) {
       this.adminserve.deleteinst(id).subscribe(res => {
         this.message = res
+        this.getallInstructors()
       })
     }
   }
 
-  refresh() {
-    window.location.reload()
-}
 }

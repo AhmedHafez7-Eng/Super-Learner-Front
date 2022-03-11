@@ -144,8 +144,7 @@ getquiz(){
 
     for (let index = 0; index < this.ques.length; index++) {
       let k = index+1;
-      let j=`question${k}`;
-      console.log(Object.values(testForm.value.valueOf(j))[index]);
+      let j = `question${k}`;
 
       if (Object.values(testForm.value.valueOf(j))[index]==this.ques[index].correct_answer) {
         this.score++;

@@ -10,7 +10,7 @@ import { course } from '../models/course.model';
 export class UpdatecourseComponent implements OnInit {
 
   constructor(private activeroute:ActivatedRoute,private instserve:InstructorserviceService) { }
- 
+
   course_id:number=(this.activeroute.snapshot.params['id']) as number;
   selectedfile!:File
   course= new course()
@@ -22,10 +22,9 @@ export class UpdatecourseComponent implements OnInit {
   uploadimg(){
     const fd=new FormData();
     fd.append('course_img',this.selectedfile,this.selectedfile.name)
-    
+
      //this.img={img_name:this.category.img}
       this.instserve.uploadimg(this.course_id,fd).subscribe((res)=>{
-      
        console.log(event)
       })
   }
@@ -33,19 +32,17 @@ export class UpdatecourseComponent implements OnInit {
     console.log(this.selectedfile)}
     //////////////////////////////////////
     updateData(){
-      
+
       console.log(this.course)
     this.instserve.update(this.course,this.course_id).subscribe(
-     (res)=>{this.mess=res
-        
+      (res) => {
+        this.mess = res
+        console.log(this.mess)
      })
-   
+
      }
      getcourse(){this.instserve.getcourse(this.course_id).subscribe(res=>{
       this.onecourse=res
      })
      }
-  refresh() {
-    window.location.reload();
-  }
 }

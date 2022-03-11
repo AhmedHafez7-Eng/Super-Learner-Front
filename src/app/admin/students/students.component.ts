@@ -28,11 +28,9 @@ export class StudentsComponent implements OnInit {
     if (confirm("Are You Sure?")) {
       this.adminserve.deletestudent(id).subscribe(res => {
         this.message = res
+        this.getallStudents()
       })
     }
   }
 
-  refresh() {
-    window.location.reload()
-}
 }

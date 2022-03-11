@@ -7,7 +7,9 @@
     <div class="course-br">
       <div class="course-title">
         <h2>
-          <button class="btn btn-info" (click)='ifenroll()' title="">{{coursesfrompare.title}}</button>
+          <button class="btn btn-info" routerLink="/course-content/{{coursesfrompare.id}}"
+            title="">{{coursesfrompare.title}}</button>
+          <!-- <button class="btn btn-info" (click)='ifenroll()' title="">{{coursesfrompare.title}}</button> -->
         </h2>
       </div>
       <div class="course-desc">

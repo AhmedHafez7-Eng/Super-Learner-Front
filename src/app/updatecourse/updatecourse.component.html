@@ -1,12 +1,13 @@
 <div class="container">
   <div *ngIf='mess' class="alert alert-success alert-dismissible fade show" role="alert">
     {{mess}} <strong>Successfully!</strong>
-    <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
+
   <div class="sectionTitle">
     <h2>Update Course Data</h2>
   </div>
-  <form class="formBx" (ngSubmit)='updateData(); f.resetForm()' #f='ngForm'>
+  <form class="formBx" (ngSubmit)='updateData();' #f='ngForm'>
     <div class="form-group ">
       <label for="title">Title</label>
       <input ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title"

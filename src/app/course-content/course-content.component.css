@@ -1,3 +1,8 @@
+.alert-success {
+  color: #4C5A7D;
+}
+
+
 .side {
   display: flex;
   flex-direction: column;
@@ -33,14 +38,14 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 35px 45px;
-  color: #53d2f2;
+  color: #4C5A7D;
   cursor: pointer;
   transition: .3s ease;
   font-weight: bold;
 }
 
 .side .contentList .sideTab:hover {
-  background-color: #53d2f2;
+  background-color: #4C5A7D;
   color: #FFF;
 }
 
@@ -69,7 +74,7 @@ ul {
 .content .contentContainer .contentItem h2 {
   text-transform: capitalize;
   color: #FFF;
-  background: #53d2f2;
+  background: #4C5A7D;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   width: fit-content;
   padding: 20px;
@@ -77,7 +82,7 @@ ul {
 
 .content .contentContainer .contentItem p {
   text-transform: capitalize;
-  color: #1b92b1;
+  color: #4C5A7D;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   width: fit-content;
   padding: 20px;
@@ -106,7 +111,7 @@ ul {
 }
 
 .quesCard h2 {
-  color: #057e9d;
+  color: #4C5A7D;
 }
 
 .quesCard .form-check-label {
@@ -122,7 +127,7 @@ ul {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   padding: 15px 25px;
   border: none;
-  color: #53d2f2;
+  color: #4C5A7D;
   background: #FFF;
   transition: .3s ease;
   -webkit-transition: .3s ease;
@@ -135,13 +140,13 @@ ul {
 
 .submitBtn button:hover {
   color: #FFF;
-  background: #53d2f2;
+  background: #4C5A7D;
 }
 
 .result {
   box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
   text-transform: capitalize;
-  background: #53d2f2;
+  background: #4C5A7D;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
