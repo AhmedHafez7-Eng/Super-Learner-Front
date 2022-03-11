@@ -34,6 +34,7 @@ url?:string
 
     })
   }
+
 enroll(){
   console.log(this.user.fname)
   this.payserve.payment({fname:this.user.fname,phone:this.user.phone,email:this.user.email}).subscribe((res)=>{

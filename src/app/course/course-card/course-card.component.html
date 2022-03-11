@@ -7,9 +7,10 @@
     <div class="course-br">
       <div class="course-title">
         <h2>
-          <button class="btn btn-info" routerLink="/course-content/{{coursesfrompare.id}}"
+          <button *ngIf='user?.role=="instructor"' class="btn btn-info"
+            routerLink="/course-content/{{coursesfrompare.id}}" title="">{{coursesfrompare.title}}</button>
+          <button *ngIf='user?.role=="student"' class="btn btn-info" (click)='ifenroll()'
             title="">{{coursesfrompare.title}}</button>
-          <!-- <button class="btn btn-info" (click)='ifenroll()' title="">{{coursesfrompare.title}}</button> -->
         </h2>
       </div>
       <div class="course-desc">
@@ -33,7 +34,7 @@
         <li><i class="fa fa-users" aria-hidden="true"></i> 224 Student</li>
         <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
       </ul>
-      <div *ngIf='user?.role=="student"'>
+      <div class="enrollBtn" *ngIf='user?.role=="student"'>
         <a (click)='enroll()' class="enroll">Enroll</a>
         <!-- <a *ngIf='url' href={{url}} target="_blank" class="pay">Click For Payment</a> -->
       </div>
