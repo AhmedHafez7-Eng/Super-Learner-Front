@@ -93,117 +93,7 @@ getquiz(){
     }
 
   ]
-  questions=[{
-    "Header": "Why We Use <br> Element",
-    "Answers": [
-        "To Make Text Bold",
-        "To Make Text Italic",
-        "To Add Breakline",
-        "To Create Horizontal Line"
-    ],
-    "CorrectAnswer": "To Add Breakline",
-    "Degree": 10
-},
-{
-    "Header": "Is <img> Element Has Attribute href",
-    "Answers": [
-        "Yes",
-        "No Its For Anchor Tag <a>",
-        "All Elements Has This Attribute",
-        "Answer 1 And 3 Is Right"
-    ],
-    "CorrectAnswer": "No Its For Anchor Tag <a>",
-    "Degree": 10
-},
-{
-    "Header": "How Can We Make Element Text Bold",
-    "Answers": [
-        "Putting It Inside <b> Tag",
-        "Putting It Inside <strong> Tag",
-        "Customizing It With Font-Weight Property In CSS",
-        "All Answers Is Right"
-    ],
-    "CorrectAnswer": "All Answers Is Right",
-    "Degree": 10
-},
-{
-    "Header": "What Is The Right Hierarchy For Creating Part Of Page",
-    "Answers": [
-        "<h2> Then <p> Then <h1> Then <p> Then <h3> Then <p> Then <img>",
-        "<h1> Then <p> Then <h3> Then <p> Then <h2> Then <p> Then <img>",
-        "<h2> Then <p> Then <h3> Then <p> Then <h1> Then <p> Then <img>",
-        "All Solutions Is Wrong"
-    ],
-    "CorrectAnswer": "All Solutions Is Wrong",
-    "Degree": 10
-},
-{
-    "Header": "How Can We Include External Page Inside Our HTML Page",
-    "Answers": [
-        "By Using Include in HTML",
-        "By Using Load In HTML",
-        "By Using iFrame Tag",
-        "All Solutions Is Wrong"
-    ],
-    "CorrectAnswer": "By Using iFrame Tag",
-    "Degree": 10
-},
-{
-    "Header": "What Is The Tag That Not Exists in HTML",
-    "Answers": [
-        "<object>",
-        "<basefont>",
-        "<abbr>",
-        "All Tags Is Exists in HTML"
-    ],
-    "CorrectAnswer": "All Tags Is Exists in HTML",
-    "Degree": 10
-},
-{
-    "Header": "How We Specify Document Type Of HTML5 Page",
-    "Answers": [
-        "<DOCTYPE html>",
-        "<DOCTYPE html5>",
-        "<!DOCTYPE html5>",
-        "<!DOCTYPE html>"
-    ],
-    "CorrectAnswer": "<!DOCTYPE html>",
-    "Degree": 10
-},
-{
-    "Header": "What Is The Element Thats Not Exists in HTML5 Semantics",
-    "Answers": [
-        "<article>",
-        "<section>",
-        "<blockquote>",
-        "<aside>"
-    ],
-    "CorrectAnswer": "<blockquote>",
-    "Degree": 10
-},
-{
-    "Header": "In HTML Can We Use This Way To Add Attributes",
-    "Answers": [
-        "<div class='class-name'>",
-        "<div class=class-name>",
-        "<div class=\"class-name\">",
-        "All Is Right"
-    ],
-    "CorrectAnswer": "All Is Right",
-    "Degree": 10
-},
-{
-    "Header": "Which Standard value for charset meta tag",
-    "Answers": [
-        "UTF-6",
-        "ISO-32",
-        "UTF-8",
-        "TMT-86"
-    ],
-    "CorrectAnswer": "UTF-6",
-    "Degree": 10
-}
-]
+  
 
   role='student';
   secNum:number=1;
@@ -253,23 +143,16 @@ getquiz(){
   testSubmit(testForm:any){
 
     for (let index = 0; index < this.ques.length; index++) {
-      if (testForm.value.question1==this.ques[index].correct_answer) {
+      let k = index+1;
+      let j=`question${k}`;
+      console.log(Object.values(testForm.value.valueOf(j))[0]);
+      
+      if (Object.values(testForm.value.valueOf(j))[index]==this.ques[index].correct_answer) {
         this.score++;
       }
     }
 
-    // if (testForm.value.question1==this.ques[0].correct_answer) {
-    //   this.score++;
-    // }
-    // if (testForm.value.question2==this.ques[1].correct_answer) {
-    //   this.score++;
-    // }
-    // if (testForm.value.question3==this.ques[2].correct_answer) {
-    //   this.score++;
-    // }
-    // if (testForm.value.question4==this.ques[3].correct_answer) {
-    //   this.score++;
-    //  }
+   
     this.test=false;
     this.scoreView=true;
 

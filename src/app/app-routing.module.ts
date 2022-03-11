@@ -37,10 +37,10 @@ import { CreateTestComponent } from './create-test/create-test.component';
 
 
 const routes: Routes = [
-  { path: 'admin/dashboard', component: AdminDashboardComponent,canActivate:[AuthService] },
-  { path: 'admin/students', component: StudentsComponent,canActivate:[AuthService] },
-  { path: 'admin/instructors', component: AdminInstructorsComponent,canActivate:[AuthService]},
-  { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService] },
+  { path: 'admin/dashboard', component: AdminDashboardComponent,canActivate:[AuthService,AdminService] },
+  { path: 'admin/students', component: StudentsComponent,canActivate:[AuthService,AdminService] },
+  { path: 'admin/instructors', component: AdminInstructorsComponent,canActivate:[AuthService,AdminService]},
+  { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService,AdminService] },
   { path: 'test/create/:id', component: CreateTestComponent },
   // { path: 'instructor-account/:id', component: InstructorAccountComponent },
   { path: 'teachers', component: InstructorsComponent },
@@ -55,7 +55,7 @@ const routes: Routes = [
   {path:'courseInfo/:id',component:CourseInfoComponent
   ,canActivate:[AuthService]},
   {path:'update/:id',component:UpdatecourseComponent},
-  { path: 'course', component: CoursesComponent,canActivate:[AdminService]},
+  { path: 'course', component: CoursesComponent,canActivate:[AuthService]},
   {path:'my-courses/:id',component: MyCoursesComponent,canActivate:[AuthService]},
     { path: 'home', component: HomeComponent},
 
