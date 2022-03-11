@@ -22,7 +22,17 @@ export class StudentsComponent implements OnInit {
        // console.log(this.instructors[7].courseofinstructor[0].title)
       })
   }
-  delete(id:number){
-    return this.adminserve.deletestudent(id).subscribe(res=>alert(res))
+  message!:any
+  delete(id: number) {
+
+    if (confirm("Are You Sure?")) {
+      this.adminserve.deletestudent(id).subscribe(res => {
+        this.message = res
+      })
+    }
   }
+
+  refresh() {
+    window.location.reload()
+}
 }

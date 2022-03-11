@@ -112,7 +112,7 @@
 
               </div>
               <div *ngIf="ques.length>0" class="submitBtn">
-                <button type="submit">submit</button>
+                <button [disabled]="testForm.invalid" type="submit">submit</button>
               </div>
             </form>
           </div>

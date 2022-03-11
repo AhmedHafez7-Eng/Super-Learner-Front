@@ -6,8 +6,14 @@
 
   <div class="content-wrapper">
 
+    <div *ngIf='message' class="alert alert-info alert-dismissible fade show" role="alert">
+      {{message}} <strong>Successfully!</strong>
+      <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
     <section class="content">
       <div class="container-fluid">
+
         <div class="row">
           <div class="col-12">
 
@@ -49,8 +55,7 @@
                       <td>{{instructor.phone}}</td>
                       <td>{{instructor.address}}</td>
                       <td>
-                        <a class="btn btn-outline-danger" (click)='deleteinst(instructor?.id)'
-                          >Delete</a>
+                        <a class="btn btn-outline-danger" (click)='deleteinst(instructor?.id)'>Delete</a>
                       </td>
                     </tr>
                   </tbody>

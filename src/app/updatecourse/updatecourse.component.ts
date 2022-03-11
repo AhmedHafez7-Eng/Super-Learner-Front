@@ -43,5 +43,9 @@ export class UpdatecourseComponent implements OnInit {
      }
      getcourse(){this.instserve.getcourse(this.course_id).subscribe(res=>{
       this.onecourse=res
-     })}
+     })
+     }
+  refresh() {
+    window.location.reload();
+  }
 }
