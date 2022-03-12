@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/service/admin.service';
 import { InstructorserviceService } from 'src/app/service/instructorservice.service';
+import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-admin-instructors',
   templateUrl: './admin-instructors.component.html',
@@ -10,9 +11,10 @@ export class AdminInstructorsComponent implements OnInit {
 
   instructors!: any
 
-  constructor(private instserve:InstructorserviceService,private adminserve:AdminService) { }
+  constructor(private userService: UserService,private instserve:InstructorserviceService,private adminserve:AdminService) { }
 
   ngOnInit(): void {
+    this.userService.blnDisplayMenu=false
     this.getallInstructors()
   }
   getallInstructors(){

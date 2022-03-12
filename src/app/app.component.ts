@@ -13,6 +13,7 @@ export class AppComponent {
   // checkval=0
   loggedIn!:any
   router!: string;
+  blnDisplayMenu!:boolean
    constructor(private _router: Router,private userService: UserService,private activeroute:Router) {
   }
   ngOnInit(): void {
@@ -28,6 +29,9 @@ export class AppComponent {
   
     
    }
+   ngDoCheck() {        
+    this.blnDisplayMenu = this.userService.blnDisplayMenu;        
+    }
   
 
   // logout(): void {

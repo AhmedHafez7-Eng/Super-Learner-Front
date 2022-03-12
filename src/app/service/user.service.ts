@@ -10,9 +10,10 @@ import { environment } from "src/environments/environment";
 })
 export class UserService {
 user?:any
+blnDisplayMenu!:boolean
 private loggedChanged = new Subject<boolean>();
 private loggedChanged2! :boolean
-  constructor(private httpclient:HttpClient) { }
+  constructor(private httpclient:HttpClient) { this.blnDisplayMenu = true; }
 
   login(token: any): void {
 
