@@ -1,0 +1,43 @@
+<div class="container">
+  <div *ngIf='message' class="alert alert-success alert-dismissible fade show" role="alert">
+    {{message}} <strong>Successfully!</strong>
+    <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="row formRow">
+
+    <div class="col-12 mt-5 sectionTitleContainer">
+      <h2 class="sectionTitle">Create a Post For Your Students</h2>
+    </div>
+
+    <div class='col-12'>
+      <form (ngSubmit)='addPost()' class="row formStyle" #addpostForm='ngForm'>
+        <div class="col-12 col-md-6 col-lg-6">
+          <label for="inputState" class="form-label">Course name</label>
+          <select required [(ngModel)]="newPost.course_id" #selectCourse="ngModel" name="courseSelect"
+            [(ngModel)]="selectedCourse" id="inputState" class="form-select">
+            <option disabled selected>Select course...</option>
+            <option value="{{course.id}}" *ngFor="let course of data;index as i">{{course.title}}</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+          <label for="inputTitle" class="form-label">Post Title</label>
+          <input required [(ngModel)]="newPost.title" #testName="ngModel" type="text" class="form-control" id="title"
+            name="title" min="2" max="70" placeholder="New Post Title">
+          <div class="alert alert-danger" *ngIf="testName.touched &&  !testName.valid">title is required</div>
+        </div>
+
+        <div class="col-12">
+          <label for="inputBody" class="form-label">Post Body</label>
+
+          <textarea required [(ngModel)]="newPost.body" #body="ngModel" class="form-control" name="body" id="body"
+            cols="30" rows="10" placeholder="Hello Dears, ...."></textarea>
+
+          <div class="alert alert-danger" *ngIf="body.touched &&  !body.valid">body is required</div>
+        </div>
+        <div class="col-12">
+          <button [disabled]='addpostForm.invalid' type="submit">Post</button>
+        </div>
+      </form>
+    </div>
+
+  </div>

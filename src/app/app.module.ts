@@ -42,6 +42,7 @@ import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.compo
 import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instructors.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { CreateTestComponent } from './create-test/create-test.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 
 
@@ -84,6 +85,7 @@ import { CreateTestComponent } from './create-test/create-test.component';
     AdminInstructorsComponent,
     AddcourseComponent,
     CreateTestComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
