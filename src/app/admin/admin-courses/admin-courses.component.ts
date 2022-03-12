@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseserveService } from 'src/app/service/courseserve.service';
 import { AdminService } from 'src/app/service/admin.service';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-admin-courses',
   templateUrl: './admin-courses.component.html',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AdminCoursesComponent implements OnInit {
   courses!: any
-  constructor(private httpserve:CourseserveService,private adminserve:AdminService, private activeroute:Router) { }
+  constructor(private userService: UserService,private httpserve:CourseserveService,private adminserve:AdminService, private activeroute:Router) { }
 
   ngOnInit(): void {
+    this.userService.blnDisplayMenu=false
     this.getallcourses()
   }
   getallcourses(){
