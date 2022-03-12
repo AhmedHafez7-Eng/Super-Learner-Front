@@ -4,7 +4,7 @@ nav {
   background-color: #131418;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
   display: flex;
-  /* position: fixed; */
+  position: relative;
   align-items: center;
   z-index: 10;
 }
@@ -113,7 +113,7 @@ nav {
 /*Stying for small screens*/
 @media screen and (max-width: 991px) {
   nav {
-    position: fixed;
+    /* position: fixed; */
     z-index: 3;
   }
 
@@ -133,7 +133,7 @@ nav {
     background: #131418;
     height: 400px;
     /* overflow-y: scroll; */
-    top: 0;
+    top: -100px;
     width: 100%;
     flex-direction: column;
     clip-path: circle(50px at 90% -20%);

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid section">
   <div class="row">
     <!-- <div class="col-3 side bg-light" [style.top.px]="height" #side (scroll)="onWindowScroll(side)"> -->
     <div class="col-12 col-md-4 col-lg-3 side">
@@ -27,6 +27,15 @@
         <div class="tests" *ngFor='let quiz of test_course'>
           <div (click)="testClicked(quiz.id)" class="sideTab">
             {{quiz.title}}
+          </div>
+        </div>
+
+        <div class="sectionTitle">
+          <h2>Course Posts</h2>
+        </div>
+        <div class="posts">
+          <div class="sideTab" (click)="getpost()">
+            Posts
           </div>
         </div>
       </div>
@@ -118,6 +127,34 @@
           <h1>your score is {{score*(testInfo.max_score / ques.length)}}/{{testInfo.max_score}}</h1>
           <div class="submitBtn">
             <button routerLink="/course">Check More Courses</button>
+          </div>
+        </div>
+
+
+
+        <div *ngIf="postView" class="wrapper row">
+          <div *ngIf="post_course.length<=0" class="alert alert-info" role="alert">
+            <h2 class="alert-heading">Hello Dear Student!</h2>
+            <p>There're No Posts for <strong>{{post_course.course_of_post.title}}</strong> yet.</p>
+            <hr>
+            <p class="mb-0"><strong>Browse it Later!</strong>, When Your Instructor Publish New Posts
+            </p>
+          </div>
+          <div class="blog_post col-12" *ngFor="let post of post_course; let i = index">
+            <div class="postHeader">
+              <div class="img_pod">
+                <img src="http://127.0.0.1:8000/userImg/{{post.instructor_of_post.profile_pic}}" alt="Instructor image">
+              </div>
+              <h3>{{post.created_at}}</h3>
+            </div>
+            <div class="postInfo">
+              <h1>{{post.title}}</h1>
+              <p>{{post.body}}</p>
+            </div>
+            <div class="postFooter">
+              <h3>Instructor/ {{post.instructor_of_post.fname}} {{post.instructor_of_post.lname}}</h3>
+              <h4>Course Name/ {{post.course_of_post.title}}</h4>
+            </div>
           </div>
         </div>
       </div>

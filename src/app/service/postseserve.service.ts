@@ -12,4 +12,7 @@ export class PostseserveService {
   addpost(data:post){
     return this.posthttp.post<any>(`${environment.baseUrl}posts`,data)
   }
+  getpost(course_id:number){
+    return this.posthttp.get(`${environment.baseUrl}posts/${course_id}`)
+  }
 }

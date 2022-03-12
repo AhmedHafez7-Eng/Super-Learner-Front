@@ -1,24 +1,24 @@
-<header class="top-navbar">
-  <nav>
-    <div class="logo">
-      <img src="../../../assets/images/logo.png" alt="Logo Image">
-    </div>
-    <div class="hamburger" (click)="toggleClass()" [class.toggle]="toggle">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-    <ul class="nav-links" [class.open]="open">
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/aboutUs">About Us</a></li>
-      <li><a routerLink="/course">Courses</a></li>
-      <li><a routerLink="/my-courses/{{user?.id}}">My Courses</a></li>
-      <li><a routerLink="/teachers">Teachers</a></li>
-      <li *ngIf="!loggedIn"><button class="first-button" routerLink="/login">Login</button></li>
-      <li *ngIf="!loggedIn"><button class="second-button" routerLink="/register">Register</button></li>
-      <li *ngIf="loggedIn"><button class="first-button" routerLink="/loggedout" (click)="logout()">Log Out</button></li>
-      <li *ngIf="loggedIn"><button class="second-button" routerLink="/profile">{{user?.fname}} {{user?.lname}}</button>
-      </li>
-    </ul>
-  </nav>
-</header>
+<!-- <header class="top-navbar"> -->
+<nav>
+  <div class="logo">
+    <img src="../../../assets/images/logo.png" alt="Logo Image">
+  </div>
+  <div class="hamburger" (click)="toggleClass()" [class.toggle]="toggle">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+  <ul class="nav-links" [class.open]="open">
+    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/aboutUs">About Us</a></li>
+    <li><a routerLink="/course">Courses</a></li>
+    <li><a routerLink="/my-courses/{{user?.id}}">My Courses</a></li>
+    <li><a routerLink="/teachers">Teachers</a></li>
+    <li *ngIf="!loggedIn"><button class="first-button" routerLink="/login">Login</button></li>
+    <li *ngIf="!loggedIn"><button class="second-button" routerLink="/register">Register</button></li>
+    <li *ngIf="loggedIn"><button class="first-button" routerLink="/loggedout" (click)="logout()">Log Out</button></li>
+    <li *ngIf="loggedIn"><button class="second-button" routerLink="/profile">{{user?.fname}} {{user?.lname}}</button>
+    </li>
+  </ul>
+</nav>
+<!-- </header> -->

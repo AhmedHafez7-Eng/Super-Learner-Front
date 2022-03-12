@@ -3,7 +3,9 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { section } from '../models/section.model';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { TestseserveService } from '../service/testseserve.service';
+import { PostseserveService } from '../service/postseserve.service';
 import { test } from '../models/test.model';
+import { post } from '../models/post.model';
 @Component({
   selector: 'app-course-content',
   templateUrl: './course-content.component.html',
@@ -11,20 +13,45 @@ import { test } from '../models/test.model';
 })
 export class CourseContentComponent implements OnInit {
   height: number = 72;
-  constructor(private activeroute:ActivatedRoute,private testhttp:TestseserveService) { }
+  constructor(private activeroute:ActivatedRoute,private testhttp:TestseserveService,private posthttp:PostseserveService) { }
  course_id:number=(this.activeroute.snapshot.params['id']) as number;
 test_course!:any
+post_course!:any
   ngOnInit(): void {
     this.getquiz()
   }
-getquiz(){
+
+  postView:boolean=false;
+  getquiz() {
   this.testhttp.gettest(this.course_id).subscribe((res)=>{
     console.log(res)
     this.test_course=res})
-
 }
 
 
+  getpost() {
+    if (!this.postView) {
+      this.scoreView = false;
+      this.test = false;
+      this.secNum=0;
+      this.postView=true;}
+  this.posthttp.getpost(this.course_id).subscribe((res)=>{
+    console.log(res)
+    this.post_course=res})
+}
+
+// posts!: any
+// postInfo!:any
+// postClicked(post_id:number){
+//     this.posthttp.getquestions(post_id).subscribe((res)=>{
+//       console.log(res)
+//       this.ques = res
+//     })
+
+//     this.posthttp.getTestInfo(post_id).subscribe((res)=>{
+//       console.log(res)
+//       this.testInfo=res})
+// }
 
 
 
@@ -101,28 +128,35 @@ getquiz(){
   section1Clicked(){
     this.secNum=1;
     this.test=false;
+    this.postView = false;
   }
   section2Clicked(){
     this.secNum=2;
     this.test=false;
+    this.postView = false;
   }
   section3Clicked(){
     this.secNum=3;
     this.test=false;
+    this.postView = false;
   }
   section4Clicked(){
     this.secNum=4;
     this.test=false;
+    this.postView = false;
   }
   section5Clicked(){
     this.secNum=5;
     this.test=false;
+    this.postView = false;
   }
+
   ques!: any
   testInfo!:any
   testClicked(test_id:number){
     if (!this.scoreView) {
-      this.secNum=0;
+      this.secNum = 0;
+      this.postView = false;
       this.test=true;}
       this.testhttp.getquestions(test_id).subscribe((res)=>{
         console.log(res)
@@ -132,7 +166,6 @@ getquiz(){
       this.testhttp.getTestInfo(test_id).subscribe((res)=>{
         console.log(res)
         this.testInfo=res})
-
   }
 
   form = new FormGroup({
