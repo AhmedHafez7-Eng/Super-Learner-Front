@@ -31,6 +31,7 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
 import { AdminService } from './service/guard/admin.service'
 import { CreateTestComponent } from './create-test/create-test.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { FeedBackFormComponent } from './feed-back-form/feed-back-form.component';
 
 //import { LoginFormComponent } from './login-form/login-form.component';
 
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'admin/courses', component: AdminCoursesComponent,canActivate:[AuthService,AdminService] },
   { path: 'test/create/:id', component: CreateTestComponent ,canActivate:[AuthService]},
   { path: 'post/create/:id', component: CreatePostComponent ,canActivate:[AuthService]},
+  { path: 'feedback/:id', component: FeedBackFormComponent ,canActivate:[AuthService]},
   // { path: 'instructor-account/:id', component: InstructorAccountComponent },
   // { path: 'teachers', component: InstructorsComponent },
   { path: 'course-content/:id', component: CourseContentComponent ,canActivate:[AuthService]},
