@@ -1,0 +1,39 @@
+<div class="container">
+  <div *ngIf='mess' class="alert alert-success alert-dismissible fade show" role="alert">
+    {{mess}} <strong>Successfully!</strong>
+    <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="row formRow">
+
+    <div class="col-12 mt-5 sectionTitleContainer">
+      <h2 class="sectionTitle">Create a Post For Your Students</h2>
+    </div>
+
+    <div class='col-12'>
+      <form (ngSubmit)='addFeedback()' class="row formStyle" #addfeedbackForm='ngForm'>
+        <div class="col-12 col-md-6 col-lg-6">
+          <label for="inputState" class="form-label">Course name</label>
+          <select required [(ngModel)]="newFeedback.course_id" #selectCourse="ngModel" name="courseSelect"
+            id="inputState" class="form-select">
+            <option disabled selected>Select course...</option>
+            <option value="{{course.course_instance.id}}" *ngFor="let course of data;index as i">
+              {{course.course_instance.title}}</option>
+          </select>
+        </div>
+
+
+        <div class="col-12">
+          <label for="inputFeedback" class="form-label">Feedback Body</label>
+
+          <textarea required [(ngModel)]="newFeedback.feedback" #feedback="ngModel" class="form-control" name="feedback"
+            id="inputFeedback" cols="30" rows="10" placeholder="Hello Dears, ...."></textarea>
+
+          <div class="alert alert-danger" *ngIf="feedback.touched &&  !feedback.valid">Feedback is required</div>
+        </div>
+        <div class="col-12">
+          <button [disabled]='addfeedbackForm.invalid' type="submit">Send Feedback</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
