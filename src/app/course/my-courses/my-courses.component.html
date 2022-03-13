@@ -1,9 +1,24 @@
-<div class="addCourse" *ngIf='user?.role=="instructor"'>
+<div class="leftFixedBtn" *ngIf='user?.role=="instructor"'>
   <a routerLink='/addcourse/{{user?.id}}'>
     <i class="fas fa-plus fa-2x"></i>
   </a>
   <span class="tooltiptext">Add New Course</span>
 </div>
+
+<div class="leftFixedBtn" *ngIf='user?.role=="instructor"'>
+  <a routerLink='/test/create/{{user?.id}}'>
+    <i class="fa fa-book fa-2x"></i>
+  </a>
+  <span class="tooltiptext">Create New Test</span>
+</div>
+
+<div class="leftFixedBtn" *ngIf='user?.role=="instructor"'>
+  <a routerLink='/post/create/{{user?.id}}'>
+    <i class="fa fa-commenting fa-2x"></i>
+  </a>
+  <span class="tooltiptext">Publish New Post</span>
+</div>
+
 <div class="container section">
   <!-- <div class="my-5"> -->
 
