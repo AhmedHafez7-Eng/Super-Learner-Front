@@ -8,13 +8,13 @@ import { FirstSectionComponent } from './course/first-section/first-section.comp
 import { CourseCardComponent } from './course/course-card/course-card.component';
 import { LastSectionComponent } from './course/last-section/last-section.component';
 import { HomeComponent } from './home/home/home.component';
-import {AboutFirstSecComponent} from './aboutUS/about-first-sec/about-first-sec.component';
+import { AboutFirstSecComponent } from './aboutUS/about-first-sec/about-first-sec.component';
 import { AboutsecSecComponent } from './aboutUS/aboutsec-sec/aboutsec-sec.component';
 import { AboutThirdSecComponent } from './aboutUS/about-third-sec/about-third-sec.component';
 import { AboutFourthSecComponent } from './aboutUS/about-fourth-sec/about-fourth-sec.component';
 import { RouterModule, ROUTES } from '@angular/router';
-import {FooterComponent} from './layouts/footer/footer.component'
-import {HeaderComponent} from './layouts/header/header.component'
+import { FooterComponent } from './layouts/footer/footer.component';
+import { HeaderComponent } from './layouts/header/header.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { InstructorListComponent } from './instructor-list/instructor-list.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
@@ -22,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InstructorsComponent } from './instructors/instructors.component';
 import { RegisterComponent } from './register/register.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { CourseInfoComponent } from './course-info/course-info.component';
 import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { MyCoursesComponent } from './course/my-courses/my-courses.component';
@@ -43,8 +43,7 @@ import { AdminInstructorsComponent } from './admin/admin-instructors/admin-instr
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { CreateTestComponent } from './create-test/create-test.component';
 import { CreatePostComponent } from './create-post/create-post.component';
-
-
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +85,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
     AddcourseComponent,
     CreateTestComponent,
     CreatePostComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,15 +94,14 @@ import { CreatePostComponent } from './create-post/create-post.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     // instructor
     //  MatFormFieldModule,
     // MatDatepickerModule,
     // MatInputModule,
     // MatNativeDateModule,
-
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
