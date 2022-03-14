@@ -51,7 +51,7 @@ userlogin():Observable<{user:instructor}>{
   const headers = new HttpHeaders({
     Authorization: `Bearer ${localStorage.getItem('token')}`
   });
- return this.httpclient.get<{user:instructor}>('http://localhost:8000/api/user', {headers})}
+ return this.httpclient.get<{user:instructor}>(`${environment.baseUrl}user`, {headers})}
   // .subscribe(
   //   (result) => {this.user = result
   //     return result
