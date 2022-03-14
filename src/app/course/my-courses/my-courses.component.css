@@ -10,7 +10,7 @@
 }
 
 
-.addCourse {
+.leftFixedBtn {
   position: fixed;
   top: 200px;
   left: 0;
@@ -20,11 +20,19 @@
   z-index: 9999999999999999999999999;
 }
 
-.addCourse a {
+.leftFixedBtn:nth-child(2){
+  top: 270px;
+}
+
+.leftFixedBtn:nth-child(3){
+  top: 340px;
+}
+
+.leftFixedBtn a {
   color: #53d2f2;
 }
 
-.addCourse .tooltiptext {
+.leftFixedBtn .tooltiptext {
   visibility: hidden;
   width: 120px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -43,7 +51,7 @@
   font-weight: bold;
 }
 
-.addCourse .tooltiptext::after {
+.leftFixedBtn .tooltiptext::after {
   content: "";
   position: absolute;
   top: 34%;
@@ -54,7 +62,7 @@
   border-color: transparent #FFF transparent transparent;
 }
 
-.addCourse:hover .tooltiptext {
+.leftFixedBtn:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }

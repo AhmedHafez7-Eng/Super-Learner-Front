@@ -60,7 +60,4 @@ export class UserService {
       data
     );
   }
-  ifenroll(ids: object) {
-    return this.httpclient.post(`${environment.baseUrl}ifenrolle`, ids);
-  }
 }

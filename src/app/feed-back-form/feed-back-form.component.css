@@ -1,0 +1,40 @@
+.formRow.row {
+  gap: 10px 20px;
+  margin-bottom: 30px;
+  padding: 15px;
+}
+
+.sectionTitleContainer {
+  margin: 0;
+  padding: 0;
+}
+
+.sectionTitle {
+  color: #4babb1;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+}
+
+form.formStyle {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  color: #4babb1;
+  text-transform: capitalize;
+  gap: 20px 0;
+}
+
+
+form.formStyle button {
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background: #4babb1;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 5px;
+}
+
+.alert {
+  margin-top: 30px;
+}

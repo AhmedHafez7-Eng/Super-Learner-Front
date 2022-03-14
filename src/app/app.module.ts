@@ -44,6 +44,7 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
 import { CreateTestComponent } from './create-test/create-test.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FeedBackFormComponent } from './feed-back-form/feed-back-form.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { ProfileComponent } from './profile/profile.component';
     CreateTestComponent,
     CreatePostComponent,
     ProfileComponent,
+    FeedBackFormComponent,
   ],
   imports: [
     BrowserModule,
