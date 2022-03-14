@@ -60,4 +60,20 @@ export class UserService {
       data
     );
   }
+  // .subscribe(
+  //   (result) => {this.user = result
+  //     return result
+  //     // console.log(this.user)
+  //     // this.userService.whologin(this.user)
+  //     // this.activeroute.navigateByUrl('/home')
+  //   }
+  // error => {
+  //   this.userService.logout();
+  //   this.activeroute.navigate(['/login']);
+  // }
+  //);
+  //console.log(this.user)}
+  ifenroll(ids: object) {
+    return this.httpclient.post(`${environment.baseUrl}ifenrolle`, ids);
+  }
 }
