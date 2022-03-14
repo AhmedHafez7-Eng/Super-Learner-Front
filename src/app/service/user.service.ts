@@ -50,7 +50,7 @@ export class UserService {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
     return this.httpclient.get<{ user: instructor }>(
-      'http://localhost:8000/api/user',
+      `${environment.baseUrl}user`,
       { headers }
     );
   }

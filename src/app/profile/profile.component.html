@@ -1,204 +1,108 @@
 <!-- <app-header></app-header> -->
 <div class="container section">
-  <div
-    *ngIf="mess"
-    class="alert alert-success alert-dismissible fade show"
-    role="alert"
-  >
+  <div *ngIf="mess" class="alert alert-success alert-dismissible fade show" role="alert">
     {{ mess }} <strong>Successfully!</strong>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="alert"
-      aria-label="Close"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-  <form
-    class="formBx row"
-    (ngSubmit)="update()"
-    enctype="multipart/form-data"
-    #f="ngForm"
-  >
-    <div class="form-group col-12 col-md-6 col-lg-6">
-      <label for="firstName">First name</label>
-      <input
-        ngModel
-        minlength="3"
-        maxlength="10"
-        #firstName="ngModel"
-        class="form-control"
-        type="text"
-        name="fname"
-        id="firstName"
-        [(ngModel)]="user.fname"
-        value="{{ ReturnData?.fname }}"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="firstName.touched && !firstName.valid"
-      >
-        First name is required
-      </div>
-      <div
-        class="alert alert-danger"
-        *ngIf="firstName.touched &&firstName.errors?.['minlength']"
-      >
-        First name must be more than 3 chars
-      </div>
-      <div
-        class="alert alert-danger"
-        *ngIf="firstName.touched &&firstName.errors?.['maxlength']"
-      >
-        First name must be less than 10 chars
-      </div>
+
+
+  <div class="row formRow">
+
+    <div class="col-12 sectionTitleContainer">
+      <h2 class="sectionTitle">Create a Post For Your Students</h2>
     </div>
-    <div class="form-group col-12 col-md-6 col-lg-6">
-      <label for="lastName">Last name</label>
-      <input
-        ngModel
-        minlength="3"
-        maxlength="10"
-        #lastName="ngModel"
-        class="form-control"
-        type="text"
-        name="lname"
-        id="lastName"
-        [(ngModel)]="user.lname"
-        value="{{ ReturnData?.lname }}"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="lastName.touched && !lastName.valid"
-      >
-        Last name is required
-      </div>
-      <div
-        class="alert alert-danger"
-        *ngIf="lastName.touched &&lastName.errors?.['minlength']"
-      >
-        Last name must be more than 3 chars
-      </div>
-      <div
-        class="alert alert-danger"
-        *ngIf="lastName.touched &&lastName.errors?.['maxlength']"
-      >
-        Last name must be less than 10 chars
-      </div>
+
+    <div class='col-12'>
+
+      <form class="row formStyle" (ngSubmit)="update()" enctype="multipart/form-data" #f="ngForm">
+        <div class="form-group col-12 col-md-6 col-lg-6">
+          <label for="firstName">First name</label>
+          <input ngModel minlength="3" maxlength="10" #firstName="ngModel" class="form-control" type="text" name="fname"
+            id="firstName" [(ngModel)]="user.fname" value="{{ ReturnData?.fname }}" />
+          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            First name is required
+          </div>
+          <div class="alert alert-danger" *ngIf="firstName.touched &&firstName.errors?.['minlength']">
+            First name must be more than 3 chars
+          </div>
+          <div class="alert alert-danger" *ngIf="firstName.touched &&firstName.errors?.['maxlength']">
+            First name must be less than 10 chars
+          </div>
+        </div>
+        <div class="form-group col-12 col-md-6 col-lg-6">
+          <label for="lastName">Last name</label>
+          <input ngModel minlength="3" maxlength="10" #lastName="ngModel" class="form-control" type="text" name="lname"
+            id="lastName" [(ngModel)]="user.lname" value="{{ ReturnData?.lname }}" />
+          <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+            Last name is required
+          </div>
+          <div class="alert alert-danger" *ngIf="lastName.touched &&lastName.errors?.['minlength']">
+            Last name must be more than 3 chars
+          </div>
+          <div class="alert alert-danger" *ngIf="lastName.touched &&lastName.errors?.['maxlength']">
+            Last name must be less than 10 chars
+          </div>
+        </div>
+        <div class="form-group col-12 col-md-6 col-lg-6">
+          <label for="mail">E-mail</label>
+          <input ngModel #email="ngModel" [pattern]="emailPattern" class="form-control" type="email" name="email"
+            id="mail" [(ngModel)]="user.email" value="{{ ReturnData?.email }}" />
+          <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['required']">
+            E-mail is required
+          </div>
+          <div class="alert alert-danger" *ngIf="email.errors?.['pattern']">
+            Please enter a valid E-mail Address
+          </div>
+        </div>
+        <div class="form-group col-12 col-md-6 col-lg-6">
+          <label for="password">password</label>
+          <input class="form-control" ngModel #password="ngModel" (change)="log(password)" [pattern]="passPattern"
+            type="password" name="password" id="password" />
+          <div class="alert alert-danger" *ngIf="password.touched && password.errors?.['required']">
+            Password is required
+          </div>
+          <div class="alert alert-danger" *ngIf="password.errors?.['pattern']">
+            Please enter a valid Password
+          </div>
+        </div>
+        <div class="form-group col-12 col-md-6 col-lg-6">
+          <label for="confirmPassword">confirm password</label>
+          <input class="form-control" ngModel #passwordConfirm="ngModel" (change)="log1(passwordConfirm)"
+            type="password" name="confirmPassword" id="confirmPassword" />
+          <div class="alert alert-danger" *ngIf="passwordConfirm.touched && passwordConfirm.errors?.['required']">
+            Password confirmation is required
+          </div>
+          <div class="alert alert-danger" *ngIf="pass != passConf">
+            Passwords doesn't match
+          </div>
+        </div>
+        <div class="form-group col-12 col-md-6 col-lg-6">
+          <label for="phone">Phone</label>
+          <input class="form-control" type="text" pattern="^[0-9]*$" ngModel #phone="ngModel" minlength="11"
+            name="phone" id="phone" [(ngModel)]="user.phone" value="{{ ReturnData?.phone }}" />
+          <div class="alert alert-danger" *ngIf="phone.touched && phone.errors?.['required']">
+            Phone number is required
+          </div>
+          <div class="alert alert-danger" *ngIf="phone.errors?.['pattern']">
+            Only numbers allowed
+          </div>
+          <div class="alert alert-danger" *ngIf="phone.errors?.['minlength']">
+            Phone number must be atleast 11 numbers
+          </div>
+        </div>
+        <div class="form-group col-12 col-md-6 col-lg-6">
+          <label for="address">Address</label>
+          <input class="form-control" type="text" ngModel #address="ngModel" name="address" id="address"
+            [(ngModel)]="user.address" value="{{ ReturnData?.address }}" />
+          <div class="alert alert-danger" *ngIf="address.touched && address.errors?.['required']">
+            Address is required
+          </div>
+        </div>
+        <div class="col-12">
+          <button [disabled]="f.invalid">Update</button>
+        </div>
+      </form>
+
     </div>
-    <div class="form-group col-12 col-md-6 col-lg-6">
-      <label for="mail">E-mail</label>
-      <input
-        ngModel
-        #email="ngModel"
-        [pattern]="emailPattern"
-        class="form-control"
-        type="email"
-        name="email"
-        id="mail"
-        [(ngModel)]="user.email"
-        value="{{ ReturnData?.email }}"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="email.touched && email.errors?.['required']"
-      >
-        E-mail is required
-      </div>
-      <div class="alert alert-danger" *ngIf="email.errors?.['pattern']">
-        Please enter a valid E-mail Address
-      </div>
-    </div>
-    <div class="form-group col-12 col-md-6 col-lg-6">
-      <label for="password">password</label>
-      <input
-        class="form-control"
-        ngModel
-        #password="ngModel"
-        (change)="log(password)"
-        [pattern]="passPattern"
-        type="password"
-        name="password"
-        id="password"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="password.touched && password.errors?.['required']"
-      >
-        Password is required
-      </div>
-      <div class="alert alert-danger" *ngIf="password.errors?.['pattern']">
-        Please enter a valid Password
-      </div>
-    </div>
-    <div class="form-group col-12 col-md-6 col-lg-6">
-      <label for="confirmPassword">confirm password</label>
-      <input
-        class="form-control"
-        ngModel
-        #passwordConfirm="ngModel"
-        (change)="log1(passwordConfirm)"
-        type="password"
-        name="confirmPassword"
-        id="confirmPassword"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="passwordConfirm.touched && passwordConfirm.errors?.['required']"
-      >
-        Password confirmation is required
-      </div>
-      <div class="alert alert-danger" *ngIf="pass != passConf">
-        Passwords doesn't match
-      </div>
-    </div>
-    <div class="form-group col-12 col-md-6 col-lg-6">
-      <label for="phone">Phone</label>
-      <input
-        class="form-control"
-        type="text"
-        pattern="^[0-9]*$"
-        ngModel
-        #phone="ngModel"
-        minlength="11"
-        name="phone"
-        id="phone"
-        [(ngModel)]="user.phone"
-        value="{{ ReturnData?.phone }}"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="phone.touched && phone.errors?.['required']"
-      >
-        Phone number is required
-      </div>
-      <div class="alert alert-danger" *ngIf="phone.errors?.['pattern']">
-        Only numbers allowed
-      </div>
-      <div class="alert alert-danger" *ngIf="phone.errors?.['minlength']">
-        Phone number must be atleast 11 numbers
-      </div>
-    </div>
-    <div class="form-group col-12 col-md-6 col-lg-6">
-      <label for="address">Address</label>
-      <input
-        class="form-control"
-        type="text"
-        ngModel
-        #address="ngModel"
-        name="address"
-        id="address"
-        [(ngModel)]="user.address"
-        value="{{ ReturnData?.address }}"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="address.touched && address.errors?.['required']"
-      >
-        Address is required
-      </div>
-    </div>
-    <div class="col-12">
-      <button [disabled]="f.invalid">Update</button>
-    </div>
-  </form>
+  </div>
 </div>

@@ -50,7 +50,8 @@ export class ProfileComponent implements OnInit {
       // data = res;
       // console.log(data);
 
-      this.activeroute.navigate(['/home']);
+      this._userSer.logout();
+      this.activeroute.navigate(['/login']);
     });
   }
 

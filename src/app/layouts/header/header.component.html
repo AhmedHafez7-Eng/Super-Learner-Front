@@ -17,7 +17,8 @@
     <li *ngIf="!loggedIn"><button class="first-button" routerLink="/login">Login</button></li>
     <li *ngIf="!loggedIn"><button class="second-button" routerLink="/register">Register</button></li>
     <li *ngIf="loggedIn"><button class="first-button" routerLink="/loggedout" (click)="logout()">Log Out</button></li>
-    <li *ngIf="loggedIn"><button class="second-button" routerLink="/profile">{{user?.fname}} {{user?.lname}}</button>
+    <li *ngIf="loggedIn"><button class="second-button" routerLink="/profile/{{user?.id}}">{{user?.fname}}
+        {{user?.lname}}</button>
     </li>
   </ul>
 </nav>
