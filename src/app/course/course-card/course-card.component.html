@@ -9,6 +9,7 @@
         <h2>
           <button *ngIf='user?.role=="instructor"|| user?.role=="admin"' class="btn btn-info"
             routerLink="/course-content/{{coursesfrompare.id}}" title="">{{coursesfrompare.title}}</button>
+
           <button *ngIf='user?.role=="student"' class="btn btn-info" (click)='ifenroll()'
             title="">{{coursesfrompare.title}}</button>
         </h2>

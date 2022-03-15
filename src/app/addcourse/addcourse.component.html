@@ -1,6 +1,6 @@
 <div class="container">
   <div *ngIf='mess' class="alert alert-success alert-dismissible fade show" role="alert">
-    {{mess}} <strong>Successfully!</strong>
+    {{mess.message}} <strong>Successfully!</strong>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
@@ -22,18 +22,23 @@
       <label for="password">Max-score</label>
       <input class="form-control" type="text" name="max_score" required [(ngModel)]=course.max_score>
     </div>
-    <!-- <div class="mb-3">
-      <label for="course_img" class="form-label">Choose course image</label>
-      <input name="course_img" class="form-control" type="file" id="course_img" [(ngModel)]=course.course_img
-        (change)="selectedFile($event)">
-    </div> -->
-    <button type="submit" [disabled]='f.invalid'>add</button>
+    
+    
+    <form class="my-3"  method="post" enctype="multipart/form-data">
+
+      <div class="mb-3">
+          <label for="course_img" class="form-label">Choose course image</label>
+          <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
+      </div>
+  
+      <!-- <button class="btn btn-primary" type="submit">upload image</button> -->
+  </form>
 
 
-
-
+  <button type="submit" [disabled]='f.invalid'>add</button>
 
 
   </form>
+  
 
 </div>
