@@ -25,8 +25,12 @@ add(){
 
   console.log(this.course)
   this.courseserve.add(this.course).subscribe(res=>{console.log(res);
-    this.mess=(res)}
-    )}
+    this.mess=(res)
+    this.uploadimg()
+  }
+    )
+   
+  }
 selectedFile(e:any){
   this.selectedfile= <File> e.target.files[0]
     console.log(this.selectedfile)

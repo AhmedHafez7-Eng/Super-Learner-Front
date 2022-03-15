@@ -23,22 +23,22 @@
       <input class="form-control" type="text" name="max_score" required [(ngModel)]=course.max_score>
     </div>
     
-    <button type="submit" [disabled]='f.invalid'>add</button>
+    
+    <form class="my-3"  method="post" enctype="multipart/form-data">
+
+      <div class="mb-3">
+          <label for="course_img" class="form-label">Choose course image</label>
+          <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
+      </div>
+  
+      <!-- <button class="btn btn-primary" type="submit">upload image</button> -->
+  </form>
 
 
-
-
+  <button type="submit" [disabled]='f.invalid'>add</button>
 
 
   </form>
-  <form class="my-3" (ngSubmit)='uploadimg()' method="post" enctype="multipart/form-data">
-
-    <div class="mb-3">
-        <label for="course_img" class="form-label">Choose course image</label>
-        <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
-    </div>
-
-    <button class="btn btn-primary" type="submit">upload image</button>
-</form>
+  
 
 </div>

@@ -78,10 +78,15 @@
 
       </select>
     </div>
-    <!-- <div class="mb-3">
-      <label for="course_img" class="form-label">Choose course image</label>
-      <input name="profile_pic" class="form-control" type="file" id="course_img" [(ngModel)]='instructor.profile_pic' (change)="selectedFile($event)">
-  </div> -->
+    <form class="my-3"  method="post" enctype="multipart/form-data">
+
+      <div class="mb-3">
+          <label for="course_img" class="form-label">Choose course image</label>
+          <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
+      </div>
+
+      <!-- <button class="btn btn-primary" type="submit">update image</button> -->
+  </form>
     <div class="col-12">
       <button [disabled]='f.invalid'>Register</button>
     </div>

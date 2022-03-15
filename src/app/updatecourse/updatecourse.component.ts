@@ -38,6 +38,7 @@ export class UpdatecourseComponent implements OnInit {
       (res) => {
         this.mess = res
         console.log(this.mess)
+        this.uploadimg()
      })
 
      }

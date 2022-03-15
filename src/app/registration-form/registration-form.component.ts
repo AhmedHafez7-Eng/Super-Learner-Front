@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../service/register.service';
 import { instructor } from "../models/instructor.model";
 import { Router } from '@angular/router';
+import { InstructorserviceService } from '../service/instructorservice.service';
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -25,7 +26,9 @@ export class RegistrationFormComponent implements OnInit {
 
 img!:any
 selectedfile!:File
-  constructor(private registserve:RegisterService,private activeroute:Router) { }
+id?:any
+
+  constructor(private instserve:InstructorserviceService,private registserve:RegisterService,private activeroute:Router) { }
 
   ngOnInit(): void {
     
@@ -35,18 +38,21 @@ selectedfile!:File
     this.instructor.profile_pic=this.selectedfile
     console.log(this.instructor)
     this.registserve.saveData(this.instructor).
-    subscribe(res=>{console.log(res);
-      this.tokenfromregist=(res.access_token)})
+    subscribe((res)=>{console.log(res);
+     // this.tokenfromregist=(res.access_token)
+    this.id=res.id
+    console.log(this.id)
+    this.uploadimg()
+    })
       this.activeroute.navigate(['/login']);
   }
   uploadimg(){
     const fd=new FormData();
-    fd.append('profile_pic',this.selectedfile,this.selectedfile.name)
-    
-    
-      this.registserve.uploadimg(1,fd).subscribe((res)=>{
-     
-       console.log(fd)
+    fd.append('course_img',this.selectedfile,this.selectedfile.name)
+
+     //this.img={img_name:this.category.img}
+      this.registserve.uploadimg(this.id,fd).subscribe((res)=>{
+       console.log(event)
       })
   }
   selectedFile(event:any){
