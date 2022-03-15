@@ -49,7 +49,7 @@ getcourses(id:number){
   //     desc: 'lorem lorem lorem',
   //     max_score: 50,
   //     instructor_id: 1,
-  //     img: '../../../assets/images/blog_2.jpg'
+  //     img: 'assets/images/blog_2.jpg'
   //   },
   //   {
   //     id: 2,
@@ -57,7 +57,7 @@ getcourses(id:number){
   //     desc: 'lorem lorem lorem',
   //     max_score: 50,
   //     instructor_id: 1,
-  //     img: '../../../assets/images/blog_2.jpg'
+  //     img: 'assets/images/blog_2.jpg'
   //   },
   //   {
   //     id: 3,
@@ -65,7 +65,7 @@ getcourses(id:number){
   //     desc: 'lorem lorem lorem',
   //     max_score: 50,
   //     instructor_id: 1,
-  //     img: '../../../assets/images/blog_2.jpg'
+  //     img: 'assets/images/blog_2.jpg'
   //   },
   //   {
   //     id: 3,
@@ -73,7 +73,7 @@ getcourses(id:number){
   //     desc: 'lorem lorem lorem',
   //     max_score: 50,
   //     instructor_id: 1,
-  //     img: '../../../assets/images/blog_2.jpg'
+  //     img: 'assets/images/blog_2.jpg'
   //   }
   // ]
 
