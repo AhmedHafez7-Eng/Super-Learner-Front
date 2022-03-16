@@ -1,5 +1,5 @@
 <div class="leftFixedBtn" *ngIf='user?.role=="instructor"'>
-  <a routerLink='/addcourse'>
+  <a (click)='payment()'>
     <i class="fas fa-plus fa-2x"></i>
   </a>
   <span class="tooltiptext">Add New Course</span>
