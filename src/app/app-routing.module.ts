@@ -90,7 +90,7 @@ const routes: Routes = [
   { path: 'loggedout', component: LoggedoutComponent },
   { path: 'secure', component: SecureComponent },
   {
-    path: 'addcourse/:id',
+    path: 'addcourse',
     component: AddcourseComponent,
     canActivate: [AuthService],
   },
