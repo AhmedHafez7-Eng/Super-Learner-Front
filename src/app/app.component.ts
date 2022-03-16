@@ -19,6 +19,9 @@ export class AppComponent {
   }
   ngOnInit(): void {
 
+
+    this._router.navigate(['/home']);
+    
     this.userService.userlogin().subscribe((res => this.user = res));
 
 

@@ -49,7 +49,6 @@ export class CreateTestComponent implements OnInit {
 
   message!: any
   addTest(){
-
     this.testService.addtest(this.newCourse).subscribe
       ((res) => { this.data = res });
     this.message = "Test Added"
