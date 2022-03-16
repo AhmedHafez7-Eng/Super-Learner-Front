@@ -9,6 +9,9 @@ export class PaymentService {
 
   constructor(private httpclient:HttpClient) { }
   payment(user:object){
-    return this.httpclient.post('http://127.0.0.1:8000/api/pay',user)
+    return this.httpclient.post(`${environment.baseUrl}pay`,user)
+  }
+  status(){
+    return this.httpclient.get(`${environment.baseUrl}status`)
   }
 }

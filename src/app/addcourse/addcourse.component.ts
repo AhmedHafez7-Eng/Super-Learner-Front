@@ -27,7 +27,7 @@ fatoohrares!: any;
   }
 add(){
   this.payserve
-  .payment({
+.payment({
     fname: this.user.fname,
     phone: this.user.phone,
     email: this.user.email,
@@ -38,15 +38,16 @@ add(){
     this.url = this.fatoohrares.Data.InvoiceURL;
     window.location.href=this.url
   });
-  
+  this.payserve.status().subscribe(res=>{
+    if(res==1){
   this.course.instructor_id=this.id
   console.log(this.course)
   this.courseserve.add(this.course).subscribe(res=>{console.log(res);
     this.mess=(res)
     this.uploadimg()
   }
-    )
-   
+    )}
+ } )
   }
 selectedFile(e:any){
   this.selectedfile= <File> e.target.files[0]
