@@ -144,7 +144,7 @@
           <div class="blog_post col-12" *ngFor="let post of post_course; let i = index">
             <div class="postHeader">
               <div class="img_pod">
-                <img src="http://127.0.0.1:8000/userImg/{{post.instructor_of_post.profile_pic}}" alt="Instructor image">
+                <img src="{{post.instructor_of_post.profile_pic}}" alt="Instructor image">
               </div>
               <h3>{{post.created_at.split('T',1)}}</h3>
             </div>
