@@ -38,6 +38,10 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: HomeComponent,
+  },
+  {
     path: 'admin/dashboard',
     component: AdminDashboardComponent,
     canActivate: [AuthService, AdminService],
