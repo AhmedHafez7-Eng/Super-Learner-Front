@@ -5,34 +5,37 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
-  styleUrls: ['./students.component.css']
+  styleUrls: ['./students.component.css'],
 })
 export class StudentsComponent implements OnInit {
+  students!: any;
 
-  students!: any
-
-  constructor(private userService: UserService,private stuserve:StudentserveService,private adminserve:AdminService) { }
+  constructor(
+    private userService: UserService,
+    private stuserve: StudentserveService,
+    private adminserve: AdminService
+  ) {}
 
   ngOnInit(): void {
-    this.userService.blnDisplayMenu=false
-    this.getallStudents()
+    this.userService.blnDisplayMenu = false;
+    this.getallStudents();
   }
-  getallStudents(){
-    this.stuserve.getAllStudents().subscribe(
-      (res)=>{this.students=res.students;
-        console.log(res)
-       // console.log(this.instructors[7].courseofinstructor[0].title)
-      })
+  getallStudents() {
+    this.stuserve.getAllStudents().subscribe((res) => {
+      this.students = res.students;
+      console.log(res);
+      // console.log(this.instructors[7].courseofinstructor[0].title)
+    });
   }
-  message!:any
+  message!: any;
+  fade = false;
   delete(id: number) {
-
-    if (confirm("Are You Sure?")) {
-      this.adminserve.deletestudent(id).subscribe(res => {
-        this.message = res
-        this.getallStudents()
-      })
+    if (confirm('Are You Sure?')) {
+      this.adminserve.deletestudent(id).subscribe((res) => {
+        this.message = res;
+        this.fade = !this.fade;
+        this.getallStudents();
+      });
     }
   }
-
 }

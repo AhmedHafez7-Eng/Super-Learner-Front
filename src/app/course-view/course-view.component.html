@@ -17,20 +17,20 @@
         <p *ngIf='user?.role=="instructor"'>{{ course?.desc }}</p>
       </div>
 
-      <div class="course-rating">
+      <!-- <div class="course-rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star-half"></i>
-      </div>
+      </div> -->
 
       <div class="course-meta-bot">
-        <ul class="course-meta-data">
+        <!-- <ul class="course-meta-data">
           <li><i class="fa fa-calendar" aria-hidden="true"></i> 6 Month</li>
           <li><i class="fa fa-users" aria-hidden="true"></i> 56 Student</li>
           <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-        </ul>
+        </ul> -->
 
         <div class="action" *ngIf="role=='instructor'">
           <a routerLink='/update/{{course.id}}' class="actionLink">{{action}}</a>

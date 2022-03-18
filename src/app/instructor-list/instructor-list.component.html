@@ -1,25 +1,23 @@
 <!-- <app-header></app-header> -->
 <div id="teachers" class="section wb">
-    <div class="container">
-        <div class="section-title row text-center">
-            <div class="col-md-8 offset-md-2">
-      
-              <h1 class="sectionTitle">Our Instructors</h1>
-      
-              <hr class="invis" />
-      
-              <p class="lead">
-                Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean
-                sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,
-                nec sagittis sem!
-              </p>
-            </div>
-          </div>
-        <div class="row teachersContainer">
-            <div *ngFor="let item of instructors" 
-            class="col-lg-4 col-md-6 col-12" >
-                <app-instructor-card [instructorData]='item' ></app-instructor-card>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-title row text-center">
+      <div class="col-md-8 offset-md-2">
+
+        <h1 class="sectionTitle">Our Instructors</h1>
+
+        <hr class="invis" />
+
+        <p class="lead">
+          Connect all your systems from rostering classes and syncing grades to tracking teacher PD and using data to
+          understand student performance
+        </p>
+      </div>
     </div>
-</div>            
+    <div class="row teachersContainer">
+      <div *ngFor="let item of instructors" class="col-lg-4 col-md-6 col-12">
+        <app-instructor-card [instructorData]='item'></app-instructor-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,4 +21,15 @@ td img {
 
 .alert {
   margin-top: 20px;
+  display: none;
+}
+
+.fade {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.btn-close {
+  position: absolute;
+  right: 20px;
 }

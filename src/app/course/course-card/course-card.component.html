@@ -20,22 +20,22 @@
         </p>
       </div>
 
-      <div class="course-rating">
+      <!-- <div class="course-rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star-half"></i>
-      </div>
+      </div> -->
     </div>
 
-    <div class="course-meta-bot">
-      <ul class="course-meta-data">
+    <div class="course-meta-bot" *ngIf='user?.role=="student"'>
+      <!-- <ul class="course-meta-data">
         <li><i class="fa fa-calendar" aria-hidden="true"></i> 3 Month</li>
         <li><i class="fa fa-users" aria-hidden="true"></i> 224 Student</li>
         <li><i class="fa fa-book" aria-hidden="true"></i> 7 Books</li>
-      </ul>
-      <div class="enrollBtn" *ngIf='user?.role=="student"'>
+      </ul> -->
+      <div class="enrollBtn">
         <a (click)='enroll()' class="enroll">Enroll</a>
         <!-- <a *ngIf='url' href={{url}} target="_blank" class="pay">Click For Payment</a> -->
       </div>
