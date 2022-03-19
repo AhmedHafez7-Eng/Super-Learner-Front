@@ -50,6 +50,7 @@ export class ProfileComponent implements OnInit {
       // data = res;
       // console.log(data);
 
+      this.uploadimg();
       this._userSer.logout();
       this.activeroute.navigate(['/login']);
     });
@@ -57,9 +58,12 @@ export class ProfileComponent implements OnInit {
 
   uploadimg() {
     const fd = new FormData();
-    fd.append('profile_pic', this.selectedfile, this.selectedfile.name);
+    fd.append('course_img', this.selectedfile, this.selectedfile.name);
 
-    this.registserve.uploadimg(1, fd).subscribe((res) => {});
+    //this.img={img_name:this.category.img}
+    this.registserve.uploadimg(this.userId, fd).subscribe((res) => {
+      console.log(event);
+    });
   }
   selectedFile(event: any) {
     this.selectedfile = <File>event.target.files[0];

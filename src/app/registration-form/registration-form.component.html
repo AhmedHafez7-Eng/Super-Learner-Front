@@ -3,7 +3,7 @@
   <form class="formBx row" (ngSubmit)='insertData()' enctype="multipart/form-data" #f='ngForm'>
     <div class="form-group col-12 col-md-6 col-lg-6">
       <label for="firstName">First name</label>
-      <input required ngModel minlength="3" maxlength="10" #firstName="ngModel" class="form-control" type="text"
+      <input required ngModel minlength="2" maxlength="70" #firstName="ngModel" class="form-control" type="text"
         name="fname" [(ngModel)]=instructor.fname id="firstName">
       <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">First name is required</div>
       <div class="alert alert-danger" *ngIf="firstName.touched &&firstName.errors?.['minlength']">First name must be
@@ -13,7 +13,7 @@
     </div>
     <div class="form-group col-12 col-md-6 col-lg-6">
       <label for="lastName">Last name</label>
-      <input required ngModel minlength="3" maxlength="10" #lastName="ngModel" class="form-control" type="text"
+      <input required ngModel minlength="2" maxlength="70" #lastName="ngModel" class="form-control" type="text"
         name="lname" [(ngModel)]=instructor.lname id="lastName">
       <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">Last name is required</div>
       <div class="alert alert-danger" *ngIf="lastName.touched &&lastName.errors?.['minlength']">Last name must be more
@@ -34,7 +34,8 @@
         type="password" name="password" [(ngModel)]=instructor.password id="password">
       <div class="alert alert-danger" *ngIf="password.touched && password.errors?.['required']">Password is required
       </div>
-      <div class="alert alert-danger" *ngIf="password.errors?.['pattern']">Please enter a valid Password</div>
+      <div class="alert alert-danger" *ngIf="password.errors?.['pattern']">Password must have at least 8 characters with
+        uppercase, lowercase & special characters and numbers</div>
     </div>
     <div class="form-group col-12 col-md-6 col-lg-6">
       <label for="confirmPassword">confirm password</label>
@@ -56,11 +57,12 @@
     </div>
     <div class="form-group col-12 col-md-6 col-lg-6">
       <label for="phone">Phone</label>
-      <input class="form-control" type="text" pattern="^[0-9]*$" required ngModel #phone="ngModel" minlength="11"
-        name="phone" [(ngModel)]=instructor.phone id="phone">
+      <input class="form-control" type="text" pattern="[0-9]{11}" required ngModel #phone="ngModel" minlength="11"
+        maxlength="11" name="phone" [(ngModel)]=instructor.phone id="phone">
       <div class="alert alert-danger" *ngIf="phone.touched && phone.errors?.['required']">Phone number is required</div>
       <div class="alert alert-danger" *ngIf="phone.errors?.['pattern']">Only numbers allowed</div>
-      <div class="alert alert-danger" *ngIf="phone.errors?.['minlength']">Phone number must be atleast 11 numbers</div>
+      <div class="alert alert-danger" *ngIf="phone.errors?.['minlength'] || phone.errors?.['maxlength']">Phone number
+        must be at least 11 numbers</div>
     </div>
     <div class="form-group col-12 col-md-6 col-lg-6">
       <label for="address">Address</label>
@@ -73,20 +75,20 @@
       <label for="roles">Role</label>
 
       <select class="form-select" name="role" id="roles" [(ngModel)]=instructor.role>
-        <option value="student">student</option>
-        <option value="instructor">instructor</option>
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
 
       </select>
     </div>
-    <form class="my-3"  method="post" enctype="multipart/form-data">
+    <form class="my-3" method="post" enctype="multipart/form-data">
 
       <div class="mb-3">
-          <label for="course_img" class="form-label">Choose course image</label>
-          <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
+        <label for="course_img" class="form-label">Select Profile Image</label>
+        <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
       </div>
 
       <!-- <button class="btn btn-primary" type="submit">update image</button> -->
-  </form>
+    </form>
     <div class="col-12">
       <button [disabled]='f.invalid'>Register</button>
     </div>
