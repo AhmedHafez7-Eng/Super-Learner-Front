@@ -5,12 +5,12 @@
   </div>
 
   <div class="sectionTitle">
-    <h2>Update Course Data</h2>
+    <h2>Update Course Info</h2>
   </div>
   <form class="formBx" (ngSubmit)='updateData();' #f='ngForm'>
     <div class="form-group ">
       <label for="title">Title</label>
-      <input ngModel minlength="3" maxlength="10" #title="ngModel" class="form-control" type="text" name="title"
+      <input ngModel minlength="2" maxlength="70" #title="ngModel" class="form-control" type="text" name="title"
         [(ngModel)]=course.title id="title" value='{{onecourse?.title}}'>
       <div class="alert alert-danger" *ngIf="title.touched && !title.valid">title is required</div>
       <div class="alert alert-danger" *ngIf="title.touched &&title.errors?.['minlength']">title must be more than 3
@@ -21,7 +21,7 @@
     <div class="form-group  ">
       <label for="description">Description</label>
       <input ngModel #description="ngModel" class="form-control" type="text" name="description" id="description"
-        [(ngModel)]=course.desc value='{{onecourse?.desc}}'>
+        [(ngModel)]=course.desc value='{{onecourse?.desc}}' minlength="2" maxlength="150">
       <div class="alert alert-danger" *ngIf="description.touched && !description.valid">description is required</div>
     </div>
     <div class="form-group  ">
@@ -31,18 +31,18 @@
       <div class="alert alert-danger" *ngIf="maxScore.touched && maxScore.errors?.['required']">this field is required
       </div>
     </div>
-    <form class="my-3"  method="post" enctype="multipart/form-data">
+    <form class="my-3" method="post" enctype="multipart/form-data">
 
       <div class="mb-3">
-          <label for="course_img" class="form-label">Choose course image</label>
-          <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
+        <label for="course_img" class="form-label">Choose course image</label>
+        <input name="course_img" class="form-control" type="file" id="course_img" (change)="selectedFile($event)">
       </div>
 
       <!-- <button class="btn btn-primary" type="submit">update image</button> -->
-  </form>
+    </form>
 
     <button>update</button>
   </form>
 
- 
+
 </div>

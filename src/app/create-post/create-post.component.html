@@ -1,6 +1,6 @@
 <div class="container section">
   <div *ngIf='message' class="alert alert-success alert-dismissible fade show" role="alert">
-    {{message}} <strong>Successfully!</strong>
+    {{message}}
     <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   <div class="row formRow">
@@ -22,7 +22,7 @@
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Post Title</label>
           <input required [(ngModel)]="newPost.title" #testName="ngModel" type="text" class="form-control" id="title"
-            name="title" min="2" max="70" placeholder="New Post Title">
+            name="title" minlength="2" maxlength="50" placeholder="New Post Title">
           <div class="alert alert-danger" *ngIf="testName.touched &&  !testName.valid">title is required</div>
         </div>
 
@@ -30,7 +30,7 @@
           <label for="inputBody" class="form-label">Post Body</label>
 
           <textarea required [(ngModel)]="newPost.body" #body="ngModel" class="form-control" name="body" id="body"
-            cols="30" rows="10" placeholder="Hello Dears, ...."></textarea>
+            cols="30" rows="10" placeholder="Hello Dears, ...." minlength="2" maxlength="300"></textarea>
 
           <div class="alert alert-danger" *ngIf="body.touched &&  !body.valid">body is required</div>
         </div>

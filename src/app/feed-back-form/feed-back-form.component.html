@@ -26,7 +26,8 @@
           <label for="inputFeedback" class="form-label">Feedback Body</label>
 
           <textarea required [(ngModel)]="newFeedback.feedback" #feedback="ngModel" class="form-control" name="feedback"
-            id="inputFeedback" cols="30" rows="10" placeholder="Hello Dears, ...."></textarea>
+            id="inputFeedback" cols="30" rows="10" placeholder="Hello Dears, ...." minlength="3"
+            maxlength="150"></textarea>
 
           <div class="alert alert-danger" *ngIf="feedback.touched &&  !feedback.valid">Feedback is required</div>
         </div>
