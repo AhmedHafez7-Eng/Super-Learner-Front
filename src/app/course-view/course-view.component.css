@@ -22,6 +22,7 @@
 .course-desc p {
   color: #555;
   letter-spacing: 2px;
+  overflow-wrap: break-word;
 }
 
 .course-rating>* {

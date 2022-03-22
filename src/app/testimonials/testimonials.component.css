@@ -1,0 +1,23 @@
+.testimonial img {
+  width: 120px;
+  height: 120px;
+  max-width: 120px;
+  border-radius: 50%;
+  /* object-fit: cover; */
+  box-shadow: 3px 3px 10px rgb(255 255 255 / 20%);
+}
+
+.testimonial .desc {
+  padding: 40px !important;
+  box-shadow: 0px 1px 10px rgb(255 255 255 / 70%);
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.testimonial .desc h3 {
+  text-transform: capitalize;
+}
+
+.testimonial .lead {
+  color: #ffb743;
+  overflow-wrap: break-word;
+}

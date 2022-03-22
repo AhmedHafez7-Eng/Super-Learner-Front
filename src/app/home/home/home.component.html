@@ -175,62 +175,75 @@
   <!-- end container -->
 </div>
 <!-- end section -->
-<section class="section lb page-section">
+<section class="section lb page-section history">
   <div class="container">
     <div class="section-title row text-center">
       <div class="col-md-8 offset-md-2">
         <h3>Our history</h3>
         <p class="lead">
-          Elementary students don’t learn the same way as college students or adults. SmartEDU was designed for all
+          Elementary students don't learn the same way as college students or adults. SmartEDU was designed for all
           students—from kindergarten through 12th grade—to be fully engaged with their learning!
         </p>
       </div>
     </div>
     <!-- end title -->
-    <div class="timeline timeline--loaded timeline--horizontal">
-      <div class="timeline__wrap">
-        <div class="timeline__items">
-          <div class="timeline__item">
+    <div class="row">
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="offset-lg-2 col-lg-8 offset-lg-2 col-12 mb-5">
             <div class="timeline__content img-bg-01">
               <h2>2022</h2>
               <p>
-                SmartEDU has spent the last 10 years learning from our 1,600+ customers and more than 20 million users
+                SmartEDU has spent the last 10 years learning from our 1,600+ customers and more than 20 million
+                users
                 about what products and services classrooms, schools, and entire districts need to be successful.
               </p>
             </div>
           </div>
-          <div class="timeline__item">
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div class="offset-lg-2 col-lg-8 offset-lg-2 col-12 mb-5">
             <div class="timeline__content img-bg-02">
               <h2>2021</h2>
               <p>
                 Learning is not just about teachers and students. SmartEDU allows you to bring everyone
-                together—students, teachers, coaches, parents, administrators—with one communication and collaboration
+                together—students, teachers, coaches, parents, administrators—with one communication and
+                collaboration
                 platform.
               </p>
             </div>
           </div>
-          <div class="timeline__item">
-            <div class="timeline__content img-bg-03">
-              <h2>2014</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                dignissim neque condimentum lacus dapibus. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
+        </ng-template>
 
-          <div class="timeline__item">
-            <div class="timeline__content img-bg-04">
-              <h2>2012</h2>
+        <ng-template ngbSlide>
+          <div class="offset-lg-2 col-lg-8 offset-lg-2 col-12 mb-5">
+            <div class="timeline__content img-bg-03">
+              <h2>2020</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                dignissim neque condimentum lacus dapibus. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit.
+                The Information technology market is always shaped with the distributive and emerging technologies. Our
+                programs always reflect the latest developments and the rapid technological progress in the global
+                technology industry. We keep monitoring future trends and seek various approaches to avail it to our
+                trainers, community and learners.
               </p>
             </div>
           </div>
-          <div class="timeline__item">
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div class="offset-lg-2 col-lg-8 offset-lg-2 col-12 mb-5">
+            <div class="timeline__content img-bg-04">
+              <h2>2019</h2>
+              <p>
+                Our programs provide more than 32 ICT disciplines that cover a wide technological spectrum including for
+                example but not limited to data science to game development and digital marketing,..etc
+              </p>
+            </div>
+          </div>
+        </ng-template>
+
+        <!-- <ng-template ngbSlide>
+          <div class="offset-lg-2 col-lg-8 offset-lg-2 col-12 mb-5">
             <div class="timeline__content img-bg-01">
               <h2>2010</h2>
               <p>
@@ -240,7 +253,10 @@
               </p>
             </div>
           </div>
-          <div class="timeline__item">
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div class="offset-lg-2 col-lg-8 offset-lg-2 col-12 mb-5">
             <div class="timeline__content img-bg-02">
               <h2>2007</h2>
               <p>
@@ -250,7 +266,10 @@
               </p>
             </div>
           </div>
-          <div class="timeline__item">
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div class="offset-lg-2 col-lg-8 offset-lg-2 col-12 mb-5">
             <div class="timeline__content img-bg-03">
               <h2>2004</h2>
               <p>
@@ -260,7 +279,10 @@
               </p>
             </div>
           </div>
-          <div class="timeline__item">
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div class="offset-lg-2 col-lg-8 offset-lg-2 col-12 mb-5">
             <div class="timeline__content img-bg-04">
               <h2>2002</h2>
               <p>
@@ -270,13 +292,13 @@
               </p>
             </div>
           </div>
-        </div>
-      </div>
+        </ng-template> -->
+      </ngb-carousel>
     </div>
   </div>
 </section>
 
-<div class="section cl">
+<div class="section cl stats">
   <div class="container">
     <div class="row text-left stat-wrap">
       <div class="col-md-4 col-12">
