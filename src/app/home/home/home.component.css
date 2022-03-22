@@ -1,7 +1,28 @@
+.stats {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://www.lincolnacademy.org/wp-content/uploads/2020/05/graduation_throwing_cap.jpg') center center no-repeat !important; */
+  /* background-size: cover !important; */
+  padding: 50px 0 !important;
+  background-color: #0e1920;
+}
+
 .stat-wrap {
   gap: 15px 0;
 }
 
 .icon_wrap {
   margin-right: 5px;
+  background-color: #eea530;
+}
+
+.history {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/originals/c9/94/cd/c994cd32f8f63da8d9dbf12b1bb3e847.jpg') !important;
+  /* background-size: cover !important; */
+}
+
+.history h3 {
+  color: #FFF;
+}
+
+.history .lead {
+  color: #CCC;
 }

@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+// import { NgImageSliderModule } from 'ng-image-slider';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -97,6 +99,8 @@ import { FeedBackFormComponent } from './feed-back-form/feed-back-form.component
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbCarouselModule,
+    // NgImageSliderModule,
     // instructor
     //  MatFormFieldModule,
     // MatDatepickerModule,
