@@ -24,7 +24,7 @@
                   </div>
                   <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                      <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                      <li class="breadcrumb-item"><a routerLink="/admin/dashboard">Dashboard</a></li>
                       <li class="breadcrumb-item active">Courses</li>
                     </ol>
                   </div>
@@ -49,7 +49,7 @@
                     <tr *ngFor='let course of courses'>
                       <td><img src="{{course.course_img}}" alt="Course Image"></td>
                       <td>{{course.title}}</td>
-                      <td>{{course.instructor_id}}</td>
+                      <td>{{course.instructor_of_course.fname}} {{course.instructor_of_course.lname}}</td>
                       <td>{{course.desc}}</td>
                       <td>{{course.max_score}}</td>
                       <td>

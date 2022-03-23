@@ -32,6 +32,7 @@ export class UserService {
     localStorage.removeItem('token');
     this.loggedChanged2 = false;
     this.loggedChanged.next(false);
+    this.blnDisplayMenu = true;
   }
   isAdmin(): boolean {
     return this.loggedChanged2;
