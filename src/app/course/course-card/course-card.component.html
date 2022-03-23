@@ -7,17 +7,20 @@
     <div class="course-br">
       <div class="course-title">
         <h2>
-          <button *ngIf='user?.role=="instructor"|| user?.role=="admin"' class="btn btn-info"
-            routerLink="/course-content/{{coursesfrompare.id}}" title="">{{coursesfrompare.title}}</button>
+          <button *ngIf='user?.role=="instructor"|| user?.role=="admin"' class="courseTitle"
+            routerLink="/course-content/{{coursesfrompare.id}}"
+            title="Click To View Content">{{coursesfrompare.title}}</button>
 
-          <button *ngIf='user?.role=="student"' class="btn btn-info" (click)='ifenroll()'
-            title="">{{coursesfrompare.title}}</button>
+          <button *ngIf='user?.role=="student"' class="courseTitle" (click)='ifenroll()'
+            title="Click To View Content">{{coursesfrompare.title}}</button>
         </h2>
       </div>
       <div class="course-desc">
         <p>
           {{coursesfrompare.desc}}
         </p>
+        <h4 class="instInfo">Instructor/ {{coursesfrompare?.instructor_of_course.fname}}
+          {{coursesfrompare?.instructor_of_course.lname}}</h4>
       </div>
 
       <!-- <div class="course-rating">
@@ -51,3 +54,4 @@
     <div class="messageBox" *ngIf='permission'>
       <div class="permission">{{permission}}</div>
     </div>
+  </div>

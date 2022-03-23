@@ -10,11 +10,18 @@
           <a routerLink='/course-content/{{course.id}}' title="">{{ course.title }}</a>
         </h2>
       </div>
-      <div class="course-desc">
-        <p *ngIf='user?.role=="student"'>
+      <div class="course-desc" *ngIf='user?.role=="student"'>
+        <p>
           {{ course?.desc }}
         </p>
-        <p *ngIf='user?.role=="instructor"'>{{ course?.desc }}</p>
+        <!-- <h4 class="instInfo">Instructor/ {{course?.instructor_of_course.fname}}
+          {{course?.instructor_of_course.lname}}</h4> -->
+      </div>
+
+      <div class="course-desc" *ngIf='user?.role=="instructor"'>
+        <p>
+          {{ course?.desc }}
+        </p>
       </div>
 
       <!-- <div class="course-rating">
