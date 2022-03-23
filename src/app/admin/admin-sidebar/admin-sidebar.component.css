@@ -35,3 +35,16 @@ a.nav-link p {
 .btn-sidebar:hover {
   color: #eea530;
 }
+
+.toggler {
+  font-size: 16px;
+  color: #AAA;
+  position: absolute;
+  top: 19px;
+  right: 15px;
+}
+
+
+body:not(.layout-fixed) .main-sidebar {
+  background: #131418 !important;
+}

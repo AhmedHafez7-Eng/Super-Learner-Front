@@ -1,7 +1,7 @@
 <div class="container section">
   <div *ngIf='message' class="alert alert-success alert-dismissible fade show" role="alert">
     {{message}}
-    <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   <div class="row formRow">
 
@@ -10,7 +10,7 @@
     </div>
 
     <div class='col-12'>
-      <form (ngSubmit)='addPost()' class="row formStyle" #addpostForm='ngForm'>
+      <form (ngSubmit)='addPost(); addpostForm.resetForm()' class="row formStyle" #addpostForm='ngForm'>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputState" class="form-label">Course name</label>
           <select required [(ngModel)]="newPost.course_id" #selectCourse="ngModel" name="courseSelect"
@@ -22,7 +22,7 @@
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Post Title</label>
           <input required [(ngModel)]="newPost.title" #testName="ngModel" type="text" class="form-control" id="title"
-            name="title" minlength="2" maxlength="50" placeholder="New Post Title">
+            name="title" minlength="1" maxlength="100" placeholder="New Post Title">
           <div class="alert alert-danger" *ngIf="testName.touched &&  !testName.valid">title is required</div>
         </div>
 
@@ -30,9 +30,11 @@
           <label for="inputBody" class="form-label">Post Body</label>
 
           <textarea required [(ngModel)]="newPost.body" #body="ngModel" class="form-control" name="body" id="body"
-            cols="30" rows="10" placeholder="Hello Dears, ...." minlength="2" maxlength="300"></textarea>
+            cols="30" rows="10" placeholder="Hello Dears, ...." minlength="1" maxlength="300"></textarea>
 
           <div class="alert alert-danger" *ngIf="body.touched &&  !body.valid">body is required</div>
+          <div class="alert alert-danger" *ngIf="body.errors?.['maxlength']">body can't be more than 300 characters
+          </div>
         </div>
         <div class="col-12">
           <button [disabled]='addpostForm.invalid' type="submit">Post</button>

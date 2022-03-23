@@ -10,7 +10,7 @@
     </div>
 
     <div class='col-12 col-md-7 col-lg-7'>
-      <form (ngSubmit)='addTest()' class="row formStyle" #addtestForm='ngForm'>
+      <form (ngSubmit)='addTest(); addtestForm.resetForm()' class="row formStyle" #addtestForm='ngForm'>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputState" class="form-label">Course name</label>
           <select required [(ngModel)]="newCourse.course_id" #selectCourse="ngModel" name="courseSelect"
@@ -22,7 +22,7 @@
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Title</label>
           <input required [(ngModel)]="newCourse.title" #testName="ngModel" type="text" class="form-control"
-            id="testName" name="testName" placeholder="PHP Part1 Exam" minlength="3" maxlength="30">
+            id="testName" name="testName" placeholder="PHP Part1 Exam" minlength="3" maxlength="100">
           <div class="alert alert-danger" *ngIf="testName.touched &&  !testName.valid">title is required</div>
         </div>
 
@@ -62,7 +62,7 @@
     </div>
 
     <div class='col-12'>
-      <form (ngSubmit)="addQuestion()" #f='ngForm' class="row formStyle" #addquesForm='ngForm'>
+      <form (ngSubmit)="addQuestion(); addquesForm.resetForm()" class="row formStyle" #addquesForm='ngForm'>
         <div class="col-12">
           <label for="inputState" class="form-label">Test name</label>
           <select class="form-select col-6" required [(ngModel)]="newQuestion.test_id" ngModel #selectTest="ngModel"
@@ -75,32 +75,32 @@
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Question Header</label>
           <input type="text" name="question" required [(ngModel)]="newQuestion.question" class="form-control"
-            id="inputTitle" placeholder="What's PHP Stands For?" minlength="2" maxlength="150">
+            id="inputTitle" placeholder="What's PHP Stands For?" minlength="1" maxlength="150">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Answer 1</label>
           <input type="text" name="answer1" required [(ngModel)]="newQuestion.answer1" class="form-control"
-            id="inputTitle" placeholder="Answer 1" minlength="2" maxlength="150">
+            id="inputTitle" placeholder="Answer 1" minlength="1" maxlength="150">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Answer 2</label>
           <input type="text" name="answer2" required [(ngModel)]="newQuestion.answer2" class="form-control"
-            id="inputTitle" placeholder="Answer 2" minlength="2" maxlength="150">
+            id="inputTitle" placeholder="Answer 2" minlength="1" maxlength="150">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Answer 3</label>
           <input type="text" name="answer3" required [(ngModel)]="newQuestion.answer3" class="form-control"
-            id="inputTitle" placeholder="Answer 3" minlength="2" maxlength="150">
+            id="inputTitle" placeholder="Answer 3" minlength="1" maxlength="150">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Answer 4</label>
           <input type="text" name="answer4" required [(ngModel)]="newQuestion.answer4" class="form-control"
-            id="inputTitle" placeholder="Answer 4" minlength="2" maxlength="150">
+            id="inputTitle" placeholder="Answer 4" minlength="1" maxlength="150">
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputTitle" class="form-label">Correct Answer</label>
           <input type="text" name="correct_answer" required [(ngModel)]="newQuestion.correct_answer"
-            class="form-control" id="inputTitle" placeholder="Correct Answer" minlength="2" maxlength="150">
+            class="form-control" id="inputTitle" placeholder="Correct Answer" minlength="1" maxlength="150">
         </div>
         <div class="col-12">
           <button [disabled]='addquesForm.invalid' type="submit">Add Question</button>

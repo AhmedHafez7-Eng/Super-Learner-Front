@@ -20,6 +20,29 @@
 /*------------------------------------------------------------------
     SKELETON
 -------------------------------------------------------------------*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #131418;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #eea530;
+}
+
+
+
 .form-control.ng-touched.ng-invalid {
   border: 1.5px solid red;
 }

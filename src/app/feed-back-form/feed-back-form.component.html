@@ -1,7 +1,7 @@
 <div class="container">
   <div *ngIf='mess' class="alert alert-success alert-dismissible fade show" role="alert">
     {{mess}}
-    <button (click)="refresh()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   <div class="row formRow">
 
@@ -10,7 +10,7 @@
     </div>
 
     <div class='col-12'>
-      <form (ngSubmit)='addFeedback()' class="row formStyle" #addfeedbackForm='ngForm'>
+      <form (ngSubmit)='addFeedback(); addfeedbackForm.resetForm()' class="row formStyle" #addfeedbackForm='ngForm'>
         <div class="col-12 col-md-6 col-lg-6">
           <label for="inputState" class="form-label">Course name</label>
           <select required [(ngModel)]="newFeedback.course_id" #selectCourse="ngModel" name="courseSelect"
