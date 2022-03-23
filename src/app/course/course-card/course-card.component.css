@@ -38,7 +38,7 @@
 .messageBox {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding-bottom: 35px;
 }
 
@@ -73,4 +73,20 @@
 
 .messageBox .permission {
   color: #d3cc00;
+}
+
+.instInfo {
+  color: #eea412;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.courseTitle {
+  border: none;
+  color: #0c406b !important;
+  font-size: 14px !important;
+  background: #FFF;
+  padding: 7px;
+  width: 100%;
+  box-shadow: 0px 3px 10px rgb(0 0 0 / 30%);
 }

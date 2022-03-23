@@ -13,7 +13,8 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class CourseCardComponent implements OnInit {
   @Input()
-  coursesfrompare!: course;
+  coursesfrompare!: any;
+  // coursesfrompare!: course;
 
   constructor(
     private payserve: PaymentService,
@@ -36,6 +37,8 @@ export class CourseCardComponent implements OnInit {
       if (this.user.role == 'instructor') this.action = false;
       else this.action = true;
     });
+
+    // console.log(this.coursesfrompare);
   }
 
   enroll() {
